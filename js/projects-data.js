@@ -143,9 +143,9 @@ const portfolioData = {
       icon: "fas fa-home"
     },
     {
-      id: "opalsl-doors",
+      id: "lod300-doors",
       category: "bim",
-      title: "OPALSL - LOD 300 Architectural Door Assemblies",
+      title: "LOD 300 Architectural Door Assemblies",
       badge: "Specialist Modeling",
       subtitle: "Standardized Parametric Family Libraries & Fabrication Documentation",
       description: "Extensive library development of LOD 300 parametric door assemblies, ironmongery specifications, and manufacturer-ready schedule documentation.",
