@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dilupa Chathuranga | BIM Specialist & Workflow Automation</title>
+  <meta name="description" content="Portfolio of Dilupa Chathuranga - BIM Specialist, Production Modeler, and Revit & AutoCAD Workflow Automation Technologist.">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="bg-grid-overlay"></div>
+  <div class="bg-wireframe-overlay"></div>
+  <div class="ambient-glow"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <div class="brand-monogram">DC</div>
+        <div class="brand-info">
+          <h1>Dilupa Chathuranga</h1>
+          <span>BIM & Workflow Automation</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#automation">Custom Tools</a></li>
+          <li><a href="#projects">BIM Projects</a></li>
+          <li><a href="#skills">Capabilities</a></li>
+          <li><a href="#experience">Philosophy</a></li>
+          <li><a href="#credentials">Credentials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Theme">
+          <i class="fas fa-sun" id="theme-icon"></i>
+        </button>
+        <button class="btn btn-secondary" onclick="downloadPortfolioPDF()">
+          <i class="fas fa-file-pdf"></i> Export PDF
+        </button>
+        <a href="#contact" class="btn btn-primary">
+          Get In Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <!-- Left: Clean Text Column -->
+        <div class="hero-intro">
+          <div class="status-badge-row">
+            <span class="status-badge">
+              <span class="status-dot"></span>
+              Available for Senior BIM & Automation Roles
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            High-Velocity BIM Production & <br>
+            <span class="text-highlight">Intelligent Revit Automation</span>
+          </h1>
+
+          <p class="hero-tagline">
+            Delivering zero-defect architectural and structural packages while engineering custom tools that eliminate repetitive drafting.
+          </p>
+
+          <p class="hero-desc">
+            Specialized in end-to-end Revit modeling, multi-discipline coordination, and construction documentation packages. Backed by custom automation solutions—AutoCAD MCP bridges, Door & Window schedule generators, and automated sheet setup tools—built to dramatically accelerate project delivery.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#automation" class="btn btn-primary">
+              <i class="fas fa-cogs"></i> Explore Custom Tools
+            </a>
+            <a href="#projects" class="btn btn-secondary">
+              <i class="fas fa-layer-group"></i> Production Projects
+            </a>
+            <button class="btn btn-outline" onclick="downloadPortfolioPDF()">
+              <i class="fas fa-file-pdf"></i> Export PDF
+            </button>
+          </div>
+
+          <!-- Quick Metric Badges -->
+          <div class="hero-quick-specs">
+            <div class="spec-chip">
+              <strong>10x Faster</strong>
+              <span>D&W Schedules</span>
+            </div>
+            <div class="spec-divider"></div>
+            <div class="spec-chip">
+              <strong>LOD 300+</strong>
+              <span>Revit Modeling</span>
+            </div>
+            <div class="spec-divider"></div>
+            <div class="spec-chip">
+              <strong>70% Cut</strong>
+              <span>Sheet Setup</span>
+            </div>
+            <div class="spec-divider"></div>
+            <div class="spec-chip">
+              <strong>Zero Error</strong>
+              <span>Standardized Tags</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Authentic Verified Production Workflows Console -->
+        <div class="hero-showcase">
+          <div class="system-console-frame">
+            <div class="console-header">
+              <div class="console-controls">
+                <span class="dot-red"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green"></span>
+              </div>
+              <div class="console-title">
+                <i class="fas fa-terminal text-blue"></i> VERIFIED PRODUCTION SYSTEMS
+              </div>
+              <span class="console-pill">Deployed</span>
+            </div>
+
+            <div class="console-body">
+              <div class="console-item" onclick="openToolModal('dw-scheduling')">
+                <div class="console-item-left">
+                  <div class="console-icon"><i class="fas fa-table"></i></div>
+                  <div>
+                    <h5>D&W Scheduling Suite</h5>
+                    <p>Automated legend & sheet population</p>
+                  </div>
+                </div>
+                <span class="console-metric">10x Speed</span>
+              </div>
+
+              <div class="console-item" onclick="openToolModal('cad-mcp')">
+                <div class="console-item-left">
+                  <div class="console-icon"><i class="fas fa-drafting-compass"></i></div>
+                  <div>
+                    <h5>AutoCAD MCP Workflow</h5>
+                    <p>Automated keyplan & DWG geometry prep</p>
+                  </div>
+                </div>
+                <span class="console-metric">CAD Bridge</span>
+              </div>
+
+              <div class="console-item" onclick="openToolModal('keyplan-importer')">
+                <div class="console-item-left">
+                  <div class="console-icon"><i class="fas fa-map"></i></div>
+                  <div>
+                    <h5>Revit Keyplan Importer</h5>
+                    <p>Pixel-perfect sheet coordinate alignment</p>
+                  </div>
+                </div>
+                <span class="console-metric">100% Align</span>
+              </div>
+
+              <div class="console-item" onclick="openToolModal('parameter-adding')">
+                <div class="console-item-left">
+                  <div class="console-icon"><i class="fas fa-sliders-h"></i></div>
+                  <div>
+                    <h5>Batch Parameter Suite</h5>
+                    <p>Multi-category shared parameter injection</p>
+                  </div>
+                </div>
+                <span class="console-metric">Zero Error</span>
+              </div>
+
+              <div class="console-item" onclick="openToolModal('sheet-setup')">
+                <div class="console-item-left">
+                  <div class="console-icon"><i class="fas fa-layer-group"></i></div>
+                  <div>
+                    <h5>Sheet Setup Manager</h5>
+                    <p>Batch titleblocks, viewports & numbering</p>
+                  </div>
+                </div>
+                <span class="console-metric">70% Cut</span>
+              </div>
+            </div>
+
+            <div class="console-footer">
+              <i class="fas fa-check-double text-emerald"></i>
+              <span>Tested & proven in real architectural production</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics Strip -->
+  <section class="metrics-section">
+    <div class="container">
+      <div class="metrics-grid" id="metrics-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Automation & Tools Showcase -->
+  <section class="section" id="automation">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ENGINEERED WORKFLOWS</span>
+        <h2 class="section-title">Revit & CAD Automation Tools</h2>
+        <p class="section-desc">
+          Custom tools engineered to remove repetitive manual bottlenecks, guarantee drawing alignment, and accelerate project submittals.
+        </p>
+      </div>
+
+      <div class="tools-grid" id="tools-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured BIM Projects -->
+  <section class="section" id="projects" style="background: rgba(14, 20, 35, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">DELIVERED WORK</span>
+        <h2 class="section-title">BIM Modeling & Coordination Projects</h2>
+        <p class="section-desc">
+          High-fidelity Architectural and Structural models, comprehensive working drawing packages, and detailed specification submittals.
+        </p>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities Matrix -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">TECHNICAL DEPTH</span>
+        <h2 class="section-title">Core Competencies & Capabilities</h2>
+        <p class="section-desc">
+          A disciplined blend of structural and architectural draughtsmanship standards combined with modern workflow automation.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category-card">
+          <h3><i class="fas fa-cube" style="color: var(--accent-blue);"></i> BIM & Documentation</h3>
+          <div id="bim-skills-list"></div>
+        </div>
+
+        <div class="skill-category-card">
+          <h3><i class="fas fa-pencil-ruler" style="color: #fbbf24;"></i> Draughtsmanship & CAD</h3>
+          <div id="draught-skills-list"></div>
+        </div>
+
+        <div class="skill-category-card">
+          <h3><i class="fas fa-code-branch" style="color: var(--accent-emerald);"></i> Workflow Automation</h3>
+          <div id="auto-skills-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey & Philosophy -->
+  <section class="section" id="experience" style="background: rgba(14, 20, 35, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">WORK ETHIC</span>
+        <h2 class="section-title">Philosophy & Production Standard</h2>
+      </div>
+
+      <div class="journey-grid">
+        <div class="journey-card">
+          <div>
+            <h3><i class="fas fa-drafting-compass" style="color: var(--accent-blue);"></i> Draughtsmanship Rigor</h3>
+            <p>
+              My work is grounded in classical Engineering Draughtsmanship discipline. Understanding geometric projection, structural framing load paths, and municipal drawing rules means every 3D element placed in Revit is constructible, coordinated, and ready for site execution.
+            </p>
+            <p>
+              Unlike operators who rely on surface-level 3D modeling, this technical discipline ensures clean linework, accurate cut planes, and flawless construction documentation.
+            </p>
+          </div>
+          <div class="quote-box">
+            "Software is only as good as the drafter's understanding of construction reality."
+          </div>
+        </div>
+
+        <div class="journey-card">
+          <div>
+            <h3><i class="fas fa-cogs" style="color: var(--accent-emerald);"></i> High-Velocity Automation</h3>
+            <p>
+              Repetitive manual tasks—like creating hundreds of door schedules, placing keyplans, or updating parameters across levels—are the biggest source of human error and project delays in architectural offices.
+            </p>
+            <p>
+              By engineering custom pyRevit utilities and AutoCAD MCP automation routines, I eliminate these repetitive bottlenecks. This drastically cuts turnaround times while ensuring zero-defect consistency across every issued drawing sheet.
+            </p>
+          </div>
+          <div class="quote-box">
+            "Automate the repetitive; focus human intelligence on precision and coordination."
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials / Education (Clean, dignified strip at the bottom) -->
+  <section class="education-section" id="credentials">
+    <div class="container">
+      <div class="education-strip">
+        <div class="education-strip-left">
+          <div class="edu-icon-circle">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="edu-text">
+            <h4>National Certificate in Engineering Draughtsmanship (NCED)</h4>
+            <p>College of Technology, Rathnapura • Comprehensive Technical Draughting & Engineering Standards</p>
+          </div>
+        </div>
+        <div class="edu-badge-tag">
+          <i class="fas fa-award"></i> Batch Top (Distinction)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact" style="background: rgba(14, 20, 35, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">CONNECT</span>
+        <h2 class="section-title">Let's Discuss Opportunities</h2>
+        <p class="section-desc">
+          Available for senior BIM modeling, coordination, and workflow automation roles worldwide.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div>
+            <h3>Direct Contact Channels</h3>
+            <p style="color: var(--text-secondary); margin-top: 6px;">
+              Feel free to reach out directly via email or connect on LinkedIn.
+            </p>
+
+            <ul class="contact-list">
+              <li class="contact-row">
+                <div class="contact-icon-box"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <h5>Primary Professional Email</h5>
+                  <a href="mailto:dnrdesigners@gmail.com">dnrdesigners@gmail.com</a>
+                </div>
+              </li>
+
+              <li class="contact-row">
+                <div class="contact-icon-box"><i class="fas fa-at"></i></div>
+                <div>
+                  <h5>Personal Email</h5>
+                  <a href="mailto:dilupa1990@gmail.com">dilupa1990@gmail.com</a>
+                </div>
+              </li>
+
+              <li class="contact-row">
+                <div class="contact-icon-box"><i class="fab fa-linkedin-in"></i></div>
+                <div>
+                  <h5>LinkedIn Profile</h5>
+                  <a href="https://www.linkedin.com/in/dilupa-chathuranga-223b5ba8/" target="_blank">
+                    linkedin.com/in/dilupa-chathuranga
+                  </a>
+                </div>
+              </li>
+
+              <li class="contact-row">
+                <div class="contact-icon-box"><i class="fab fa-github"></i></div>
+                <div>
+                  <h5>GitHub Work</h5>
+                  <a href="https://github.com/Dilu-C" target="_blank">
+                    github.com/Dilu-C
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="contact-card export-card">
+          <i class="fas fa-file-invoice" style="font-size: 2.8rem; color: #ffffff; margin-bottom: 16px;"></i>
+          <h3 style="margin-bottom: 8px;">Export Executive PDF Portfolio</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px; max-width: 380px;">
+            One-click print-optimized PDF generation formatted for executive recruitment, HR reviews, and client presentations.
+          </p>
+          <button class="btn btn-primary" style="padding: 12px 28px; font-size: 0.95rem;" onclick="downloadPortfolioPDF()">
+            <i class="fas fa-print"></i> Generate & Save PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="#automation">Custom Tools</a>
+        <a href="#projects">BIM Projects</a>
+        <a href="#skills">Capabilities</a>
+        <a href="#credentials">Credentials</a>
+        <a href="https://www.linkedin.com/in/dilupa-chathuranga-223b5ba8/" target="_blank">LinkedIn</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Dilupa Chathuranga. Precision Engineering & BIM Automation.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="detail-modal">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal()" title="Close">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="js/projects-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
