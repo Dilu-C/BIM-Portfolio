@@ -146,6 +146,29 @@ function setupEventListeners() {
   });
 }
 
+// Helper to render bulleted or standard text
+function renderFormattedPoints(text, isPositive = false) {
+  if (!text) return '';
+  if (text.includes('•')) {
+    const parts = text.split('•').map(p => p.trim()).filter(Boolean);
+    const intro = parts[0].endsWith(':') ? parts[0] : '';
+    const items = intro ? parts.slice(1) : parts;
+    const iconClass = isPositive ? 'fas fa-check-circle text-emerald' : 'fas fa-times-circle text-red';
+    return `
+      ${intro ? `<p style="margin-bottom: 10px; font-weight: 500;">${intro}</p>` : ''}
+      <ul style="list-style: none; padding-left: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+        ${items.map(item => `
+          <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 0.92rem; line-height: 1.5;">
+            <i class="${iconClass}" style="margin-top: 4px; flex-shrink: 0;"></i>
+            <span>${item}</span>
+          </li>
+        `).join('')}
+      </ul>
+    `;
+  }
+  return `<p>${text}</p>`;
+}
+
 // Modal Handlers
 function openToolModal(toolId) {
   const tool = portfolioData.tools.find(t => t.id === toolId);
@@ -159,25 +182,46 @@ function openToolModal(toolId) {
     <h2 class="modal-title">${tool.title}</h2>
     <div class="modal-subtitle">${tool.subtitle}</div>
 
+    ${tool.image ? `
+    <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px; text-align: center;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-family: monospace;">
+          <i class="fas fa-window-maximize" style="color: var(--accent-blue);"></i> Revit Custom Ribbon Integration
+        </span>
+        <span class="badge badge-emerald" style="font-size: 0.7rem;">Live In Production</span>
+      </div>
+      <img src="${tool.image}" alt="${tool.title}" style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08); background: #fff;" />
+    </div>
+    ` : ''}
+
     <div class="modal-section">
       <h4><i class="fas fa-info-circle text-cyan"></i> Overview</h4>
       <p>${tool.description}</p>
     </div>
 
     <div class="modal-section" style="background: rgba(239, 68, 68, 0.08); border-left: 3px solid #ef4444; padding: 14px 18px; border-radius: 6px;">
-      <h4 style="color: #f87171;"><i class="fas fa-exclamation-triangle"></i> The Industry Problem</h4>
-      <p>${tool.problem}</p>
+      <h4 style="color: #f87171;"><i class="fas fa-exclamation-triangle"></i> The Industry Bottleneck (Before)</h4>
+      <div style="color: #cbd5e1;">${renderFormattedPoints(tool.problem, false)}</div>
     </div>
 
     <div class="modal-section" style="background: rgba(16, 185, 129, 0.08); border-left: 3px solid #10b981; padding: 14px 18px; border-radius: 6px; margin-top: 14px;">
-      <h4 style="color: #34d399;"><i class="fas fa-cogs"></i> Engineered Automation Solution</h4>
-      <p>${tool.solution}</p>
+      <h4 style="color: #34d399;"><i class="fas fa-cogs"></i> Engineered Automation Architecture (After)</h4>
+      <div style="color: #cbd5e1;">${renderFormattedPoints(tool.solution, true)}</div>
     </div>
 
     <div class="modal-section" style="background: rgba(6, 182, 212, 0.08); border-left: 3px solid #06b6d4; padding: 14px 18px; border-radius: 6px; margin-top: 14px;">
       <h4 style="color: #38bdf8;"><i class="fas fa-chart-line"></i> Measurable Production Impact</h4>
-      <p>${tool.impact}</p>
+      <p style="color: #cbd5e1; font-weight: 500;">${tool.impact}</p>
     </div>
+
+    ${tool.ribbonTools ? `
+    <div class="modal-section" style="margin-top: 18px; background: rgba(99, 102, 241, 0.08); border-left: 3px solid #6366f1; padding: 14px 18px; border-radius: 6px;">
+      <h4 style="color: #818cf8;"><i class="fas fa-th-large"></i> Ribbon Panel Modules & Tools</h4>
+      <div class="tag-list" style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px;">
+        ${tool.ribbonTools.map(r => `<span class="tag" style="background: rgba(99, 102, 241, 0.18); border-color: rgba(99, 102, 241, 0.35); color: #c7d2fe; font-weight: 500;"><i class="fas fa-cube" style="color: #a5b4fc; margin-right: 4px;"></i> ${r}</span>`).join('')}
+      </div>
+    </div>
+    ` : ''}
 
     <div class="modal-section" style="margin-top: 20px;">
       <h4><i class="fas fa-tags"></i> Core Technologies</h4>

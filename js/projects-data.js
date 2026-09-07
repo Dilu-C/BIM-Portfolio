@@ -19,7 +19,7 @@ const portfolioData = {
   },
 
   metrics: [
-    { label: "D&W Schedules", value: "10x Faster", sub: "Automated View & Sheet Population" },
+    { label: "D&W Schedules", value: ">25x Faster", sub: "Dynamic Tables, Dims & 20+ Params" },
     { label: "BIM Modeling", value: "LOD 300+", sub: "Architectural & Structural Models" },
     { label: "Drawing Setup", value: "70% Faster", sub: "AutoCAD MCP & Keyplan Importers" },
     { label: "Documentation", value: "Zero Defect", sub: "Standardized Parameters & Tags" }
@@ -42,14 +42,23 @@ const portfolioData = {
     {
       id: "dw-scheduling",
       category: "automation",
-      title: "Door & Window (D&W) Scheduling Suite",
-      badge: "Flagship Revit Tool",
-      subtitle: "Full-Cycle Legend Duplication & Sheet Schedule Placement",
-      description: "An end-to-end automation tool developed for pyRevit that duplicates pristine template legend views, populates them with dynamic door/window components, and generates filtered schedule sheets.",
-      problem: "Creating door and window schedules with elevations, dimensions, and schedule tables is one of the most tedious tasks in Revit, requiring days of manual view duplication and coordinate tracking.",
-      solution: "Engineered a robust Revit workflow handling View.Duplicate(), element transformations via DB.Transform.Identity, SubTransaction commits, dynamic bounding-box calculation, and automated ScheduleSheetInstance placement.",
-      impact: "Automated the entire D&W scheduling pipeline, turning an 8-hour repetitive drafting chore into a one-click process that runs in minutes.",
-      tags: ["Revit API", "pyRevit", "Schedule Automation", "Legend Generation"],
+      title: "Door & Window (D&W) Dynamic Scheduling Suite",
+      badge: "Flagship Revit Automation",
+      subtitle: "Batch 20+ Parameter Injection, Auto-Aligned Tables, Dynamic Dims & Instant Sync",
+      description: "An end-to-end parametric Revit automation platform that completely replaces manual legend drafting and disconnected schedules with live model data, automated linear dimensioning, dynamic table alignment, and instant revision synchronization.",
+      problem: "Traditional Revit D&W scheduling was a tedious, highly error-prone bottleneck: (1) Draughtsmen had to manually pull 10+ doors/windows from legends one by one. (2) Over 20 parameters and notes were typed as static plain text—leading to endless typos, zero model traceability, and no live links. (3) Linear dimensions had to be drawn by hand on every single view. (4) Whenever an architect or engineer changed a door or window type/size, the schedule tables stayed stuck on old, obsolete values—causing massive drawing discrepancies, costly site rework, and coordination confusion.",
+      solution: "Engineered a custom, production-proven Revit Ribbon suite (Panel: 'Door & Window Schedules') powered by pyRevit and Revit API: • Batch Parameter Injection (20+ Params): Simultaneously injects and maps 20+ shared parameters across all door and window families with automated data feeds. • Live Dynamic Linking: Any change in family dimensions or properties feeds directly into schedules. • Auto-Aligning Tables: Automatically calculates layout coordinates and neatly aligns schedule tables based on actual element counts. • One-Click Sync ('Update Tables'): Instantly refreshes all table data against live model geometry with zero manual typing. • Automated Dynamic Dimensions ('Dims'): Programmatically snaps and places linear dimensions on elevations, updating automatically with geometry changes. • Global Smart Re-Tagging ('ReTagAll'): One-click re-tagging ensures every door and window is tagged accurately with zero duplicates.",
+      impact: "Delivers a transformative leap in production velocity (>95% time reduction, slashing multi-day manual drafting to seconds). Completely eliminates manual text typos, manual dimensioning, and stale drawing schedule discrepancies.",
+      image: "assets/images/revit_dw_ribbon_panel.png",
+      ribbonTools: [
+        "ReTagAll (Global Tag Sync)",
+        "Add / Remove / Map",
+        "Data (20+ Param Batch Injection)",
+        "Table (Auto-Align Dynamic Tables)",
+        "Update Tables (Instant Live Model Sync)",
+        "Dims (Auto-Dimensioning Engine)"
+      ],
+      tags: ["Revit API", "pyRevit", "Dynamic Scheduling", "Auto-Dimensioning", "Batch Parameters", "Live Model Sync"],
       icon: "fas fa-table"
     },
     {
