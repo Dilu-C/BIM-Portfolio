@@ -62,6 +62,27 @@ const portfolioData = {
       icon: "fas fa-table"
     },
     {
+      id: "headless-batch-export",
+      category: "automation",
+      title: "Headless Multi-Format Batch Exporter",
+      badge: "Enterprise Automation",
+      subtitle: "Background CAD, Single PDF & Combined Set PDF Export Without Opening Files",
+      description: "A high-performance batch export engine built with pyRevit and custom WPF/XAML interfaces that processes multiple closed Revit project files (.rvt) silently in the background—simultaneously outputting CAD (DWG), individual sheet PDFs, and a compiled multi-page Combined Set PDF without ever opening the files in the Revit UI.",
+      problem: "BIM submittal and delivery deadlines suffer from severe workstation bottlenecks: • Opening large 200MB–800MB Revit project files takes 15–30 minutes per file, completely locking up drafters' machines. • Exporting sheets to DWG and printing to PDF one-by-one requires hours of tedious clicking and continuous supervision. • Merging separate PDFs into a unified client drawing set requires third-party software, introducing sheet order mixups and revision collation mistakes.",
+      solution: "Engineered a headless, multi-file background export engine using the Revit API: • Zero-UI Background Processing: Opens RVT models in memory via background document instances without graphical view overhead, running exports at hardware speed. • 3-in-1 Simultaneous Publishing: Concurrently generates standardized DWG files, individual sheet PDFs, and an assembled Multi-Page Combined PDF set in a single automated pass. • Multi-Model Batch Queue: Custom WPF interface lets users queue multiple project models, toggle sheets, and track live progress. • Clean Teardown: Safely closes and purges background documents without saving dirty states, preventing memory leaks.",
+      impact: "Slashes submittal export time by over 80%, turning hours of tedious, machine-freezing manual export clicking into a silent background operation with 100% sheet ordering accuracy.",
+      ribbonTools: [
+        "Zero-UI Background Engine",
+        "Multi-RVT File Queue",
+        "Company Standard CAD Export",
+        "Single Sheet PDF Generator",
+        "Combined Set PDF Compiler",
+        "Custom WPF Dark/Light UI"
+      ],
+      tags: ["Revit API", "Headless Processing", "Batch Export", "DWG & PDF", "WPF / XAML", "pyRevit"],
+      icon: "fas fa-file-export"
+    },
+    {
       id: "keyplan-importer",
       category: "automation",
       title: "Revit Keyplan Importer",
