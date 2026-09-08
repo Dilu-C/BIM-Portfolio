@@ -183,11 +183,16 @@ body {
   z-index: 100;
 }
 
+.navbar .container {
+  max-width: 1360px;
+}
+
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 70px;
+  gap: 16px;
 }
 
 .nav-brand {
@@ -196,6 +201,7 @@ body {
   gap: 12px;
   text-decoration: none;
   color: var(--text-primary);
+  flex-shrink: 0;
 }
 
 .brand-monogram {
@@ -216,6 +222,7 @@ body {
   font-size: 1.02rem;
   font-weight: 700;
   letter-spacing: -0.2px;
+  white-space: nowrap;
 }
 
 .brand-info span {
@@ -225,20 +232,25 @@ body {
   letter-spacing: 1.2px;
   display: block;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: clamp(10px, 1.3vw, 22px);
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text-secondary);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 500;
+  white-space: nowrap;
+  padding: 6px 4px;
   transition: var(--transition-fast);
 }
 
@@ -250,7 +262,8 @@ body {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 /* Executive Tactile 3D Buttons */
@@ -1356,6 +1369,25 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 1120px) {
+  .brand-info span {
+    display: none;
+  }
+  .nav-links {
+    gap: 10px;
+  }
+  .nav-links a {
+    font-size: 0.82rem;
+  }
+  .nav-actions {
+    gap: 8px;
+  }
+  .nav-actions .btn {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+}
+
 @media (max-width: 992px) {
   .hero-content {
     grid-template-columns: 1fr;
@@ -1374,10 +1406,13 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 880px) {
   .nav-links {
     display: none;
   }
+}
+
+@media (max-width: 768px) {
   .hero-title {
     font-size: 2.3rem;
   }
