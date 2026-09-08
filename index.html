@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <link rel="stylesheet" href="css/styles.css?v=2.8">
+  <link rel="stylesheet" href="css/styles.css?v=2.9">
 </head>
 <body>
 
@@ -31,7 +31,7 @@
         </div>
       </a>
 
-      <nav>
+      <nav class="nav-menu" id="nav-menu">
         <ul class="nav-links">
           <li><a href="#automation" class="btn btn-secondary nav-btn"><i class="fas fa-tools"></i> Custom Tools</a></li>
           <li><a href="#projects" class="btn btn-secondary nav-btn"><i class="fas fa-cubes"></i> BIM Projects</a></li>
@@ -43,15 +43,18 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="btn btn-secondary" onclick="downloadPortfolioPDF()">
+        <button class="btn btn-secondary nav-action-pdf" onclick="downloadPortfolioPDF()">
           <i class="fas fa-file-pdf"></i> Export PDF
         </button>
-        <a href="#contact" class="btn btn-primary">
+        <a href="#contact" class="btn btn-primary nav-action-contact">
           Get In Touch
         </a>
         <div class="nav-divider"></div>
         <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Theme">
           <i class="fas fa-sun" id="theme-icon"></i>
+        </button>
+        <button class="mobile-toggle btn btn-secondary" id="mobile-toggle-btn" aria-label="Toggle Navigation">
+          <i class="fas fa-bars" id="mobile-toggle-icon"></i>
         </button>
       </div>
     </div>
@@ -444,7 +447,7 @@
     </div>
   </div>
 
-  <script src="js/projects-data.js?v=2.8"></script>
-  <script src="js/main.js?v=2.8"></script>
+  <script src="js/projects-data.js?v=2.9"></script>
+  <script src="js/main.js?v=2.9"></script>
 </body>
 </html>

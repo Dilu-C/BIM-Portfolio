@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSkills();
   setupEventListeners();
   setupThemeToggle();
+  setupMobileMenu();
 });
 
 // Render Hero Metrics
@@ -312,4 +313,38 @@ function updateThemeIcon(theme) {
   } else {
     icon.className = 'fas fa-sun';
   }
+}
+
+// Setup Mobile Menu Drawer
+function setupMobileMenu() {
+  const toggleBtn = document.getElementById('mobile-toggle-btn');
+  const navMenu = document.getElementById('nav-menu');
+  const toggleIcon = document.getElementById('mobile-toggle-icon');
+  
+  if (!toggleBtn || !navMenu) return;
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navMenu.classList.toggle('active');
+    const isActive = navMenu.classList.contains('active');
+    if (toggleIcon) {
+      toggleIcon.className = isActive ? 'fas fa-times' : 'fas fa-bars';
+    }
+  });
+
+  // Close menu when any nav-btn is clicked
+  navMenu.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      if (toggleIcon) toggleIcon.className = 'fas fa-bars';
+    });
+  });
+
+  // Close when clicking anywhere outside
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target) && navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+      if (toggleIcon) toggleIcon.className = 'fas fa-bars';
+    }
+  });
 }
