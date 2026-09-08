@@ -64,22 +64,23 @@ const portfolioData = {
     {
       id: "headless-batch-export",
       category: "automation",
-      title: "Headless Multi-Format Batch Exporter",
-      badge: "Enterprise Automation",
-      subtitle: "Background CAD, Single PDF & Combined Set PDF Export Without Opening Files",
-      description: "A high-performance batch export engine built with pyRevit and custom WPF/XAML interfaces that processes multiple closed Revit project files (.rvt) silently in the background—simultaneously outputting CAD (DWG), individual sheet PDFs, and a compiled multi-page Combined Set PDF without ever opening the files in the Revit UI.",
-      problem: "BIM submittal and delivery deadlines suffer from severe workstation bottlenecks: • Opening large 200MB–800MB Revit project files takes 15–30 minutes per file, completely locking up drafters' machines. • Exporting sheets to DWG and printing to PDF one-by-one requires hours of tedious clicking and continuous supervision. • Merging separate PDFs into a unified client drawing set requires third-party software, introducing sheet order mixups and revision collation mistakes.",
-      solution: "Engineered a headless, multi-file background export engine using the Revit API: • Zero-UI Background Processing: Opens RVT models in memory via background document instances without graphical view overhead, running exports at hardware speed. • 3-in-1 Simultaneous Publishing: Concurrently generates standardized DWG files, individual sheet PDFs, and an assembled Multi-Page Combined PDF set in a single automated pass. • Multi-Model Batch Queue: Custom WPF interface lets users queue multiple project models, toggle sheets, and track live progress. • Clean Teardown: Safely closes and purges background documents without saving dirty states, preventing memory leaks.",
-      impact: "Slashes submittal export time by over 80%, turning hours of tedious, machine-freezing manual export clicking into a silent background operation with 100% sheet ordering accuracy.",
+      title: "Enterprise Batch Export & Smart Archiving Suite (v2.0)",
+      badge: "Flagship Automation • Revit 2022–2027+ Ready",
+      subtitle: "Inline Vector Sheet Previews, Collision-Free Selective Archiving, True Lifecycle Pipeline & Zero-Hang Architecture",
+      description: "A high-performance production export & publishing platform built with pyRevit and custom WPF/XAML interfaces that processes closed and active Revit project files (.rvt) silently in the background—simultaneously outputting CAD (DWG), individual sheet PDFs, and an assembled multi-page Combined Set PDF with live vector previews and intelligent deliverable archiving.",
+      problem: "BIM submittal and delivery deadlines suffer from severe workstation bottlenecks: • Opening large 200MB–800MB Revit project models takes 15–30 minutes per file, completely locking up drafters' machines. • Manual single-sheet CAD and PDF exporting requires hours of tedious clicking and continuous supervision, prone to missing revisions or sheet order mixups. • Traditional export scripts blindly archive or overwrite entire output folders, accidentally sweeping deliverables from other buildings or drawings into previous folders. • Background Revit documents left in memory cause worksharing lockups and freeze the Revit process upon exit.",
+      solution: "Engineered an enterprise-grade Revit automation suite (Panel: 'Export') featuring: • Headless Background Multi-File Engine: Concurrently processes multiple models in memory without graphical view overhead. • Interactive Inline Vector Sheet Preview: Dynamic rendering pipeline delivering crisp vector previews for 2D plans with smart raster fallback for 3D/shaded views, complete with click-to-zoom inspection. • Smart Exact-Name Selective Archiving: Scans destination directories and moves ONLY previous files whose exact filenames collide with current deliverables into collision-aware versions (00 PREVIOUS/<Date>/<01, 02>), preserving unrelated project deliverables 100% untouched. • True Lifecycle Pipeline (Pending ➔ Exporting... ➔ Done): Individual single sheets export sequentially with live progress badges, compiling the unified Combined PDF and generating an automated Excel Drawing List Transmittal only after all singles succeed. • Zero-Hang Memory Shield: Instant document disposal (doc.Close(False)) after reading metadata and exports, with guaranteed window close hooks preventing memory leaks and Revit exit freezes. • Future-Proof Compatibility: Dynamically supports Revit 2022 through Revit 2026 (active production) and 2027+.",
+      impact: "Slashes drawing submittal delivery time by over 85%, guarantees zero accidental deliverable overwrites across multi-building projects, and provides drafters with instant vector visual verification without opening bulky project models.",
       ribbonTools: [
-        "Zero-UI Background Engine",
-        "Multi-RVT File Queue",
-        "Company Standard CAD Export",
-        "Single Sheet PDF Generator",
-        "Combined Set PDF Compiler",
-        "Custom WPF Dark/Light UI"
+        "Inline Vector Preview & Click-to-Zoom",
+        "Smart Exact-Name Archiving (00 PREVIOUS)",
+        "True Lifecycle Pipeline (Pending ➔ Done)",
+        "Standardized WPF Pill Status Badges",
+        "Automated Excel Drawing List Transmittal",
+        "Zero-Hang Background Document Shield",
+        "Revit 2022–2026 Production | 2027+ Ready"
       ],
-      tags: ["Revit API", "Headless Processing", "Batch Export", "DWG & PDF", "WPF / XAML", "pyRevit"],
+      tags: ["Revit API", "pyRevit", "Batch Export v2.0", "Vector Preview", "Smart Archiving", "WPF / XAML", "Enterprise Memory Management", "Revit 2022-2027+"],
       icon: "fas fa-file-export"
     },
     {
@@ -207,11 +208,12 @@ const portfolioData = {
       { name: "Building Codes & Documentation Standards", level: 92 }
     ],
     automation: [
+      { name: "Enterprise Batch Export & Archiving Suite (v2.0)", level: 98 },
       { name: "AutoCAD MCP Workflow Automation", level: 94 },
       { name: "Revit D&W Scheduling Automation", level: 98 },
       { name: "Keyplan Importer & Alignment Tools", level: 94 },
       { name: "Parameter Management Tools", level: 92 },
-      { name: "pyRevit Tool Deployment & Optimization", level: 90 },
+      { name: "pyRevit Tool Deployment & Optimization", level: 96 },
       { name: "AI-Assisted Workflow Engineering", level: 95 }
     ]
   }
