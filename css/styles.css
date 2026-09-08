@@ -331,7 +331,7 @@ body {
 }
 
 .mobile-toggle {
-  display: none;
+  display: none !important;
   width: 36px;
   height: 36px;
   padding: 0;
@@ -1503,7 +1503,7 @@ body {
   }
 
   .mobile-toggle {
-    display: inline-flex;
+    display: inline-flex !important;
   }
 
   .nav-action-pdf {
