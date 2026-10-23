@@ -19,10 +19,10 @@ const portfolioData = {
   },
 
   metrics: [
-    { label: "D&W Schedules", value: ">25x Faster", sub: "Dynamic Tables, Dims & 20+ Params" },
+    { label: "D&W Schedules", value: ">25x Faster", sub: "Dynamic Tables, Dims & 25 Params" },
     { label: "BIM Modeling", value: "LOD 300+", sub: "Architectural & Structural Models" },
-    { label: "Drawing Setup", value: "70% Faster", sub: "AutoCAD MCP & Keyplan Importers" },
-    { label: "Documentation", value: "Zero Defect", sub: "Standardized Parameters & Tags" }
+    { label: "Drawing Setup", value: "70% Faster", sub: "Batch TitleBlock & Keyplan Importers" },
+    { label: "Coordination", value: "0 Coordinate Drift", sub: "Multi-Discipline Masterplan Replicator" }
   ],
 
   tools: [
@@ -31,20 +31,20 @@ const portfolioData = {
       category: "automation",
       title: "Door & Window Dynamic Scheduling Suite",
       badge: "Flagship Automation",
-      subtitle: "Batch 20+ Parameter Injection, Auto-Aligned Tables, Dynamic Dims & Instant Sync",
+      subtitle: "Batch 25 Parameter Injection, Auto-Aligned Tables, Dynamic Dims & Instant Sync",
       video: "assets/videos/dw_schedule_data.mp4",
       image: "assets/images/revit_dw_ribbon_panel.png",
       description: "An end-to-end parametric Revit automation platform that completely replaces manual legend drafting and disconnected schedules with live model data, automated linear dimensioning, dynamic table alignment, and instant revision synchronization.",
       problem: "Traditional Revit D&W scheduling was a tedious, highly error-prone bottleneck: (1) Draughtsmen had to manually pull 10+ doors/windows from legends one by one. (2) Over 20 parameters and notes were typed as static plain text—leading to endless typos, zero model traceability, and no live links. (3) Linear dimensions had to be drawn by hand on every single view. (4) Whenever an architect or engineer changed a door or window type/size, the schedule tables stayed stuck on old, obsolete values—causing massive drawing discrepancies, costly site rework, and coordination confusion.",
-      solution: "Engineered a custom, production-proven Revit Ribbon suite (Panel: 'Door & Window Schedules') powered by pyRevit and Revit API: • Batch Parameter Injection (20+ Params): Simultaneously injects and maps 20+ shared parameters across all door and window families with automated data feeds. • Live Dynamic Linking: Any change in family dimensions or properties feeds directly into schedules. • Auto-Aligning Tables: Automatically calculates layout coordinates and neatly aligns schedule tables based on actual element counts. • One-Click Sync ('Update Tables'): Instantly refreshes all table data against live model geometry with zero manual typing. • Automated Dynamic Dimensions ('Dims'): Programmatically snaps and places linear dimensions on elevations, updating automatically with geometry changes. • Global Smart Re-Tagging ('ReTagAll'): One-click re-tagging ensures every door and window is tagged accurately with zero duplicates.",
+      solution: "Engineered a custom, production-proven Revit Ribbon suite (Panel: 'Door & Window Schedules') powered by pyRevit and Revit API: • Batch Parameter Injection (25 Params): Simultaneously injects and maps 25 shared parameters across all door and window families with automated data feeds. • Live Dynamic Linking: Any change in family dimensions, host wall types, or room associations feeds directly into schedules. • Auto-Aligning Tables: Automatically calculates layout coordinates and neatly aligns schedule tables based on actual element counts. • One-Click Sync ('Update Tables'): Instantly refreshes all table data against live model geometry with zero manual typing. • Automated Dynamic Dimensions ('Dims'): Programmatically snaps and places linear dimensions on elevations, updating automatically with geometry changes. • Global Smart Re-Tagging ('ReTagAll'): One-click re-tagging ensures every door and window is tagged sequentially with zero duplicates.",
       impact: "Delivers a transformative leap in production velocity (>95% time reduction, slashing multi-day manual drafting to seconds). Completely eliminates manual text typos, manual dimensioning, and stale drawing schedule discrepancies.",
       ribbonTools: [
-        "ReTagAll (Global Tag Sync)",
-        "Add / Remove / Map",
-        "Data (20+ Param Batch Injection)",
-        "Table (Auto-Align Dynamic Tables)",
-        "Update Tables (Instant Live Model Sync)",
-        "Dims (Auto-Dimensioning Engine)"
+        "ReTagAll (Global Sequential Tag Sync)",
+        "Add / Remove / Map (Shared Parameter Engine)",
+        "Data (25 Param Batch Live Injection)",
+        "Table (Auto-Align Dynamic Elevation Tables)",
+        "Update Tables (Instant Live 3D Model Sync)",
+        "Dims (Automated Dimensioning Engine)"
       ],
       tags: ["Revit API", "pyRevit", "Dynamic Scheduling", "Auto-Dimensioning", "Batch Parameters", "Live Model Sync"],
       icon: "fas fa-table"
@@ -56,18 +56,21 @@ const portfolioData = {
       badge: "Flagship Production Tool",
       subtitle: "Vector Sheet Previews, Collision-Free Archiving & True Lifecycle Pipeline",
       video: "assets/videos/export_manager.mp4",
+      videos: [
+        { label: "Export Manager (Active Model UI)", src: "assets/videos/export_manager.mp4" },
+        { label: "Headless Batch Exporter (Closed Models)", src: "assets/videos/batch_export.mp4" }
+      ],
       description: "A high-performance production export & publishing platform built with pyRevit and custom WPF/XAML interfaces that processes closed and active Revit project files (.rvt) silently in the background—simultaneously outputting CAD (DWG), individual sheet PDFs, and an assembled multi-page Combined Set PDF with live vector previews and intelligent deliverable archiving.",
       problem: "BIM submittal and delivery deadlines suffer from severe workstation bottlenecks: • Opening large 200MB–800MB Revit project models takes 15–30 minutes per file, completely locking up drafters' machines. • Manual single-sheet CAD and PDF exporting requires hours of tedious clicking and continuous supervision, prone to missing revisions or sheet order mixups. • Traditional export scripts blindly archive or overwrite entire output folders, accidentally sweeping deliverables from other buildings or drawings into previous folders. • Background Revit documents left in memory cause worksharing lockups and freeze the Revit process upon exit.",
       solution: "Engineered an enterprise-grade Revit automation suite (Panel: 'Export') featuring: • Headless Background Multi-File Engine: Concurrently processes multiple models in memory without graphical view overhead. • Interactive Inline Vector Sheet Preview: Dynamic rendering pipeline delivering crisp vector previews for 2D plans with smart raster fallback for 3D/shaded views, complete with click-to-zoom inspection. • Smart Exact-Name Selective Archiving: Scans destination directories and moves ONLY previous files whose exact filenames collide with current deliverables into collision-aware versions (00 PREVIOUS/<Date>/<01, 02>), preserving unrelated project deliverables 100% untouched. • True Lifecycle Pipeline (Pending ➔ Exporting... ➔ Done): Individual single sheets export sequentially with live progress badges, compiling the unified Combined PDF and generating an automated Excel Drawing List Transmittal only after all singles succeed. • Zero-Hang Memory Shield: Instant document disposal (doc.Close(False)) after reading metadata and exports, with guaranteed window close hooks preventing memory leaks and Revit exit freezes. • Future-Proof Compatibility: Dynamically supports Revit 2022 through Revit 2026 (active production) and 2027+.",
       impact: "Slashes drawing submittal delivery time by over 85%, guarantees zero accidental deliverable overwrites across multi-building projects, and provides drafters with instant vector visual verification without opening bulky project models.",
       ribbonTools: [
+        "Export Manager (Active Model Multi-Format Publisher)",
+        "Batch Export (Headless Multi-Model Background Engine)",
         "Inline Vector Preview & Click-to-Zoom",
         "Smart Exact-Name Archiving (00 PREVIOUS)",
         "True Lifecycle Pipeline (Pending ➔ Done)",
-        "Standardized WPF Pill Status Badges",
-        "Automated Excel Drawing List Transmittal",
-        "Zero-Hang Background Document Shield",
-        "Revit 2022–2026 Production | 2027+ Ready"
+        "Automated Excel & Word Document Transmittals"
       ],
       tags: ["Revit API", "pyRevit", "Batch Export v2.0", "Vector Preview", "Smart Archiving", "WPF / XAML", "Enterprise Memory Management", "Revit 2022-2027+"],
       icon: "fas fa-file-export"
@@ -79,13 +82,18 @@ const portfolioData = {
       badge: "Masterplan Automation",
       subtitle: "Automated Villa Staging, Named Sites Generation & mm-Precision Multi-Discipline Replication",
       video: "assets/videos/replicate_master.mp4",
+      videos: [
+        { label: "Replicate Master (Discipline Replication)", src: "assets/videos/replicate_master.mp4" },
+        { label: "Stage Links (Batch Link Discovery & Staging)", src: "assets/videos/stage_links.mp4" },
+        { label: "Site Generator (Automated Named Sites)", src: "assets/videos/site_generator.mp4" }
+      ],
       description: "A comprehensive pyRevit coordination suite developed for multi-villa island masterplans (100+ units) in the Maldives, automating Named Sites generation, sequential link staging, and exact millimeter-precision replication across all engineering disciplines.",
       problem: "Coordinating 100+ water villas across an island in Maldives required weeks of manual model linking, workset creation, and coordinate alignment across Architectural (ARC), Structural (STR), Mechanical (MEP), Electrical (ELE), and Plumbing (PLU) master models. Manual placement invited coordinate drift and severe modeling mismatches.",
-      solution: "Engineered a high-velocity 3-module coordination suite on the 'Coordination' ribbon panel: • Site Generator: Automatically discovers villa clusters, preserves survey coordinates, and publishes all Named Sites in one single click without coordinate drift. • Stage Links: Scans external project directories for unlinked FOH, BOH, and Villa models, creates corresponding project Worksets, batch-links them into the model anew, and stages links neatly south of the island in sequential order. • Replicate Master: Reads placed building coordinates, rotations (θ), and workset assignments directly from the ARC Master Model, and automatically batch-links and replicates STR, MEP, ELE, and PLU models at exact millimeter positions into clean discipline masters.",
+      solution: "Engineered a high-velocity 3-module coordination suite on the 'Coordination' ribbon panel: • Stage Links: Scans external project directories for unlinked FOH, BOH, and Villa models (0 initial links loaded), creates corresponding project Worksets, batch-links them anew into the active project, and stages them into a sequential staging line south of the island. • Site Generator: Automatically discovers villa clusters, preserves survey coordinates, and publishes all Named Sites across 100+ villas in one single click without coordinate drift. • Replicate Master: Reads placed building coordinates, rotations (θ), and workset assignments directly from the ARC Master Model, and automatically batch-links and replicates STR, MEP, ELE, and PLU models at exact millimeter positions into clean discipline masters.",
       impact: "Compressed weeks of tedious multi-discipline model linking into seconds. Completely eliminated coordinate drift, rotation errors, and workset misalignment across 100+ island villas.",
       ribbonTools: [
-        "Site Generator (Automated Named Sites Publishing)",
         "Stage Links (Batch Link Discovery & Staging Line)",
+        "Site Generator (Automated Named Sites Publishing)",
         "Replicate Master (Multi-Discipline Millimeter Replication)",
         "Workset Synchronization & Naming Consistency",
         "Zero-Drift Shared Coordinate Management"
@@ -96,20 +104,21 @@ const portfolioData = {
     {
       id: "keyplan-importer",
       category: "automation",
-      title: "Revit Keyplan Importer & Coordinate Aligner",
+      title: "Revit Keyplan Importer & TitleBlock Parameter Linker",
       badge: "Production Tool",
-      subtitle: "Automated DWG Keyplan Clean, Import & TitleBlock Alignment",
+      subtitle: "Direct Title Block (.rfa) Clean, Import & Automated Visibility Linking",
       video: "assets/videos/keyplan_importer.mp4",
-      description: "Custom Revit pyRevit extension tool engineered to automatically import standardized keyplans, clean CAD geometry, and position them with pixel-perfect coordinate alignment across all drawing sheets.",
-      problem: "Manually placing keyplans on dozens of individual sheets was repetitive, prone to inconsistent viewport positioning, and consumed hours of draughtsman time per submittal package.",
-      solution: "Created an intelligent Revit importer that reads sheet metadata, detects target titleblock insertion points, and snaps the corresponding level keyplan into place automatically.",
-      impact: "Guaranteed 100% drawing alignment across all sheets while saving hours of manual placement per project submittal.",
+      description: "Custom Revit pyRevit extension tool engineered to run inside Title Block Family files (.rfa), automatically purging obsolete CAD layers, importing standardized DWG keyplans at origin (0,0,0), and linking each CAD's visibility directly to a dedicated Yes/No Family Parameter.",
+      problem: "Manually placing keyplans inside Title Block families or on dozens of individual sheets was repetitive, prone to inconsistent viewport positioning, layer conflicts, and tedious manual visibility parameter mapping.",
+      solution: "Created an intelligent Revit importer that executes inside Title Block Family files (.rfa): cleans obsolete CAD imports, validates keyplan DWG files, imports them at (0,0,0), automatically creates Yes/No Family Parameters, associates CAD visibility, and sets all parameters to Off (0) across all family types so drafters simply turn on the relevant keyplan per sheet in the project.",
+      impact: "Guaranteed 100% drawing alignment across all sheets while saving hours of manual placement and parameter linking per project submittal.",
       ribbonTools: [
         "Batch CAD Keyplan Importer",
-        "Pixel-Perfect Coordinate Snapping",
-        "TitleBlock Insertion Point Detector"
+        "Automatic Yes/No Parameter Creation",
+        "Visibility Association Engine",
+        "Location Plan Exclusion Filter"
       ],
-      tags: ["pyRevit", "Keyplan Automation", "Sheet Layout", "Revit API"],
+      tags: ["pyRevit", "Keyplan Automation", "Title Block Family", "Visibility Parameters", "Revit API"],
       icon: "fas fa-map"
     },
     {
@@ -141,7 +150,7 @@ const portfolioData = {
       video: "assets/videos/material_auditor.mp4",
       description: "Quality assurance utility that scans and standardizes family materials against corporate DIL_MAT criteria across architectural and structural models.",
       problem: "Imported families and third-party vendor models frequently introduced non-standard material names, missing render assets, and unlinked textures—corrupting material schedules and rendering pipelines.",
-      solution: "Engineered an automated Material Auditor that scans active and linked families, compares material definitions against DIL_MAT standardized criteria, and batch-standardizes material tags in one click.",
+      solution: "Engineered an automated Material Auditor that scans active and linked families, compares material definitions against DIL_MAT standardized criteria, flags unstandardized elements with status badges, and batch-standardizes material tags in one click.",
       impact: "Guaranteed 100% material compliance and zero schedule discrepancies across all project models.",
       ribbonTools: [
         "Family Material Auditor",
@@ -158,32 +167,81 @@ const portfolioData = {
       badge: "Structural Automation",
       subtitle: "Smart Connect, SplitColumn & Projected Beams Auto-Snapping",
       video: "assets/videos/project_beams.mp4",
+      videos: [
+        { label: "Project Beams (Surface Snapping)", src: "assets/videos/project_beams.mp4" },
+        { label: "Smart Connect (Framing Connection Healer)", src: "assets/videos/smart_connect.mp4" },
+        { label: "Split Column (Multi-Level Splitter)", src: "assets/videos/split_column.mp4" }
+      ],
       description: "A suite of structural engineering pyRevit tools designed to automate structural framing alignment, column level splitting, and analytical joint connectivity.",
       problem: "Structural modellers spend hours manually extending and trimming beam centerlines to complex sloped roof surfaces, splitting multi-story columns at floor slabs, and correcting unjoined structural framing joints.",
-      solution: "Developed structural automation tools: • Smart Connect: Automatically heals framing joints without manual trimming. • SplitColumn: Accurately splits continuous columns at selected target levels while preserving elevation offsets. • ProjectBeams: Calculates 3D geometric vectors and mathematically snaps rafter and purlin centerlines to sloped roof or slab planes in a single pass without distorting plan (X, Y) coordinates.",
+      solution: "Developed structural automation tools: • ProjectBeams: Calculates 3D geometric vectors and mathematically snaps rafter and purlin centerlines to sloped roof or slab planes in a single pass without distorting plan (X, Y) coordinates. • Smart Connect: Automatically batch-places structural connections to intersecting framing members. • SplitColumn: Accurately splits continuous columns at selected target levels while preserving elevation offsets.",
       impact: "Saves dozens of hours in structural framing setup and ensures flawless analytical model geometry for Robot Structural Analysis and Navisworks.",
       ribbonTools: [
+        "ProjectBeams (Single-Pass Surface Snapping)",
         "Smart Connect (Framing Joint Healer)",
-        "SplitColumn (Multi-Level Column Splitter)",
-        "ProjectBeams (Single-Pass Surface Snapping)"
+        "SplitColumn (Multi-Level Column Splitter)"
       ],
       tags: ["Revit API", "Structural Detailing", "Smart Connect", "Beam Projection", "Column Splitting"],
       icon: "fas fa-cubes"
     },
     {
+      id: "brick-masonry",
+      category: "automation",
+      title: "Parametric Brick Masonry & Coursing Engine",
+      badge: "Architectural Detailing",
+      subtitle: "Procedural Block Coursing, Mortar Joint Control & Quantity Takeoffs",
+      video: "assets/videos/brick_masonry.mp4",
+      description: "Custom Revit architectural modeling tool that parametrically splits walls and generates true brick, solid concrete block, hollow block, or paving unit courses with configurable mortar joints.",
+      problem: "Modeling individual masonry courses for construction detailing, architectural visual presentations, and exact block unit quantity takeoffs was virtually impossible using standard Revit walls without days of tedious manual drafting.",
+      solution: "Engineered a parametric masonry generator that takes host wall geometry, applies chosen block dimensions (Standard Brick 215x102.5x65, Solid Concrete 440x100x215, Hollow Block 440x215x215, Paving 200x100x60), accounts for mortar joint gaps, and procedurally models the masonry coursing.",
+      impact: "Provides exact bill of quantities (BOQ) unit counts, accurate bond patterns, and pristine construction details in seconds.",
+      ribbonTools: [
+        "Parametric Block Dimension Selector",
+        "Mortar Joint Thickness Controller",
+        "Automated Coursing Splitter",
+        "Exact Unit Quantity Counter"
+      ],
+      tags: ["Revit API", "Architectural Detailing", "Brick Masonry", "Procedural Modeling", "Quantity Takeoff"],
+      icon: "fas fa-th"
+    },
+    {
+      id: "coordination-toolkit",
+      category: "coordination",
+      title: "Level Re-Hosting & Model Coordination Suite",
+      badge: "BIM Coordination",
+      subtitle: "Change Host Level with Offset Compensation & Copy from Links",
+      video: "assets/videos/change_host_level.mp4",
+      videos: [
+        { label: "Change Host Level", src: "assets/videos/change_host_level.mp4" },
+        { label: "Copy Elements from Link", src: "assets/videos/copy_from_link.mp4" }
+      ],
+      description: "Specialized model coordination toolkit providing zero-displacement level re-hosting and selective element copying across linked Revit models.",
+      problem: "Re-hosting walls, columns, floors, or stairs to different levels in Revit natively displaces their vertical position, wrecking floor-to-floor coordination. Copying specific elements from linked consultant files often required messy Copy/Monitor workarounds.",
+      solution: "Built a dual-mode coordination tool: (1) Change Host recalculates base and top offsets automatically to maintain the element's exact 3D position while updating its host level parameter. (2) Copy from Link browses linked models and selectively imports chosen categories at exact matching coordinates.",
+      impact: "Eliminates vertical coordinate shifting, fixes level association blunders across multi-story buildings, and enables seamless cross-model asset migration.",
+      ribbonTools: [
+        "Change Host (Zero-Displacement Re-Hosting)",
+        "Move Level (Elevation Adjustment Shield)",
+        "Copy from Link (Multi-Category Link Importer)",
+        "Join / Unjoin Batch Geometry Cleaner"
+      ],
+      tags: ["Revit API", "Level Re-Hosting", "Copy from Link", "Coordination", "pyRevit"],
+      icon: "fas fa-arrows-alt-v"
+    },
+    {
       id: "update-mot-areas",
       category: "automation",
-      title: "MOT Area & Spatial Compliance Synchronizer",
+      title: "MOT Area & Hospitality Spatial Compliance",
       badge: "Hospitality Compliance",
       subtitle: "Ministry of Tourism (MOT) Room Area & Spatial Compliance Sync",
       video: "assets/videos/update_mot_areas.mp4",
       description: "Automated spatial compliance tool built for luxury Maldives resort masterplans to calculate, verify, and synchronize room boundaries against Ministry of Tourism (MOT) area standards.",
       problem: "Maldives resort developments require strict adherence to MOT room area classifications. Manual verification and area parameter synchronization across hundreds of rooms and villas was labor-intensive and error-prone.",
-      solution: "Developed an automated spatial sync tool that reads room geometry, calculates net and gross usable floor areas, and writes compliant MOT area parameters directly into schedule headers.",
+      solution: "Developed an automated spatial sync tool that reads room geometry from 'TOTAL BUA PER UNIT' Area Plan views, categorizes 'Building Common Area' as Covered and 'Exterior Area' as Open, and writes compliant MOT area parameters directly into schedule headers.",
       impact: "Guarantees 100% audit-ready MOT submission schedules with zero human calculation error.",
       ribbonTools: [
         "Update MOT Areas (One-Click Spatial Sync)",
-        "Boundary Extraction Engine",
+        "TOTAL BUA PER UNIT View Extractor",
         "Resort Compliance Schedules"
       ],
       tags: ["pyRevit", "MOT Compliance", "Resort BIM", "Area Calculations"],
@@ -194,10 +252,10 @@ const portfolioData = {
       category: "automation",
       title: "BIM Family Cloud & Visual Asset Browser",
       badge: "Firm-Wide Asset Engine",
-      subtitle: "Multi-Discipline Family Catalog with Real-Time 3D Thumbnails",
+      subtitle: "Multi-Discipline Family Catalog with Studio-White 3D Previews",
       video: "assets/videos/family_library.mp4",
       image: "assets/images/family_library_ui.png",
-      description: "A high-performance visual component browser for Revit that provides instant access to hundreds of verified, standardized architectural, structural, and MEP families with 3D thumbnails.",
+      description: "A high-performance visual component browser for Revit that provides instant access to hundreds of verified, standardized architectural, structural, and MEP families with studio-white 3D previews.",
       problem: "Drafters frequently loaded outdated or corrupt families from scattered local hard drives, creating model inconsistencies and ballooning project file sizes.",
       solution: "Engineered an in-Revit visual catalog interface with discipline filter tabs (ARC, STR, PLU, FIRE, ACMV), real-time search, studio-white canvas previews, and 1-click loading into active models.",
       impact: "Cut family discovery and loading time by 90% while guaranteeing firm-wide component standardization.",

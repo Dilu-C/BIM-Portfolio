@@ -24,21 +24,51 @@ function renderMetrics() {
   `).join('');
 }
 
+// Global Modal Video Switcher
+window.switchModalVideo = function(src, btn) {
+  const vid = document.getElementById('modal-active-video');
+  if (vid) {
+    vid.src = src;
+    vid.load();
+    vid.play().catch(() => {});
+  }
+  if (btn && btn.parentElement) {
+    const allBtns = btn.parentElement.querySelectorAll('.video-tab-btn');
+    allBtns.forEach(b => {
+      b.style.background = 'rgba(255,255,255,0.06)';
+      b.style.color = '#94a3b8';
+      b.style.borderColor = 'rgba(255,255,255,0.1)';
+    });
+    btn.style.background = 'rgba(6, 182, 212, 0.2)';
+    btn.style.color = '#38bdf8';
+    btn.style.borderColor = 'rgba(6, 182, 212, 0.5)';
+  }
+};
+
 // Render Automation Tools
 function renderTools() {
   const container = document.getElementById('tools-grid');
   if (!container || !portfolioData.tools) return;
 
-  container.innerHTML = portfolioData.tools.map(tool => `
+  container.innerHTML = portfolioData.tools.map(tool => {
+    const mainVideo = tool.video || (tool.videos && tool.videos.length > 0 ? tool.videos[0].src : null);
+    return `
     <div class="tool-card" data-category="${tool.category}">
-      ${tool.video ? `
+      ${mainVideo ? `
         <div class="tool-video-preview" style="position: relative; overflow: hidden; border-radius: 8px 8px 0 0; background: #0b1120; border-bottom: 1px solid rgba(255,255,255,0.08); margin: -28px -28px 18px -28px;">
-          <video src="${tool.video}" autoplay loop muted playsinline style="width: 100%; height: 165px; object-fit: cover; display: block;"></video>
+          <video src="${mainVideo}" autoplay loop muted playsinline style="width: 100%; height: 165px; object-fit: cover; display: block;"></video>
           <span style="position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); color: #34d399; font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(52, 211, 153, 0.3); letter-spacing: 0.05em;">
             <i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 4px; color: #10b981;"></i> LIVE DEMO
           </span>
         </div>
-      ` : ''}
+      ` : (tool.image ? `
+        <div class="tool-video-preview" style="position: relative; overflow: hidden; border-radius: 8px 8px 0 0; background: #0b1120; border-bottom: 1px solid rgba(255,255,255,0.08); margin: -28px -28px 18px -28px;">
+          <img src="${tool.image}" alt="${tool.title}" style="width: 100%; height: 165px; object-fit: cover; display: block;" />
+          <span style="position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); color: #38bdf8; font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.3); letter-spacing: 0.05em;">
+            <i class="fas fa-layer-group" style="font-size: 0.5rem; margin-right: 4px; color: #38bdf8;"></i> UI PREVIEW
+          </span>
+        </div>
+      ` : '')}
       <div class="tool-card-top">
         <div class="tool-icon-wrapper">
           <i class="${tool.icon}"></i>
@@ -55,7 +85,8 @@ function renderTools() {
         <i class="fas fa-search-plus"></i> View Workflow & Impact
       </button>
     </div>
-  `).join('');
+  `;
+  }).join('');
 }
 
 // Render BIM Projects
@@ -98,52 +129,40 @@ function renderProjects(filter = 'all') {
 
 // Render Skills Matrix
 function renderSkills() {
-  const bimContainer = document.getElementById('bim-skills-list');
-  const draughtContainer = document.getElementById('draught-skills-list');
-  const autoContainer = document.getElementById('auto-skills-list');
+  const container = document.getElementById('skills-container');
+  if (!container || !portfolioData.skills) return;
 
-  if (bimContainer && portfolioData.skills.bim) {
-    bimContainer.innerHTML = portfolioData.skills.bim.map(s => createSkillBar(s)).join('');
-  }
-  if (draughtContainer && portfolioData.skills.draughting) {
-    draughtContainer.innerHTML = portfolioData.skills.draughting.map(s => createSkillBar(s)).join('');
-  }
-  if (autoContainer && portfolioData.skills.automation) {
-    autoContainer.innerHTML = portfolioData.skills.automation.map(s => createSkillBar(s)).join('');
-  }
-}
+  const categories = [
+    { title: 'BIM & Technical Modeling', data: portfolioData.skills.bim, icon: 'fas fa-cubes' },
+    { title: 'Engineering Draughtsmanship', data: portfolioData.skills.draughting, icon: 'fas fa-compass-drafting' },
+    { title: 'Workflow Automation & Scripting', data: portfolioData.skills.automation, icon: 'fas fa-robot' }
+  ];
 
-function createSkillBar(skill) {
-  return `
-    <div class="skill-item">
-      <div class="skill-header">
-        <span>${skill.name}</span>
-        <span>${skill.level}%</span>
+  container.innerHTML = categories.map(cat => `
+    <div class="skill-category">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon"><i class="${cat.icon}"></i></div>
+        <h3>${cat.title}</h3>
       </div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: ${skill.level}%"></div>
+      <div class="skill-bars">
+        ${cat.data.map(s => `
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">${s.name}</span>
+              <span class="skill-pct">${s.level}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width: ${s.level}%;"></div>
+            </div>
+          </div>
+        `).join('')}
       </div>
     </div>
-  `;
+  `).join('');
 }
 
-// Setup Event Listeners
+// Filter Buttons Setup
 function setupEventListeners() {
-  // Modal Close on click outside or ESC
-  const modal = document.getElementById('detail-modal');
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
-  });
-
-  // Filter Buttons
   const filterBtns = document.querySelectorAll('.filter-btn');
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -158,8 +177,10 @@ function setupEventListeners() {
 // Helper to render bulleted or standard text
 function renderFormattedPoints(text, isPositive = false) {
   if (!text) return '';
-  if (text.includes('•')) {
-    const parts = text.split('•').map(p => p.trim()).filter(Boolean);
+  if (text.includes('•') || text.includes('\n- ')) {
+    const parts = text.includes('•') 
+      ? text.split('•').map(p => p.trim()).filter(Boolean)
+      : text.split('\n- ').map(p => p.trim()).filter(Boolean);
     const intro = parts[0].endsWith(':') ? parts[0] : '';
     const items = intro ? parts.slice(1) : parts;
     const iconClass = isPositive ? 'fas fa-check-circle text-emerald' : 'fas fa-times-circle text-red';
@@ -186,12 +207,15 @@ function openToolModal(toolId) {
   const modal = document.getElementById('detail-modal');
   const content = document.getElementById('modal-body');
 
+  const videosList = tool.videos || (tool.video ? [{ label: "Verified Production Demo", src: tool.video }] : []);
+  const hasMultipleVideos = videosList.length > 1;
+
   content.innerHTML = `
     <span class="badge badge-cyan modal-badge">${tool.badge}</span>
     <h2 class="modal-title">${tool.title}</h2>
     <div class="modal-subtitle">${tool.subtitle}</div>
 
-    ${tool.video ? `
+    ${videosList.length > 0 ? `
     <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px; text-align: center;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06);">
         <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-family: monospace;">
@@ -199,7 +223,18 @@ function openToolModal(toolId) {
         </span>
         <span class="badge badge-emerald" style="font-size: 0.7rem;"><i class="fas fa-check-circle"></i> Verified In Revit</span>
       </div>
-      <video src="${tool.video}" autoplay loop muted playsinline controls style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08); background: #fff;"></video>
+
+      ${hasMultipleVideos ? `
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; justify-content: center;">
+        ${videosList.map((v, i) => `
+          <button class="video-tab-btn" onclick="switchModalVideo('${v.src}', this)" style="padding: 6px 14px; font-size: 0.78rem; font-weight: 600; border-radius: 6px; cursor: pointer; transition: all 0.2s; border: 1px solid ${i === 0 ? 'rgba(6, 182, 212, 0.5)' : 'rgba(255,255,255,0.1)'}; background: ${i === 0 ? 'rgba(6, 182, 212, 0.2)' : 'rgba(255,255,255,0.06)'}; color: ${i === 0 ? '#38bdf8' : '#94a3b8'};">
+            <i class="fas fa-play" style="font-size: 0.65rem; margin-right: 6px;"></i> ${v.label}
+          </button>
+        `).join('')}
+      </div>
+      ` : ''}
+
+      <video id="modal-active-video" src="${videosList[0].src}" autoplay loop muted playsinline controls style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08); background: #fff;"></video>
     </div>
     ` : (tool.image ? `
     <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px; text-align: center;">
@@ -251,11 +286,10 @@ function openToolModal(toolId) {
   `;
 
   modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
 }
 
-function openProjectModal(projId) {
-  const proj = portfolioData.projects.find(p => p.id === projId);
+function openProjectModal(projectId) {
+  const proj = portfolioData.projects.find(p => p.id === projectId);
   if (!proj) return;
 
   const modal = document.getElementById('detail-modal');
@@ -267,21 +301,21 @@ function openProjectModal(projId) {
     <div class="modal-subtitle">${proj.subtitle}</div>
 
     <div class="modal-section">
-      <h4><i class="fas fa-info-circle text-cyan"></i> Scope of Work</h4>
+      <h4><i class="fas fa-building text-gold"></i> Project Overview</h4>
       <p>${proj.description}</p>
     </div>
 
     <div class="modal-section">
-      <h4><i class="fas fa-clipboard-check text-emerald"></i> Key Technical Deliverables</h4>
+      <h4><i class="fas fa-star text-gold"></i> Key Deliverables & Technical Highlights</h4>
       <ul class="project-highlights" style="margin-top: 10px;">
         ${proj.highlights.map(h => `
-          <li><i class="fas fa-check-circle" style="color: #10b981;"></i> <span>${h}</span></li>
+          <li><i class="fas fa-check-circle"></i> <span>${h}</span></li>
         `).join('')}
       </ul>
     </div>
 
     <div class="modal-section" style="margin-top: 20px;">
-      <h4><i class="fas fa-tools"></i> Software & Methodologies</h4>
+      <h4><i class="fas fa-tools"></i> Software & Methodologies Used</h4>
       <div class="tag-list">
         ${proj.toolsUsed.map(t => `<span class="tag">${t}</span>`).join('')}
       </div>
@@ -289,80 +323,76 @@ function openProjectModal(projId) {
   `;
 
   modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
 }
 
+// Close Modal
 function closeModal() {
   const modal = document.getElementById('detail-modal');
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
+  const vid = document.getElementById('modal-active-video');
+  if (vid) {
+    vid.pause();
+    vid.src = "";
   }
+  if (modal) modal.classList.remove('active');
 }
 
-// Trigger Print / PDF Download
-function downloadPortfolioPDF() {
-  window.print();
-}
-
-// Setup Theme Switcher
+// Theme Toggle
 function setupThemeToggle() {
   const toggleBtn = document.getElementById('theme-toggle-btn');
-  if (!toggleBtn) return;
-
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
-
-  toggleBtn.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
-  });
-}
-
-function updateThemeIcon(theme) {
   const icon = document.getElementById('theme-icon');
-  if (!icon) return;
-  if (theme === 'light') {
-    icon.className = 'fas fa-moon';
-  } else {
-    icon.className = 'fas fa-sun';
+  const html = document.documentElement;
+
+  const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+  html.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme, icon);
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('portfolio-theme', next);
+      updateThemeIcon(next, icon);
+    });
   }
 }
 
-// Setup Mobile Menu Drawer
+function updateThemeIcon(theme, icon) {
+  if (!icon) return;
+  if (theme === 'dark') {
+    icon.className = 'fas fa-sun';
+  } else {
+    icon.className = 'fas fa-moon';
+  }
+}
+
+// Mobile Menu
 function setupMobileMenu() {
   const toggleBtn = document.getElementById('mobile-toggle-btn');
+  const icon = document.getElementById('mobile-toggle-icon');
   const navMenu = document.getElementById('nav-menu');
-  const toggleIcon = document.getElementById('mobile-toggle-icon');
-  
-  if (!toggleBtn || !navMenu) return;
 
-  toggleBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    navMenu.classList.toggle('active');
-    const isActive = navMenu.classList.contains('active');
-    if (toggleIcon) {
-      toggleIcon.className = isActive ? 'fas fa-times' : 'fas fa-bars';
-    }
-  });
-
-  // Close menu when any nav-btn is clicked
-  navMenu.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      if (toggleIcon) toggleIcon.className = 'fas fa-bars';
+  if (toggleBtn && navMenu) {
+    toggleBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const isOpen = navMenu.classList.contains('active');
+      if (icon) icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
     });
-  });
 
-  // Close when clicking anywhere outside
-  document.addEventListener('click', (e) => {
-    if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target) && navMenu.classList.contains('active')) {
-      navMenu.classList.remove('active');
-      if (toggleIcon) toggleIcon.className = 'fas fa-bars';
-    }
-  });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        if (icon) icon.className = 'fas fa-bars';
+      });
+    });
+  }
 }
+
+// PDF Export Placeholder
+window.downloadPortfolioPDF = function() {
+  window.print();
+};
+
+window.openToolModal = openToolModal;
+window.openProjectModal = openProjectModal;
+window.closeModal = closeModal;
