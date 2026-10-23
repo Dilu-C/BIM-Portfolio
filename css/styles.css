@@ -1627,31 +1627,17 @@ body {
   --accent-amber: #d97706;
 }
 
+/* Pure Clean Modern Executive Canvas (Zero Grid / Zero Clutter in Light Mode) */
 [data-theme="light"] body {
-  background-color: #f8fafc !important;
-  background-image: radial-gradient(circle 800px at 50% -120px, rgba(2, 132, 199, 0.04), transparent 70%) !important;
+  background: #f8fafc !important;
+  background-image: none !important;
   color: #0f172a !important;
 }
 
-/* Clean, Invisible-Noise Neutral Technical Canvas */
-[data-theme="light"] .bg-grid-overlay {
-  background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px) !important;
-  background-size: 32px 32px !important;
-  opacity: 1 !important;
-  filter: none !important;
-}
-
-/* Zero Clutter, Zero Graffiti: Hide Distracting Wireframes in Light Mode */
-[data-theme="light"] .bg-wireframe-overlay {
-  display: none !important;
-}
-
-/* Pure Soft Blue Top Vignette */
+[data-theme="light"] .bg-grid-overlay,
+[data-theme="light"] .bg-wireframe-overlay,
 [data-theme="light"] .ambient-glow {
-  opacity: 0.12 !important;
-  background: radial-gradient(circle 600px at 50% -80px, rgba(2, 132, 199, 0.10), transparent 70%) !important;
+  display: none !important;
 }
 
 /* Light Theme Navbar */
