@@ -129,36 +129,27 @@ function renderProjects(filter = 'all') {
 
 // Render Skills Matrix
 function renderSkills() {
-  const container = document.getElementById('skills-container');
-  if (!container || !portfolioData.skills) return;
+  if (!portfolioData.skills) return;
 
-  const categories = [
-    { title: 'BIM & Technical Modeling', data: portfolioData.skills.bim, icon: 'fas fa-cubes' },
-    { title: 'Engineering Draughtsmanship', data: portfolioData.skills.draughting, icon: 'fas fa-compass-drafting' },
-    { title: 'Workflow Automation & Scripting', data: portfolioData.skills.automation, icon: 'fas fa-robot' }
-  ];
+  function renderCategory(items, containerId) {
+    const el = document.getElementById(containerId);
+    if (!el || !items) return;
+    el.innerHTML = items.map(s => `
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">${s.name}</span>
+          <span class="skill-pct">${s.level}%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: ${s.level}%;"></div>
+        </div>
+      </div>
+    `).join('');
+  }
 
-  container.innerHTML = categories.map(cat => `
-    <div class="skill-category">
-      <div class="skill-cat-header">
-        <div class="skill-cat-icon"><i class="${cat.icon}"></i></div>
-        <h3>${cat.title}</h3>
-      </div>
-      <div class="skill-bars">
-        ${cat.data.map(s => `
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">${s.name}</span>
-              <span class="skill-pct">${s.level}%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-fill" style="width: ${s.level}%;"></div>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-    </div>
-  `).join('');
+  renderCategory(portfolioData.skills.bim, 'bim-skills-list');
+  renderCategory(portfolioData.skills.draughting, 'draught-skills-list');
+  renderCategory(portfolioData.skills.automation, 'auto-skills-list');
 }
 
 // Filter Buttons Setup

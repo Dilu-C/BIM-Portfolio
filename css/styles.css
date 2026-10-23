@@ -902,7 +902,7 @@ body {
 .tool-card h3 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-primary);
   margin-bottom: 6px;
 }
 
@@ -1052,7 +1052,7 @@ body {
 .project-content h3 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-primary);
   margin-bottom: 6px;
 }
 
@@ -1114,7 +1114,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .skill-item {
@@ -1140,7 +1140,7 @@ body {
 .skill-fill {
   height: 100%;
   border-radius: 999px;
-  background: #ffffff;
+  background: var(--accent-blue);
 }
 
 /* Professional Journey Section */
@@ -1165,7 +1165,7 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 14px;
-  color: #ffffff;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1267,7 +1267,7 @@ body {
 .contact-card h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
@@ -2104,4 +2104,26 @@ body {
 
 [data-theme="light"] .footer-copy {
   color: #64748b !important;
+}
+
+[data-theme="light"] .skill-header {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .skill-name {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="light"] .skill-pct {
+  color: #0284c7 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="light"] .skill-bar {
+  background: #e2e8f0 !important;
+}
+
+[data-theme="light"] .skill-fill {
+  background: #0284c7 !important;
 }
