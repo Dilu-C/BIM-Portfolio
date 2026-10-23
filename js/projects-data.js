@@ -33,7 +33,11 @@ const portfolioData = {
       title: "Door & Window Dynamic Scheduling Suite",
       badge: "Flagship Automation",
       subtitle: "Batch 25 Parameter Injection, Auto-Aligned Tables, Dynamic Dims & Instant Sync",
-      video: "assets/videos/dw_schedule_data.mp4",
+      video: "assets/videos/dw_schedule_suite.mp4",
+      videos: [
+        { label: "Full D&W Suite Workflow", src: "assets/videos/dw_schedule_suite.mp4" },
+        { label: "25 Param Data Injection Loop", src: "assets/videos/dw_schedule_data.mp4" }
+      ],
       image: "assets/images/revit_dw_ribbon_panel.png",
       description: "An end-to-end parametric Revit automation platform that completely replaces manual legend drafting and disconnected schedules with live model data, automated generic annotation mapping, dynamic 2-row and single-row sheet layouts, and instant revision synchronization.",
       problem: "Traditional Revit D&W scheduling was a tedious, highly error-prone bottleneck: (1) Draughtsmen had to manually pull 100+ doors/windows from legends one by one. (2) Over 20 parameters and notes were typed as static plain text with zero model traceability. (3) Linear dimensions had to be drawn by hand on every single view. (4) Whenever an opening size or type changed, the schedule tables stayed stuck on old, obsolete values - causing massive drawing discrepancies, costly site rework, and coordination confusion.",
