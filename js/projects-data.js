@@ -32,21 +32,17 @@ const portfolioData = {
       category: "automation",
       title: "Door & Window Dynamic Scheduling Suite",
       badge: "Flagship Automation",
-      subtitle: "Batch 25 Parameter Injection, Auto-Aligned Tables, Dynamic Dims & Instant Sync",
+      subtitle: "Batch Parameter Injection, Auto-Aligned Tables, Dynamic Dims & Instant Sync",
       video: "assets/videos/dw_schedule_suite.mp4",
-      videos: [
-        { label: "Full D&W Suite Workflow", src: "assets/videos/dw_schedule_suite.mp4" },
-        { label: "25 Param Data Injection Loop", src: "assets/videos/dw_schedule_data.mp4" }
-      ],
       image: "assets/images/revit_dw_ribbon_panel.png",
       description: "An end-to-end parametric Revit automation platform that completely replaces manual legend drafting and disconnected schedules with live model data, automated generic annotation mapping, dynamic 2-row and single-row sheet layouts, and instant revision synchronization.",
       problem: "Traditional Revit D&W scheduling was a tedious, highly error-prone bottleneck: (1) Draughtsmen had to manually pull 100+ doors/windows from legends one by one. (2) Over 20 parameters and notes were typed as static plain text with zero model traceability. (3) Linear dimensions had to be drawn by hand on every single view. (4) Whenever an opening size or type changed, the schedule tables stayed stuck on old, obsolete values - causing massive drawing discrepancies, costly site rework, and coordination confusion.",
-      solution: "Engineered a custom, production-proven Revit Ribbon suite powered by pyRevit and Revit API: (1) Ecosystem-Wide Parameter Injection: Simultaneously injects and maps 25+ shared parameters across the active project and every single D&W family. (2) Generic Annotation Coordinate Grid: Generates custom schedule tables, places specialized generic annotation families in front of each schedule row, and programmatically maps matching shared parameters at exact coordinates. (3) Spatial Location Data Extraction: Automatically extracts opening coordinates (host walls, room numbers, levels) and baked family data, pushing values to target schedule parameters in one pass. (4) Intelligent Multi-Sheet Layout Engine: Organizes 100+ doors and windows into sequential 2-row layouts across 100+ sheets, with automatic fallback to single-row layouts on final sheets for oversized folding/sliding doors. (5) Live Dynamic Dimensions & ReTagAll: Programmatically snaps linear dimensions on elevations and performs global sequential tag synchronization.",
+      solution: "Engineered a custom, production-proven Revit Ribbon suite powered by pyRevit and Revit API: (1) Ecosystem-Wide Parameter Injection: Simultaneously injects and maps shared parameters across the active project and every single D&W family. (2) Generic Annotation Coordinate Grid: Generates custom schedule tables, places specialized generic annotation families in front of each schedule row, and programmatically maps matching shared parameters at exact coordinates. (3) Spatial Location Data Extraction: Automatically extracts opening coordinates (host walls, room numbers, levels) and baked family data, pushing values to target schedule parameters in one pass. (4) Intelligent Multi-Sheet Layout Engine: Organizes 100+ doors and windows into sequential 2-row layouts across 100+ sheets, with automatic fallback to single-row layouts on final sheets for oversized folding/sliding doors. (5) Live Dynamic Dimensions & ReTagAll: Programmatically snaps linear dimensions on elevations and performs global sequential tag synchronization.",
       impact: "Compressed weeks of manual schedule drafting into a 1-click automated operation, delivering 100% data fidelity across 100+ drawing sheets with zero typos.",
       ribbonTools: [
         "ReTagAll (Global Sequential Tag Sync)",
         "Add / Remove / Map (Shared Parameter Engine)",
-        "Data (25 Param Batch Live Injection)",
+        "Data (Batch Live Parameter Injection)",
         "Table (Auto-Align Dynamic Elevation Tables)",
         "Update Tables (Instant Live 3D Model Sync)",
         "Dims (Automated Dimensioning Engine)"
