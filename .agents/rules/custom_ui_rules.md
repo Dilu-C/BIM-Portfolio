@@ -1,4 +1,4 @@
-﻿---
+---
 trigger: ui_design, pyrevit_dialogs, forms_alert, popup_window
 description: pyRevit පෙරනිමි (Default) forms.alert හෝ TaskDialog භාවිතය තහනම් කිරීම සහ සියලුම UI Dialogs අභිරුචි (Custom Dark Theme WPF) ශෛලියෙන් පමණක් සැකසීමේ නීතිය.
 ---
@@ -21,3 +21,9 @@ description: pyRevit පෙරනිමි (Default) forms.alert හෝ TaskDial
 ## 3. Batch Tools වලදී Headless Execution (Zero Modal Interruptions)
 - Batch Processing මෙවලම් (උදා: `Batch_TitleBlock_Replacer`) ක්‍රියාත්මක වන විට, එක් එක් Model එක සඳහා popups/alerts නොපෙන්විය යුතුය.
 - සියලුම විස්තර Progress Log එකට ලියවිය යුතු අතර, සම්පූර්ණ Batch එක අවසානයේ පමණක් අපගේ Custom Manager Summary Dialog එක පෙන්විය යුතුය.
+
+## 4. Modal Dialogs සහ Alert Popups වලදී Keyboard Navigation සහ Enter Key Mandate (IsDefault & IsCancel)
+- **Enter Key to OK / Submit**: පරිශීලකයාට මවුස් එකෙන් click නොකර keyboard එකෙන්ම කාර්යක්ෂමව වැඩ නිම කිරීමට හැකි විය යුතුය. සියලුම Custom Dialogs, Text Inputs, Profile Save, Alerts සහ Confirmation popups වල Primary/OK බොත්තම සඳහා `IsDefault="True"` අනිවාර්යයෙන්ම යෙදිය යුතුය.
+- **Escape Key to Cancel / Close**: Cancel හෝ Close බොත්තම සඳහා `IsCancel="True"` අනිවාර්යයෙන්ම යෙදිය යුතුය.
+- **TextBox Enter/Escape Key Handling**: Input TextBoxes (උදා: Set name inputs, search boxes) වලදී `KeyDown` හෝ `PreviewKeyDown` මඟින් `Enter` යතුර එබූ සැණින් form එක submit වීම (OK) සහ `Escape` යතුර එබූ විට cancel වීම ස්ථිරවම සහතික කළ යුතුය.
+- **Future UI Invariant**: දැනට සාදා ඇති සහ ඉදිරියට සාදන සෑම modal dialog, alert, සහ input prompt එකකම මෙම standard keyboard navigation පහසුකම අනිවාර්යයෙන්ම අන්තර්ගත විය යුතුය.
