@@ -4,10 +4,10 @@
 const portfolioData = {
   profile: {
     name: "Dilupa Chathuranga",
-    title: "BIM Specialist & Workflow Automation Consultant",
-    subtitle: "Revit Architecture & Structure | Custom pyRevit Tools | Revit & AutoCAD MCP Automation",
-    tagline: "High-velocity BIM modeling, complex project delivery, and custom workflow automation for global firms.",
-    location: "Available for Global Remote Consulting & High-Value BIM Contracts",
+    title: "BIM Specialist & Workflow Automation Technologist",
+    subtitle: "Revit Architecture & Structure | Custom pyRevit Tools | Revit & AutoCAD Automation",
+    tagline: "High-velocity BIM modeling and documentation engineered with custom workflow automation.",
+    location: "Available for Freelance BIM Projects & Remote Work",
     primaryEmail: "dnrdesigners@gmail.com",
     secondaryEmail: "dilupa1990@gmail.com",
     linkedin: "https://www.linkedin.com/in/dilupa-chathuranga-223b5ba8/",
