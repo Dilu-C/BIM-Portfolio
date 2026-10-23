@@ -50,10 +50,12 @@ function renderTools() {
   const container = document.getElementById('tools-grid');
   if (!container || !portfolioData.tools) return;
 
-  container.innerHTML = portfolioData.tools.map(tool => {
+  const totalTools = portfolioData.tools.length;
+  container.innerHTML = portfolioData.tools.map((tool, idx) => {
     const mainVideo = tool.video || (tool.videos && tool.videos.length > 0 ? tool.videos[0].src : null);
+    const isFeatured = (idx === totalTools - 1);
     return `
-    <div class="tool-card" data-category="${tool.category}">
+    <div class="tool-card ${isFeatured ? 'tool-card-featured' : ''}" data-category="${tool.category}">
       ${mainVideo ? `
         <div class="tool-video-preview" style="position: relative; overflow: hidden; border-radius: 8px 8px 0 0; background: #0b1120; border-bottom: 1px solid rgba(255,255,255,0.08); margin: -28px -28px 18px -28px;">
           <video src="${mainVideo}" autoplay loop muted playsinline style="width: 100%; height: 165px; object-fit: cover; display: block;"></video>

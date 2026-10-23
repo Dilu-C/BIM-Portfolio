@@ -1628,15 +1628,12 @@ body {
 }
 
 [data-theme="light"] body {
-  background-color: #f8fafc;
-  background-image: 
-    radial-gradient(circle 800px at 50% -120px, rgba(2, 132, 199, 0.05), transparent 70%),
-    radial-gradient(circle 600px at 100% 40%, rgba(99, 102, 241, 0.03), transparent 60%);
-  background-attachment: fixed;
-  color: #0f172a;
+  background-color: #f8fafc !important;
+  background-image: radial-gradient(circle 800px at 50% -120px, rgba(2, 132, 199, 0.04), transparent 70%) !important;
+  color: #0f172a !important;
 }
 
-/* Subtle, Ultra-Clean Architectural Micro-Grid (Zero Clutter, Zero Eye-Strain) */
+/* Clean, Invisible-Noise Neutral Technical Canvas */
 [data-theme="light"] .bg-grid-overlay {
   background-image: 
     linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
@@ -1646,17 +1643,15 @@ body {
   filter: none !important;
 }
 
-/* Elegant, Soft-Focus Architectural Linework Watermark */
+/* Zero Clutter, Zero Graffiti: Hide Distracting Wireframes in Light Mode */
 [data-theme="light"] .bg-wireframe-overlay {
-  opacity: 0.05 !important;
-  filter: invert(1) contrast(1.1) !important;
-  mix-blend-mode: multiply !important;
+  display: none !important;
 }
 
-/* Soft Executive Top Ambient Glow */
+/* Pure Soft Blue Top Vignette */
 [data-theme="light"] .ambient-glow {
-  opacity: 0.15 !important;
-  background: radial-gradient(circle 700px at 50% -100px, rgba(2, 132, 199, 0.10), transparent 70%) !important;
+  opacity: 0.12 !important;
+  background: radial-gradient(circle 600px at 50% -80px, rgba(2, 132, 199, 0.10), transparent 70%) !important;
 }
 
 /* Light Theme Navbar */
@@ -2141,23 +2136,26 @@ body {
 }
 /* 10th Card Full-Width Balance in Desktop Grid (Zero Awkward Empty Void) */
 @media (min-width: 992px) {
+  .tools-grid > .tool-card-featured,
   .tools-grid > .tool-card:last-child {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
-    padding: 30px 36px;
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 32px !important;
+    padding: 30px 36px !important;
   }
+  .tools-grid > .tool-card-featured .tool-card-top,
   .tools-grid > .tool-card:last-child .tool-card-top {
-    margin-bottom: 0;
-    flex: 1;
+    margin-bottom: 0 !important;
+    flex: 1 !important;
   }
+  .tools-grid > .tool-card-featured .btn-card-action,
   .tools-grid > .tool-card:last-child .btn-card-action {
-    width: auto;
-    min-width: 220px;
-    white-space: nowrap;
-    align-self: center;
+    width: auto !important;
+    min-width: 220px !important;
+    white-space: nowrap !important;
+    align-self: center !important;
   }
 }
