@@ -1629,22 +1629,35 @@ body {
 
 [data-theme="light"] body {
   background-color: #f8fafc;
+  background-image: 
+    radial-gradient(circle 900px at 100% 5%, rgba(14, 165, 233, 0.12), transparent 60%),
+    radial-gradient(circle 800px at 0% 50%, rgba(99, 102, 241, 0.08), transparent 55%),
+    radial-gradient(circle 800px at 85% 95%, rgba(16, 185, 129, 0.08), transparent 60%);
+  background-attachment: fixed;
   color: #0f172a;
 }
 
+/* Crisp Architectural Drafting Grid in Light Theme */
 [data-theme="light"] .bg-grid-overlay {
-  opacity: 0.05;
-  filter: invert(1);
+  background-image: 
+    linear-gradient(to right, rgba(14, 165, 233, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 165, 233, 0.07) 1px, transparent 1px) !important;
+  background-size: 44px 44px !important;
+  opacity: 1 !important;
+  filter: none !important;
 }
 
+/* High-Definition Architectural Wireframe Overlay in Light Theme */
 [data-theme="light"] .bg-wireframe-overlay {
-  opacity: 0.04;
-  filter: invert(1);
+  opacity: 0.15 !important;
+  filter: invert(1) contrast(1.35) !important;
+  mix-blend-mode: multiply !important;
 }
 
+/* Vibrant Architectural Cyan Ambient Glow */
 [data-theme="light"] .ambient-glow {
-  opacity: 0.12;
-  background: radial-gradient(circle 800px at 50% -20%, #bae6fd, transparent 70%);
+  opacity: 0.4 !important;
+  background: radial-gradient(circle 850px at 50% -120px, rgba(14, 165, 233, 0.25), transparent 70%) !important;
 }
 
 /* Light Theme Navbar */
