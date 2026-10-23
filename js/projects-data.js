@@ -20,7 +20,7 @@ const portfolioData = {
   },
 
   metrics: [
-    { label: "D&W Schedules", value: ">25x Faster", sub: "Dynamic Tables, Dims & 25 Params" },
+    { label: "D&W Schedules", value: ">25x Faster", sub: "Dynamic Tables, Dims & 25+ Specification Parameters" },
     { label: "BIM Modeling", value: "LOD 300+", sub: "Architectural & Structural Models" },
     { label: "Drawing Setup", value: "70% Faster", sub: "Batch TitleBlock & Keyplan Importers" },
     { label: "Coordination", value: "0 Coordinate Drift", sub: "Multi-Discipline Masterplan Replicator" }
@@ -93,29 +93,68 @@ const portfolioData = {
       icon: "fas fa-layer-group"
     },
     {
+      id: "batch-link-stager",
+      category: "coordination",
+      title: "Masterplan Batch Link & Staging Line Generator",
+      badge: "Masterplan Automation",
+      subtitle: "Batch Links External RVT Models, Auto-Creates MP-XX Worksets & Generates Staging Line",
+      image: "assets/images/batch_link_stager_ui.png?v=6.0",
+      video: "assets/videos/stage_links.mp4",
+      description: "High-velocity masterplan coordination tool built for pyRevit that scans external project directories for unlinked FOH, BOH, and Villa models, automatically generates corresponding designated project Worksets (e.g. MP-XX-CODE), batch-links them into the active master model, and arranges them in a neat staging line south of the island in sequential building number order (1, 2, 3 ->) ready for manual site placement.",
+      problem: "In large-scale island resort masterplans with 34+ distinct building models, manually browsing, linking, creating individual worksets, setting up levels, and placing models one by one took days of tedious clicking, prone to missing links and incorrect workset assignments.",
+      solution: "Engineered a custom WPF dark-theme interface that scans external link directories, detects renamed models, provides level datum offsets (e.g. Water Villas = +1.80m Jetty Level, Land = 0.00m MSL Datum), automatically creates designated worksets, batch-links selected RVT files, and stages them along a calculated X/Y spacing line.",
+      impact: "Compressed days of manual link setup into a single 30-second automated execution with 100% workset naming consistency.",
+      ribbonTools: [
+        "Batch Model Discovery",
+        "Automated MP-XX Workset Creation",
+        "Staging Line Layout Engine",
+        "Water Villa Level Offsets",
+        "Visual Source Synchronization"
+      ],
+      tags: ["Revit API", "pyRevit", "WPF / XAML", "Batch Linking", "Workset Automation", "Masterplan Coordination"],
+      icon: "fas fa-cubes"
+    },
+    {
+      id: "site-generator",
+      category: "coordination",
+      title: "Batch Named Sites Generator & External Publisher",
+      badge: "Spatial Intelligence",
+      subtitle: "Headless Multi-Location Named Sites Generation & Shared Coordinate Publishing",
+      image: "assets/images/site_generator_ui.png?v=6.0",
+      video: "assets/videos/site_generator.mp4",
+      description: "Custom pyRevit coordination engine that solves the multi-instance repeated building challenge. Once building links are placed across the island masterplan (even if an identical villa type is placed in 100 distinct locations), this tool headlessly opens external RVT models in the background, calculates 100% accurate ProjectLocations transform matrices, generates all Named Sites, publishes shared coordinates, and saves the models automatically.",
+      problem: "When an architectural or structural villa model is repeated across 50 to 100 island locations, manually creating Named Sites inside each external RVT model, recording local rotation angles, and acquiring/publishing coordinates by hand is an exhausting, days-long ordeal prone to human error and coordinate drift.",
+      solution: "Engineered a headless background engine with a sleek dark-theme UI: discovers all placed link instances in the active master model, extracts instance transformation matrices, opens each external RVT model headlessly via Revit API, generates corresponding Named Sites, publishes 100% accurate ProjectLocations, and auto-saves without human intervention.",
+      impact: "Eliminated coordinate drift across 100+ placed villa instances and reduced days of high-risk manual site publishing to a single click.",
+      ribbonTools: [
+        "Headless Background RVT Processing",
+        "Batch Named Sites Generator",
+        "ProjectLocations Matrix Calculator",
+        "Shared Coordinate Publisher",
+        "Live Console Diagnostic Feed"
+      ],
+      tags: ["Revit API", "pyRevit", "Named Sites", "Shared Coordinates", "Headless Processing", "WPF UI"],
+      icon: "fas fa-map-marker-alt"
+    },
+    {
       id: "coordination-masterplan",
       category: "coordination",
-      title: "Multi-Discipline Masterplan & Villa Replicator Suite",
-      badge: "Masterplan Automation",
-      subtitle: "Automated Villa Staging, Named Sites Generation & mm-Precision Multi-Discipline Replication",
+      title: "Multi-Discipline Masterplan Replicator",
+      badge: "Discipline Synchronization",
+      subtitle: "Millimeter-Precision Placement of STR, MEP, ELE & PLU from Architectural Masters",
+      image: "assets/images/coordination_ribbon_panel.png?v=6.0",
       video: "assets/videos/replicate_master.mp4",
-      videos: [
-        { label: "Replicate Master (Discipline Replication)", src: "assets/videos/replicate_master.mp4" },
-        { label: "Stage Links (Batch Link Discovery & Staging)", src: "assets/videos/stage_links.mp4" },
-        { label: "Site Generator (Automated Named Sites)", src: "assets/videos/site_generator.mp4" }
-      ],
-      description: "A comprehensive pyRevit coordination suite engineered for large-scale multi-villa resort masterplans (100+ units), automating Named Sites generation, sequential link staging, and exact millimeter-precision replication across all engineering disciplines.",
-      problem: "Coordinating 100+ villas across a large-scale coastal resort masterplan required weeks of manual model linking, workset creation, and coordinate alignment across Architectural (ARC), Structural (STR), Mechanical (MEP), Electrical (ELE), and Plumbing (PLU) master models. Manual placement invited coordinate drift and severe modeling mismatches.",
-      solution: "Engineered a high-velocity 3-module coordination suite on the 'Coordination' ribbon panel:  -  Stage Links: Scans external project directories for unlinked FOH, BOH, and Villa models (0 initial links loaded), creates corresponding project Worksets, batch-links them anew into the active project, and stages them into a sequential staging line south of the island.  -  Site Generator: Automatically discovers villa clusters, preserves survey coordinates, and publishes all Named Sites across 100+ villas in one single click without coordinate drift.  -  Replicate Master: Reads placed building coordinates, rotations (deg), and workset assignments directly from the ARC Master Model, and automatically batch-links and replicates STR, MEP, ELE, and PLU models at exact millimeter positions into clean discipline masters.",
-      impact: "Compressed weeks of tedious multi-discipline model linking into seconds. Completely eliminated coordinate drift, rotation errors, and workset misalignment across 100+ island villas.",
+      description: "High-precision masterplan synchronization engine that reads placed building coordinates, rotations (deg), and workset assignments directly from the Architectural Master Model, and automatically batch-links and replicates Structural (STR), Mechanical (MEP), Electrical (ELE), and Plumbing (PLU) models at exact millimeter positions into clean discipline masters.",
+      problem: "Replicating 100+ villas across separate discipline master models manually required days of error-prone copy-pasting, rotation matching, and alignment checks - inevitably causing clashes between disciplines.",
+      solution: "Built an automated replication engine that reads the primary ARC master, discovers all linked instances, and writes identical transformation matrices to STR and MEP master models with zero coordinate drift.",
+      impact: "Guaranteed 100% millimetric alignment across all engineering discipline masters in seconds.",
       ribbonTools: [
-        "Stage Links (Batch Link Discovery & Staging Line)",
-        "Site Generator (Automated Named Sites Publishing)",
-        "Replicate Master (Multi-Discipline Millimeter Replication)",
-        "Workset Synchronization & Naming Consistency",
-        "Zero-Drift Shared Coordinate Management"
+        "ARC Master Instance Reader",
+        "Cross-Discipline Millimeter Replication",
+        "Workset Synchronization",
+        "Zero-Drift Shared Coordinates"
       ],
-      tags: ["Revit API", "Masterplan Coordination", "Named Sites", "Multi-Discipline Links", "Villa Clusters", "pyRevit"],
+      tags: ["Revit API", "pyRevit", "Masterplan Coordination", "Discipline Replication", "Zero Drift"],
       icon: "fas fa-network-wired"
     },
     {
