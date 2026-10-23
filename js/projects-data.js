@@ -137,18 +137,18 @@ const portfolioData = {
       category: "automation",
       title: "Material Auditor & Standards Engine",
       badge: "BIM Compliance",
-      subtitle: "Automated Family Material Auditing & Strict Standards Compliance",
+      subtitle: "Automated Family Material Auditing & Strict DIL_MAT Standardization",
       video: "assets/videos/material_auditor.mp4",
-      description: "Quality assurance utility that scans and standardizes family materials against corporate standard criteria across architectural and structural models.",
+      description: "Quality assurance utility that scans and standardizes family materials against corporate DIL_MAT criteria across architectural and structural models.",
       problem: "Imported families and third-party vendor models frequently introduced non-standard material names, missing render assets, and unlinked textures—corrupting material schedules and rendering pipelines.",
-      solution: "Engineered an automated Material Auditor that scans active and linked families, compares material definitions against standardized criteria, and batch-standardizes material tags in one click.",
+      solution: "Engineered an automated Material Auditor that scans active and linked families, compares material definitions against DIL_MAT standardized criteria, and batch-standardizes material tags in one click.",
       impact: "Guaranteed 100% material compliance and zero schedule discrepancies across all project models.",
       ribbonTools: [
         "Family Material Auditor",
-        "Standard Criteria Standardizer",
+        "DIL_MAT Criteria Standardizer",
         "Batch Parameter Remapping"
       ],
-      tags: ["pyRevit", "Material Audit", "Standard Criteria", "Quality Assurance"],
+      tags: ["pyRevit", "Material Audit", "DIL_MAT Criteria", "Quality Assurance"],
       icon: "fas fa-paint-roller"
     },
     {
