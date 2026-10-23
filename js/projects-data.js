@@ -255,6 +255,7 @@ const portfolioData = {
       title: "Luxury Single-Bedroom Beach Villa with Skydeck",
       badge: "Hospitality & Resort",
       subtitle: "High-End Architectural Modeling & Bespoke Detail Documentation",
+      image: "assets/images/luxury_beach_villa_render.jpg",
       description: "A luxury coastal resort villa featuring intricate architectural detailing, timber pergolas, panoramic glazing, cantilevered skydeck, and integrated interior casework.",
       highlights: [
         "High-fidelity LOD 350 architectural model encompassing foundation to bespoke roof profiles",
