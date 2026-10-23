@@ -14,6 +14,21 @@ window.switchModalGallery = function(src, caption, btn) {
   }
 };
 
+window.switchModalGalleryIndex = function(projectId, index, btn) {
+  const proj = portfolioData.projects.find(p => p.id === projectId);
+  if (!proj || !proj.gallery || !proj.gallery[index]) return;
+  const item = proj.gallery[index];
+  const img = document.getElementById('modal-active-gallery-img');
+  const cap = document.getElementById('modal-active-gallery-caption');
+  if (img) img.src = item.src;
+  if (cap) cap.innerHTML = item.caption;
+  if (btn && btn.parentElement) {
+    const allBtns = btn.parentElement.querySelectorAll('.gallery-tab-btn');
+    allBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+};
+
 // Main JavaScript Logic for Dilupa Chathuranga's Portfolio
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -336,7 +351,7 @@ function openProjectModal(projectId) {
 
       <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; justify-content: center;">
         ${proj.gallery.map((g, i) => `
-          <button class="gallery-tab-btn ${i === 0 ? 'active' : ''}" onclick="switchModalGallery('${g.src}', '${g.caption.replace(/'/g, "\'")}', this)">
+          <button class="gallery-tab-btn ${i === 0 ? 'active' : ''}" onclick="switchModalGalleryIndex('${proj.id}', ${i}, this)">
             <i class="${g.icon}"></i> ${g.label}
           </button>
         `).join('')}
