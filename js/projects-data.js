@@ -81,7 +81,7 @@ const portfolioData = {
       video: "assets/videos/replicate_master.mp4",
       description: "A comprehensive pyRevit coordination suite developed for multi-villa island masterplans (100+ units) in the Maldives, automating Named Sites generation, sequential link staging, and exact millimeter-precision replication across all engineering disciplines.",
       problem: "Coordinating 100+ water villas across an island in Maldives required weeks of manual model linking, workset creation, and coordinate alignment across Architectural (ARC), Structural (STR), Mechanical (MEP), Electrical (ELE), and Plumbing (PLU) master models. Manual placement invited coordinate drift and severe modeling mismatches.",
-      solution: "Engineered a high-velocity 3-module coordination suite on the 'Coordination' ribbon panel: • Site Generator: Automatically discovers villa clusters, preserves survey coordinates, and publishes all Named Sites in one single click without coordinate drift. • Stage Links: Scans project folders for FOH, BOH, and Villa models, creates corresponding Worksets, and stages links neatly south of the island in sequential order. • Replicate Master: Reads placed building coordinates, rotations (θ), and workset assignments directly from the ARC Master Model, and automatically batch-links and replicates STR, MEP, ELE, and PLU models at exact millimeter positions into clean discipline masters.",
+      solution: "Engineered a high-velocity 3-module coordination suite on the 'Coordination' ribbon panel: • Site Generator: Automatically discovers villa clusters, preserves survey coordinates, and publishes all Named Sites in one single click without coordinate drift. • Stage Links: Scans external project directories for unlinked FOH, BOH, and Villa models, creates corresponding project Worksets, batch-links them into the model anew, and stages links neatly south of the island in sequential order. • Replicate Master: Reads placed building coordinates, rotations (θ), and workset assignments directly from the ARC Master Model, and automatically batch-links and replicates STR, MEP, ELE, and PLU models at exact millimeter positions into clean discipline masters.",
       impact: "Compressed weeks of tedious multi-discipline model linking into seconds. Completely eliminated coordinate drift, rotation errors, and workset misalignment across 100+ island villas.",
       ribbonTools: [
         "Site Generator (Automated Named Sites Publishing)",
@@ -137,18 +137,18 @@ const portfolioData = {
       category: "automation",
       title: "Material Auditor & Standards Engine",
       badge: "BIM Compliance",
-      subtitle: "Automated Family Material Auditing & Strict RYN_MAT Standardization",
+      subtitle: "Automated Family Material Auditing & Strict Standards Compliance",
       video: "assets/videos/material_auditor.mp4",
-      description: "Quality assurance utility that scans and standardizes family materials against corporate RYN_MAT criteria across architectural and structural models.",
+      description: "Quality assurance utility that scans and standardizes family materials against corporate standard criteria across architectural and structural models.",
       problem: "Imported families and third-party vendor models frequently introduced non-standard material names, missing render assets, and unlinked textures—corrupting material schedules and rendering pipelines.",
-      solution: "Engineered an automated Material Auditor that scans active and linked families, compares material definitions against standard criteria, and batch-standardizes material tags in one click.",
+      solution: "Engineered an automated Material Auditor that scans active and linked families, compares material definitions against standardized criteria, and batch-standardizes material tags in one click.",
       impact: "Guaranteed 100% material compliance and zero schedule discrepancies across all project models.",
       ribbonTools: [
         "Family Material Auditor",
-        "RYN_MAT Criteria Standardizer",
+        "Standard Criteria Standardizer",
         "Batch Parameter Remapping"
       ],
-      tags: ["pyRevit", "Material Audit", "RYN_MAT Criteria", "Quality Assurance"],
+      tags: ["pyRevit", "Material Audit", "Standard Criteria", "Quality Assurance"],
       icon: "fas fa-paint-roller"
     },
     {
@@ -192,10 +192,11 @@ const portfolioData = {
     {
       id: "family-library",
       category: "automation",
-      title: "Riyan Family Cloud & Visual Asset Browser",
+      title: "BIM Family Cloud & Visual Asset Browser",
       badge: "Firm-Wide Asset Engine",
       subtitle: "Multi-Discipline Family Catalog with Real-Time 3D Thumbnails",
       video: "assets/videos/family_library.mp4",
+      image: "assets/images/family_library_ui.png",
       description: "A high-performance visual component browser for Revit that provides instant access to hundreds of verified, standardized architectural, structural, and MEP families with 3D thumbnails.",
       problem: "Drafters frequently loaded outdated or corrupt families from scattered local hard drives, creating model inconsistencies and ballooning project file sizes.",
       solution: "Engineered an in-Revit visual catalog interface with discipline filter tabs (ARC, STR, PLU, FIRE, ACMV), real-time search, studio-white canvas previews, and 1-click loading into active models.",
