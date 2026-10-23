@@ -200,21 +200,23 @@ const portfolioData = {
     {
       id: "family-library",
       category: "automation",
-      title: "BIM Family Cloud & Visual Asset Browser",
-      badge: "Firm-Wide Asset Engine",
-      subtitle: "Multi-Discipline Family Catalog with Studio-White 3D Previews",
+      title: "BIM Family Browser & 420+ Parametric Family Library",
+      badge: "Asset Engine & 429+ Families",
+      subtitle: "Custom WPF Visual Catalog Engine & 429+ Production-Grade Parametric BIM Families",
       image: "assets/images/family_library_ui.png",
-      video: "assets/videos/family_library.mp4",
-      description: "A high-performance visual component browser for Revit that provides instant access to hundreds of verified, standardized architectural, structural, and MEP families with studio-white 3D previews.",
-      problem: "Drafters frequently loaded outdated or corrupt families from scattered local hard drives, creating model inconsistencies and ballooning project file sizes.",
-      solution: "Engineered an in-Revit visual catalog interface with discipline filter tabs (ARC, STR, PLU, FIRE, ACMV), real-time search, studio-white canvas previews, and 1-click loading into active models.",
-      impact: "Cut family discovery and loading time by 90% while guaranteeing firm-wide component standardization.",
+      description: "A dual-power BIM asset solution combining a custom high-performance WPF visual browser for Revit with an enterprise library of 429+ parametric BIM families authored, standardized, and maintained across Architectural, Structural, and MEP disciplines.",
+      problem: "Design teams previously wasted up to 20% of modeling hours hunting for unverified families on scattered network drives. Downloaded web families lacked shared parameters, had bloated geometry, and caused severe project crashes and inaccurate door/window schedules.",
+      solution: "Authored and standardized 429+ production-grade Revit families from scratch - including 85 Doors, 113 Windows, 43 Wall assemblies, Structural Framing, Foundations, Railings, Stairs, and Title Blocks - all built to strict LOD standards with uniform shared parameters. To deliver them instantly to drafters, engineered a custom pyRevit WPF visual catalog with discipline filters (ARC, STR, PLU, ELE, FIRE, ACMV), real-time search, studio-white 3D previews, and 1-click loading directly into active models.",
+      impact: "Centralized 429+ verified parametric families into a single 1-click visual interface. Completely eradicated corrupt family imports, eliminated parameter discrepancies in schedules, and reduced component search-and-load time from 15 minutes to under 5 seconds.",
       ribbonTools: [
-        "Multi-Discipline Asset Browser",
-        "Studio-White 3D Thumbnail Canvas",
-        "1-Click Direct Project Loading"
+        "429+ Custom Authored Parametric Families (Doors, Windows, Walls, Framing, MEP)",
+        "WPF / XAML Visual Asset Catalog Engine",
+        "Multi-Discipline Filtering (ARC, STR, PLU, ELE, FIRE, ACMV)",
+        "Studio-White 3D Isometric Thumbnail Canvas",
+        "Standardized Shared Parameters & Dynamic Type Catalogs",
+        "1-Click Direct Active Project Inserter"
       ],
-      tags: ["Revit API", "WPF / XAML", "Family Browser", "Component Standardization"],
+      tags: ["Revit API", "WPF / XAML", "400+ Custom BIM Families", "Parametric Modeling", "Component Standardization"],
       icon: "fas fa-boxes"
     },
     {
@@ -309,7 +311,7 @@ const portfolioData = {
     bim: [
       { name: "Autodesk Revit (Architecture & Structure)", level: 98 },
       { name: "BIM Coordination & Clash Detection (Navisworks)", level: 92 },
-      { name: "Parametric Family Creation & Shared Parameters", level: 95 },
+      { name: "Parametric Family Creation & Shared Parameters (420+ Families)", level: 98 },
       { name: "Construction Documentation & Detail Drafting", level: 96 }
     ],
     draughting: [

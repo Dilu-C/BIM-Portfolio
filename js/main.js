@@ -243,17 +243,17 @@ function openToolModal(toolId) {
       </div>
       ` : ''}
 
-      <video id="modal-active-video" src="${videosList[0].src}" autoplay loop muted playsinline controls style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08); background: #fff;"></video>
+      <video id="modal-active-video" src="${videosList[0].src}" autoplay loop muted playsinline controls style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08); background: #0b1120;"></video>
     </div>
     ` : (tool.image ? `
     <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px; text-align: center;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06);">
         <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-family: monospace;">
-          <i class="fas fa-window-maximize" style="color: var(--accent-blue);"></i> Revit Custom Ribbon Integration
+          <i class="fas fa-boxes" style="color: var(--accent-cyan, #06b6d4);"></i> Live Production Interface & 429+ Custom BIM Families
         </span>
         <span class="badge badge-emerald" style="font-size: 0.7rem;">Live In Production</span>
       </div>
-      <img src="${tool.image}" alt="${tool.title}" style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08); background: #fff;" />
+      <img src="${tool.image}" alt="${tool.title}" style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08); background: #18181b;" />
     </div>
     ` : '')}
 
