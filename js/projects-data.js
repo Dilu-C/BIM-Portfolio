@@ -50,31 +50,47 @@ const portfolioData = {
       tags: ["Revit API", "pyRevit", "Dynamic Scheduling", "Auto-Dimensioning", "Batch Parameters", "Live Model Sync"],
       icon: "fas fa-table"
     },
-    {
-      id: "headless-batch-export",
+        {
+      id: "export-manager",
       category: "automation",
-      title: "Enterprise Batch Export & Archiving Suite (v2.0)",
+      title: "Export Manager & Drawing Publishing Platform",
       badge: "Flagship Production Tool",
-      subtitle: "Vector Sheet Previews, Collision-Free Archiving & True Lifecycle Pipeline",
+      subtitle: "Active Model Vector Sheet Previews, Click-to-Zoom & Smart Archiving",
       video: "assets/videos/export_manager.mp4",
-      videos: [
-        { label: "Export Manager (Active Model UI)", src: "assets/videos/export_manager.mp4" },
-        { label: "Headless Batch Exporter (Closed Models)", src: "assets/videos/batch_export.mp4" }
-      ],
-      description: "A high-performance production export & publishing platform built with pyRevit and custom WPF/XAML interfaces that processes closed and active Revit project files (.rvt) silently in the background—simultaneously outputting CAD (DWG), individual sheet PDFs, and an assembled multi-page Combined Set PDF with live vector previews and intelligent deliverable archiving.",
-      problem: "BIM submittal and delivery deadlines suffer from severe workstation bottlenecks: • Opening large 200MB–800MB Revit project models takes 15–30 minutes per file, completely locking up drafters' machines. • Manual single-sheet CAD and PDF exporting requires hours of tedious clicking and continuous supervision, prone to missing revisions or sheet order mixups. • Traditional export scripts blindly archive or overwrite entire output folders, accidentally sweeping deliverables from other buildings or drawings into previous folders. • Background Revit documents left in memory cause worksharing lockups and freeze the Revit process upon exit.",
-      solution: "Engineered an enterprise-grade Revit automation suite (Panel: 'Export') featuring: • Headless Background Multi-File Engine: Concurrently processes multiple models in memory without graphical view overhead. • Interactive Inline Vector Sheet Preview: Dynamic rendering pipeline delivering crisp vector previews for 2D plans with smart raster fallback for 3D/shaded views, complete with click-to-zoom inspection. • Smart Exact-Name Selective Archiving: Scans destination directories and moves ONLY previous files whose exact filenames collide with current deliverables into collision-aware versions (00 PREVIOUS/<Date>/<01, 02>), preserving unrelated project deliverables 100% untouched. • True Lifecycle Pipeline (Pending ➔ Exporting... ➔ Done): Individual single sheets export sequentially with live progress badges, compiling the unified Combined PDF and generating an automated Excel Drawing List Transmittal only after all singles succeed. • Zero-Hang Memory Shield: Instant document disposal (doc.Close(False)) after reading metadata and exports, with guaranteed window close hooks preventing memory leaks and Revit exit freezes. • Future-Proof Compatibility: Dynamically supports Revit 2022 through Revit 2026 (active production) and 2027+.",
-      impact: "Slashes drawing submittal delivery time by over 85%, guarantees zero accidental deliverable overwrites across multi-building projects, and provides drafters with instant vector visual verification without opening bulky project models.",
+      description: "An enterprise export publishing platform for active Revit models featuring interactive inline vector sheet previews with click-to-zoom inspection, PDF and DWG publishing with custom naming profiles, collision-free exact-name archiving to 00 PREVIOUS, and automated Word (.docx) & Excel (.xlsx) Transmittal packages.",
+      problem: "Traditional Revit exporting suffers from severe workstation friction: (1) Drafters have to blindly export sheets without visually inspecting them, leading to misaligned views or outdated revision dates on published PDFs. (2) Accidental overwrites wipe out previous client deliverables. (3) Drafters spend hours manually preparing Word and Excel transmittal sheets after exporting, inviting human typing errors and submittal delays.",
+      solution: "Engineered an enterprise-grade Revit automation tool on the 'Export' panel featuring: • Interactive Inline Vector Sheet Preview: Dynamic rendering pipeline delivering crystal-clear vector previews for 2D plans with smart raster fallback and click-to-zoom inspection before publishing. • Smart Exact-Name Selective Archiving: Scans destination directories and moves ONLY previous files whose exact filenames collide with current deliverables into collision-aware versions (00 PREVIOUS/<Date>/<01, 02>), leaving unrelated project files 100% untouched. • Automated Transmittals: Instantly compiles full document transmittals in both Word (.docx) and Excel (.xlsx) format matching corporate BIM standards. • Multi-Format Output: Publishes PDF (Separate Sheets or Unified Combined Set) and CAD (DWG) with custom Naming Profiles.",
+      impact: "Slashes drawing submittal preparation by 85%, provides instant visual verification before exporting, and guarantees collision-free submittal archiving.",
       ribbonTools: [
         "Export Manager (Active Model Multi-Format Publisher)",
-        "Batch Export (Headless Multi-Model Background Engine)",
-        "Inline Vector Preview & Click-to-Zoom",
+        "Inline Vector Sheet Previews & Click-to-Zoom",
         "Smart Exact-Name Archiving (00 PREVIOUS)",
-        "True Lifecycle Pipeline (Pending ➔ Done)",
-        "Automated Excel & Word Document Transmittals"
+        "Automated Word & Excel Document Transmittals",
+        "Custom Sheet Naming Rules Engine"
       ],
-      tags: ["Revit API", "pyRevit", "Batch Export v2.0", "Vector Preview", "Smart Archiving", "WPF / XAML", "Enterprise Memory Management", "Revit 2022-2027+"],
+      tags: ["Revit API", "pyRevit", "Export Manager", "Vector Preview", "Smart Archiving", "Document Transmittals", "WPF / XAML"],
       icon: "fas fa-file-export"
+    },
+    {
+      id: "batch-export",
+      category: "automation",
+      title: "Headless Multi-Model Batch Exporter",
+      badge: "High-Velocity Batch Engine",
+      subtitle: "Background Multi-Model Publishing Without Graphical View Overhead",
+      video: "assets/videos/batch_export.mp4",
+      description: "High-velocity background batch publishing engine that concurrently processes multiple closed Revit project models (.rvt) headlessly in memory without GUI viewport overhead. Automatically exports CAD (DWG) and sheetwise or combined multi-page PDFs, compiles transmittal drawing registers, and prevents memory leaks.",
+      problem: "Publishing large multi-building or multi-villa projects requires opening dozens of heavy 300MB–800MB Revit models one by one. Opening each model interactively consumes 15–30 minutes, freezes the drafter's machine for hours, and causes worksharing lockups when background documents are left open in memory.",
+      solution: "Engineered a dedicated headless multi-model background batch processor: • Concurrently opens closed project models in memory without graphical viewport overhead. • Batch-publishes selected sheets across 10+ models into DWG and PDF formats in a single unattended queue run. • Generates automated Excel drawing list transmittals and status execution logs. • Zero-Hang Memory Shield: Enforces guaranteed document disposal (doc.Close(False)) after each model to ensure zero memory leaks and prevent Revit freezing upon exit.",
+      impact: "Eliminates workstation downtime during major project submittals, allowing overnight or unattended background publishing across entire resort villa clusters.",
+      ribbonTools: [
+        "Headless Background Multi-Model Engine",
+        "Closed Model In-Memory Processing",
+        "Combined & Sheetwise PDF Publishing",
+        "Batch Execution Status Logs & Transmittals",
+        "Zero-Hang Memory Disposal Shield"
+      ],
+      tags: ["Revit API", "pyRevit", "Batch Export", "Headless Processing", "Memory Management", "Multi-Model Queue"],
+      icon: "fas fa-layer-group"
     },
     {
       id: "coordination-masterplan",
