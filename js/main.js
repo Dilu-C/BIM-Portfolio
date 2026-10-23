@@ -186,9 +186,9 @@ function setupEventListeners() {
 // Helper to render bulleted or standard text
 function renderFormattedPoints(text, isPositive = false) {
   if (!text) return '';
-  if (text.includes('•') || text.includes('\n- ')) {
-    const parts = text.includes('•') 
-      ? text.split('•').map(p => p.trim()).filter(Boolean)
+  if (text.includes(' - ') || text.includes('\n- ')) {
+    const parts = text.includes(' - ') 
+      ? text.split(' - ').map(p => p.trim()).filter(Boolean)
       : text.split('\n- ').map(p => p.trim()).filter(Boolean);
     const intro = parts[0].endsWith(':') ? parts[0] : '';
     const items = intro ? parts.slice(1) : parts;
@@ -337,7 +337,7 @@ function openProjectModal(projectId) {
     <div class="modal-section modal-revit-sheet-box" style="margin-top: 18px; margin-bottom: 18px; background: rgba(14, 20, 35, 0.7); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 16px;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.08);">
         <span style="font-size: 0.85rem; font-weight: 700; color: #f8fafc; letter-spacing: 0.02em;">
-          <i class="fas fa-cube" style="color: var(--accent-blue); margin-right: 6px;"></i> Authentic Production Revit Model â€” Multi-Angle 3D Views
+          <i class="fas fa-cube" style="color: var(--accent-blue); margin-right: 6px;"></i> Authentic Production Revit Model  -  Multi-Angle 3D Views
         </span>
         <span class="badge badge-emerald" style="font-size: 0.7rem;"><i class="fas fa-check-circle"></i> Authored in Revit</span>
       </div>
