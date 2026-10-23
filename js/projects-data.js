@@ -200,23 +200,23 @@ const portfolioData = {
     {
       id: "family-library",
       category: "automation",
-      title: "BIM Family Browser & 420+ Parametric Family Library",
-      badge: "Asset Engine & 429+ Families",
-      subtitle: "Custom WPF Visual Catalog Engine & 429+ Production-Grade Parametric BIM Families",
+      title: "BIM Family Browser & Parametric D&W Suite",
+      badge: "Asset Engine & D&W Suite",
+      subtitle: "Custom WPF Visual Catalog Engine & Advanced Mathematical Parametric D&W Families",
       image: "assets/images/family_library_ui.png",
-      description: "A dual-power BIM asset solution combining a custom high-performance WPF visual browser for Revit with an enterprise library of 429+ parametric BIM families authored, standardized, and maintained across Architectural, Structural, and MEP disciplines.",
-      problem: "Design teams previously wasted up to 20% of modeling hours hunting for unverified families on scattered network drives. Downloaded web families lacked shared parameters, had bloated geometry, and caused severe project crashes and inaccurate door/window schedules.",
-      solution: "Authored and standardized 429+ production-grade Revit families from scratch - including 85 Doors, 113 Windows, 43 Wall assemblies, Structural Framing, Foundations, Railings, Stairs, and Title Blocks - all built to strict LOD standards with uniform shared parameters. To deliver them instantly to drafters, engineered a custom pyRevit WPF visual catalog with discipline filters (ARC, STR, PLU, ELE, FIRE, ACMV), real-time search, studio-white 3D previews, and 1-click loading directly into active models.",
-      impact: "Centralized 429+ verified parametric families into a single 1-click visual interface. Completely eradicated corrupt family imports, eliminated parameter discrepancies in schedules, and reduced component search-and-load time from 15 minutes to under 5 seconds.",
+      description: "A dual-power BIM asset solution: a custom high-performance WPF visual browser for Revit paired with an advanced suite of custom-authored parametric Door and Window families, standardized wall assemblies, and company title blocks.",
+      problem: "Standard Revit door and window families were rigid and difficult to configure for diverse architectural openings. Drafters spent hours hunting for components across drives and manually hacking opening families to handle variable panel counts, custom sliding tracks, and louver/glass infill variations.",
+      solution: "Engineered advanced parametric Revit families from scratch: custom multi-panel folding doors with complex mathematical formulas allowing independent panel count control per side; 2-panel sliding barn doors with exposed track hardware; and dynamic windows featuring configurable panel numbers, swing directions, and interchangeable panel types (Louvers, Glass, Open). In addition, authored standardized wall types and company title block sheets. To deliver these assets seamlessly, engineered an in-Revit visual WPF catalog with multi-discipline tabs (ARC, STR, PLU, ELE, FIRE, ACMV), real-time search, studio-white 3D previews, and 1-click loading directly into active projects.",
+      impact: "Eliminated dozens of rigid opening families by consolidating them into intelligent, formula-driven parametric assets, while the visual catalog reduced component search-and-load time from 15 minutes to under 5 seconds.",
       ribbonTools: [
-        "429+ Custom Authored Parametric Families (Doors, Windows, Walls, Framing, MEP)",
-        "WPF / XAML Visual Asset Catalog Engine",
-        "Multi-Discipline Filtering (ARC, STR, PLU, ELE, FIRE, ACMV)",
-        "Studio-White 3D Isometric Thumbnail Canvas",
-        "Standardized Shared Parameters & Dynamic Type Catalogs",
-        "1-Click Direct Active Project Inserter"
+        "Parametric Multi-Panel Folding Doors (Custom Panel Math Formulas)",
+        "2-Panel Sliding Barn Doors (Exposed Track Hardware)",
+        "Dynamic Parametric Windows (Configurable Panel Counts & Swing)",
+        "Interchangeable Infill Types (Louvers, Glass, Open Panels)",
+        "Standardized Wall Assemblies & Sheet Title Blocks",
+        "WPF / XAML Visual Asset Browser (Central Multi-Discipline Catalog)"
       ],
-      tags: ["Revit API", "WPF / XAML", "400+ Custom BIM Families", "Parametric Modeling", "Component Standardization"],
+      tags: ["Revit API", "WPF / XAML", "Advanced Parametric Families", "Formula Math", "D&W Standards"],
       icon: "fas fa-boxes"
     },
     {
@@ -311,7 +311,7 @@ const portfolioData = {
     bim: [
       { name: "Autodesk Revit (Architecture & Structure)", level: 98 },
       { name: "BIM Coordination & Clash Detection (Navisworks)", level: 92 },
-      { name: "Parametric Family Creation & Shared Parameters (420+ Families)", level: 98 },
+      { name: "Parametric Family Creation & Advanced Formulas (D&W Suite)", level: 98 },
       { name: "Construction Documentation & Detail Drafting", level: 96 }
     ],
     draughting: [

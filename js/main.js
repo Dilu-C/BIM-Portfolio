@@ -249,7 +249,7 @@ function openToolModal(toolId) {
     <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px; text-align: center;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06);">
         <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-family: monospace;">
-          <i class="fas fa-boxes" style="color: var(--accent-cyan, #06b6d4);"></i> Live Production Interface & 429+ Custom BIM Families
+          <i class="fas fa-boxes" style="color: var(--accent-cyan, #06b6d4);"></i> Live Production Interface & Custom BIM Asset Engine
         </span>
         <span class="badge badge-emerald" style="font-size: 0.7rem;">Live In Production</span>
       </div>
