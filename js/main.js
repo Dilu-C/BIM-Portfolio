@@ -255,17 +255,17 @@ function openToolModal(toolId) {
 
     <div class="modal-section" style="background: rgba(239, 68, 68, 0.08); border-left: 3px solid #ef4444; padding: 14px 18px; border-radius: 6px;">
       <h4 style="color: #f87171;"><i class="fas fa-exclamation-triangle"></i> The Industry Bottleneck (Before)</h4>
-      <div style="color: #cbd5e1;">${renderFormattedPoints(tool.problem, false)}</div>
+      <div class="modal-box-text">${renderFormattedPoints(tool.problem, false)}</div>
     </div>
 
     <div class="modal-section" style="background: rgba(16, 185, 129, 0.08); border-left: 3px solid #10b981; padding: 14px 18px; border-radius: 6px; margin-top: 14px;">
       <h4 style="color: #34d399;"><i class="fas fa-cogs"></i> Engineered Automation Architecture (After)</h4>
-      <div style="color: #cbd5e1;">${renderFormattedPoints(tool.solution, true)}</div>
+      <div class="modal-box-text">${renderFormattedPoints(tool.solution, true)}</div>
     </div>
 
     <div class="modal-section" style="background: rgba(6, 182, 212, 0.08); border-left: 3px solid #06b6d4; padding: 14px 18px; border-radius: 6px; margin-top: 14px;">
       <h4 style="color: #38bdf8;"><i class="fas fa-chart-line"></i> Measurable Production Impact</h4>
-      <p style="color: #cbd5e1; font-weight: 500;">${tool.impact}</p>
+      <p class="modal-box-text" style="font-weight: 500;">${tool.impact}</p>
     </div>
 
     ${tool.ribbonTools ? `
