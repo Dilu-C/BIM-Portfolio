@@ -258,17 +258,17 @@ const portfolioData = {
       icon: "fas fa-boxes"
     },
     {
-      id: "cad-mcp",
+      id: "bim-cad-mcp",
       category: "automation",
-      title: "AutoCAD MCP Workflow Automation",
-      badge: "CAD + AI Bridge",
-      subtitle: "Transforming Days of Painstaking Drawing Prep into Automated Operations",
-      description: "Pioneered a Model Context Protocol (MCP) automation pipeline within AutoCAD to batch-process, clean, and standardize complex DWG keyplans and geometric boundaries before importing to Revit.",
-      problem: "Preparing multi-level keyplans and detailed boundary line drawings manually in AutoCAD took days of tedious clicking, layer sorting, scaling, and bounding box cleanup.",
-      solution: "Engineered an AutoCAD MCP server bridge with scripted geometry standardization, automated layer isolation, and coordinate boundary extraction in minutes.",
-      impact: "Compressed days of manual CAD prep into structured, reliable data streams ready for automated Revit import.",
-      tags: ["AutoCAD", "MCP Automation", "CAD Optimization", "Batch Scripting"],
-      icon: "fas fa-drafting-compass"
+      title: "Revit & AutoCAD MCP AI Automation Bridges",
+      badge: "AI + BIM/CAD Protocol",
+      subtitle: "Dual-Engine Model Context Protocol for Live Revit API Execution & AutoCAD DWG Automation",
+      description: "Pioneered production-grade Model Context Protocol (MCP) bridges connecting AI coding agents directly to live Autodesk Revit and AutoCAD runtime environments. Enables hands-free Revit Python API script execution in active documents and autonomous AutoCAD DWG geometric sanitization.",
+      problem: "Traditional BIM and CAD operations require endless manual repetition across disparate environments: manually testing and running Python scripts inside Revit, auditing element parameters, and spending days in AutoCAD cleaning, exploding, flattening, and standardizing multi-building DWG files before import.",
+      solution: "Engineered dual native MCP server bridges: (1) Revit MCP Server: Live socket/listener bridge executing Python scripts directly within active or background Revit sessions via pyRevit and Revit API, enabling real-time element querying, parameter injection, geometry verification, and model health audits. (2) AutoCAD MCP Server: Direct COM automation bridge executing batch layer sanitization, 3D-to-2D polyline flattening, block audits, and coordinate boundary extraction in minutes.",
+      impact: "Unlocks autonomous AI-driven BIM engineering: audits Revit project health directly through natural language agent workflows and transforms days of manual CAD drawing preparation into structured, reliable data streams ready for automated Revit import.",
+      tags: ["Revit API", "AutoCAD COM", "Model Context Protocol", "AI Automation", "Python MCP"],
+      icon: "fas fa-robot"
     }
   ],
 

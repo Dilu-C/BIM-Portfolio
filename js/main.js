@@ -241,7 +241,7 @@ function renderFormattedPoints(text, isPositive = false) {
 
 // Modal Handlers
 function openToolModal(toolId) {
-  const tool = portfolioData.tools.find(t => t.id === toolId);
+  const tool = portfolioData.tools.find(t => t.id === toolId || (toolId === 'cad-mcp' && t.id === 'bim-cad-mcp'));
   if (!tool) return;
 
   const modal = document.getElementById('detail-modal');
@@ -448,13 +448,22 @@ function setupThemeToggle() {
   const icon = document.getElementById('theme-icon');
   const html = document.documentElement;
 
-  const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+  const referrer = (document.referrer || '').toLowerCase();
+  const isLinkedInReferrer = referrer.includes('linkedin') || referrer.includes('lnkd.in');
+  let savedTheme = localStorage.getItem('portfolio-theme');
+
+  // If visitor is coming from LinkedIn or has no saved preference, enforce dark theme
+  if (isLinkedInReferrer || !savedTheme) {
+    savedTheme = 'dark';
+    localStorage.setItem('portfolio-theme', 'dark');
+  }
+
   html.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme, icon);
 
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
-      const current = html.getAttribute('data-theme');
+      const current = html.getAttribute('data-theme') || 'dark';
       const next = current === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('portfolio-theme', next);

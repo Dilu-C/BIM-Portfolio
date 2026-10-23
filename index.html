@@ -4,7 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dilupa Chathuranga | BIM Specialist & Workflow Automation</title>
-  <meta name="description" content="Portfolio of Dilupa Chathuranga - BIM Specialist, Production Modeler, and Revit & AutoCAD Workflow Automation Technologist.">
+  <meta name="description" content="Portfolio of Dilupa Chathuranga - BIM Specialist, Production Modeler, and Revit & AutoCAD AI/MCP Workflow Automation Technologist.">
+  
+  <script>
+    (function() {
+      try {
+        var ref = (document.referrer || '').toLowerCase();
+        var isLinkedIn = ref.indexOf('linkedin') !== -1 || ref.indexOf('lnkd.in') !== -1;
+        var theme = localStorage.getItem('portfolio-theme');
+        if (isLinkedIn || !theme) {
+          theme = 'dark';
+          localStorage.setItem('portfolio-theme', 'dark');
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
   
   <!-- Open Graph / LinkedIn / Social Preview Meta Tags -->
   <meta property="og:type" content="website">
@@ -27,7 +44,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <link rel="stylesheet" href="css/styles.css?v=6.1">
+  <link rel="stylesheet" href="css/styles.css?v=6.2">
 </head>
 <body>
 
@@ -98,7 +115,7 @@
           </p>
 
           <p class="hero-desc">
-            Specialized in end-to-end Revit modeling, multi-discipline coordination, and construction documentation packages. Backed by custom automation solutions - AutoCAD MCP bridges, Door & Window schedule generators, and automated sheet setup tools - built to dramatically accelerate project delivery.
+            Specialized in end-to-end Revit modeling, multi-discipline coordination, and construction documentation packages. Backed by custom automation solutions - Revit &amp; AutoCAD MCP AI bridges, Door &amp; Window schedule generators, and automated sheet setup tools - built to dramatically accelerate project delivery.
           </p>
 
           <div class="hero-cta">
@@ -262,6 +279,17 @@
                 </div>
                 <span class="console-metric">3D Catalog</span>
               </div>
+
+              <div class="console-item" onclick="openToolModal('bim-cad-mcp')">
+                <div class="console-item-left">
+                  <div class="console-icon"><i class="fas fa-robot"></i></div>
+                  <div>
+                    <h5>Revit &amp; AutoCAD MCP Bridges</h5>
+                    <p>Live Python API socket &amp; CAD COM automation</p>
+                  </div>
+                </div>
+                <span class="console-metric">AI Bridge</span>
+              </div>
             </div>
 
             <div class="console-footer">
@@ -378,7 +406,7 @@
               Architectural production bottlenecks - like batch-processing 57 building keyplans from CAD into Title Blocks, injecting 25+ shared parameters across project models and family hierarchies, or manually laying out hundreds of Door &amp; Window schedule tables - are where human error and project deadlines break down.
             </p>
             <p>
-              By engineering custom pyRevit ribbon suites and AutoCAD MCP automation pipelines, I orchestrate complete end-to-end data pipelines: extracting spatial opening coordinates, auto-mapping parameters to custom generic annotation schedules, and generating 100+ fully-aligned drawing sheets with intelligent 2-row and single-row oversized layouts in seconds.
+              By engineering custom pyRevit ribbon suites alongside Revit &amp; AutoCAD MCP AI automation pipelines, I orchestrate complete end-to-end data pipelines: executing live Revit API scripts via AI model bridges, extracting spatial opening coordinates, auto-mapping parameters to custom generic annotation schedules, and generating 100+ fully-aligned drawing sheets with intelligent 2-row and single-row oversized layouts in seconds.
             </p>
           </div>
           <div class="quote-box">
@@ -506,7 +534,7 @@
     </div>
   </div>
 
-  <script src="js/projects-data.js?v=6.1"></script>
-  <script src="js/main.js?v=6.1"></script>
+  <script src="js/projects-data.js?v=6.2"></script>
+  <script src="js/main.js?v=6.2"></script>
 </body>
 </html>
