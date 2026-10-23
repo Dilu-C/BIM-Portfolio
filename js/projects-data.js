@@ -203,7 +203,7 @@ const portfolioData = {
       title: "BIM Family Browser & Parametric D&W Suite",
       badge: "Asset Engine & D&W Suite",
       subtitle: "Custom WPF Visual Catalog Engine & Advanced Mathematical Parametric D&W Families",
-      image: "assets/images/family_library_ui.png",
+      image: "assets/images/family_library_ui.png?v=5.0",
       description: "A dual-power BIM asset solution: a custom high-performance WPF visual browser for Revit paired with an advanced suite of custom-authored parametric Door and Window families, standardized wall assemblies, and company title blocks.",
       problem: "Standard Revit door and window families were rigid and difficult to configure for diverse architectural openings. Drafters spent hours hunting for components across drives and manually hacking opening families to handle variable panel counts, custom sliding tracks, and louver/glass infill variations.",
       solution: "Engineered advanced parametric Revit families from scratch: custom multi-panel folding doors with complex mathematical formulas allowing independent panel count control per side; 2-panel sliding barn doors with exposed track hardware; and dynamic windows featuring configurable panel numbers, swing directions, and interchangeable panel types (Louvers, Glass, Open). In addition, authored standardized wall types and company title block sheets. To deliver these assets seamlessly, engineered an in-Revit visual WPF catalog with multi-discipline tabs (ARC, STR, PLU, ELE, FIRE, ACMV), real-time search, studio-white 3D previews, and 1-click loading directly into active projects.",
