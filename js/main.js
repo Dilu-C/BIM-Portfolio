@@ -112,8 +112,8 @@ function renderProjects(filter = 'all') {
       ` : (proj.image ? `
         <div class="project-video-preview" style="position: relative; overflow: hidden; border-radius: 8px 8px 0 0; background: #0b1120; border-bottom: 1px solid rgba(255,255,255,0.08);">
           <img src="${proj.image}" alt="${proj.title}" style="width: 100%; height: 165px; object-fit: cover; display: block;" />
-          <span style="position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(4px); color: #38bdf8; font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.4); letter-spacing: 0.05em;">
-            <i class="fas fa-robot" style="font-size: 0.55rem; margin-right: 4px; color: #38bdf8;"></i> AI RENDER
+          <span style="position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(4px); color: ${proj.isAi === false ? '#34d399' : '#38bdf8'}; font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid ${proj.isAi === false ? 'rgba(52, 211, 153, 0.4)' : 'rgba(56, 189, 248, 0.4)'}; letter-spacing: 0.05em;">
+            <i class="${proj.isAi === false ? 'fas fa-drafting-compass' : 'fas fa-robot'}" style="font-size: 0.55rem; margin-right: 4px; color: ${proj.isAi === false ? '#34d399' : '#38bdf8'};"></i> ${proj.isAi === false ? 'PARAMETRIC BIM' : 'AI RENDER'}
           </span>
         </div>
       ` : `
@@ -323,10 +323,10 @@ function openProjectModal(projectId) {
     ` : (proj.image ? `
     <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px; text-align: center;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06);">
-        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #38bdf8; font-family: monospace;">
-          <i class="fas fa-robot"></i> AI-Generated Architectural Render
+        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: ${proj.isAi === false ? '#34d399' : '#38bdf8'}; font-family: monospace;">
+          <i class="${proj.isAi === false ? 'fas fa-drafting-compass' : 'fas fa-robot'}"></i> ${proj.isAi === false ? 'Authentic Parametric Revit Family Architecture' : 'AI-Generated Architectural Render'}
         </span>
-        <span class="badge badge-cyan" style="font-size: 0.7rem;"><i class="fas fa-drafting-compass"></i> From Revit Elevations</span>
+        <span class="badge ${proj.isAi === false ? 'badge-emerald' : 'badge-cyan'}" style="font-size: 0.7rem;"><i class="fas fa-check-circle"></i> ${proj.isAi === false ? '100% Handcrafted BIM' : 'From Revit Elevations'}</span>
       </div>
       <img src="${proj.image}" alt="${proj.title}" style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08);" />
       ${proj.aiNote ? `<p style="font-size: 0.78rem; color: #94a3b8; margin-top: 8px; font-style: italic;">Note: ${proj.aiNote}</p>` : ''}

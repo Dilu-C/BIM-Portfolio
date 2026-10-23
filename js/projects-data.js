@@ -200,23 +200,22 @@ const portfolioData = {
     {
       id: "family-library",
       category: "automation",
-      title: "BIM Family Browser & Parametric D&W Suite",
-      badge: "Asset Engine & D&W Suite",
-      subtitle: "Custom WPF Visual Catalog Engine & Advanced Mathematical Parametric D&W Families",
-      image: "assets/images/family_library_ui.png?v=5.0",
-      description: "A dual-power BIM asset solution: a custom high-performance WPF visual browser for Revit paired with an advanced suite of custom-authored parametric Door and Window families, standardized wall assemblies, and company title blocks.",
-      problem: "Standard Revit door and window families were rigid and difficult to configure for diverse architectural openings. Drafters spent hours hunting for components across drives and manually hacking opening families to handle variable panel counts, custom sliding tracks, and louver/glass infill variations.",
-      solution: "Engineered advanced parametric Revit families from scratch: custom multi-panel folding doors with complex mathematical formulas allowing independent panel count control per side; 2-panel sliding barn doors with exposed track hardware; and dynamic windows featuring configurable panel numbers, swing directions, and interchangeable panel types (Louvers, Glass, Open). In addition, authored standardized wall types and company title block sheets. To deliver these assets seamlessly, engineered an in-Revit visual WPF catalog with multi-discipline tabs (ARC, STR, PLU, ELE, FIRE, ACMV), real-time search, studio-white 3D previews, and 1-click loading directly into active projects.",
-      impact: "Eliminated dozens of rigid opening families by consolidating them into intelligent, formula-driven parametric assets, while the visual catalog reduced component search-and-load time from 15 minutes to under 5 seconds.",
+      title: "BIM Family Cloud & Visual Asset Browser",
+      badge: "Firm-Wide Asset Engine",
+      subtitle: "Multi-Discipline Family Catalog with Studio-White 3D Previews",
+      image: "assets/images/family_library_ui.png?v=5.1",
+      description: "A high-performance visual component browser for Revit that provides instant access to hundreds of verified, standardized architectural, structural, and MEP families with studio-white 3D previews.",
+      problem: "Drafters frequently loaded outdated or corrupt families from scattered local hard drives, creating model inconsistencies and ballooning project file sizes.",
+      solution: "Engineered an in-Revit visual catalog interface with discipline filter tabs (ARC, STR, PLU, ELE, FIRE, ACMV), real-time search, studio-white canvas previews, and 1-click loading into active models.",
+      impact: "Cut family discovery and loading time by 90% while guaranteeing firm-wide component standardization.",
       ribbonTools: [
-        "Parametric Multi-Panel Folding Doors (Custom Panel Math Formulas)",
-        "2-Panel Sliding Barn Doors (Exposed Track Hardware)",
-        "Dynamic Parametric Windows (Configurable Panel Counts & Swing)",
-        "Interchangeable Infill Types (Louvers, Glass, Open Panels)",
-        "Standardized Wall Assemblies & Sheet Title Blocks",
-        "WPF / XAML Visual Asset Browser (Central Multi-Discipline Catalog)"
+        "Multi-Discipline Asset Browser (ARC, STR, PLU, ELE, FIRE, ACMV)",
+        "Studio-White 3D Thumbnail Canvas",
+        "1-Click Direct Project Loading",
+        "Central Repository Synchronization",
+        "Clean Category Navigation (Doors, Windows, Cover Pages, Title Blocks)"
       ],
-      tags: ["Revit API", "WPF / XAML", "Advanced Parametric Families", "Formula Math", "D&W Standards"],
+      tags: ["Revit API", "WPF / XAML", "Family Browser", "Component Standardization"],
       icon: "fas fa-boxes"
     },
     {
@@ -235,6 +234,25 @@ const portfolioData = {
   ],
 
   projects: [
+    {
+      id: "parametric-families",
+      category: "bim",
+      title: "Advanced Parametric D&W Suite & Master Library",
+      badge: "Parametric Engineering",
+      subtitle: "Mathematical Formula-Driven Folding/Sliding Systems, Dynamic Windows & Shared Parameters",
+      image: "assets/images/parametric_dw_showcase.png?v=5.1",
+      isAi: false,
+      description: "An elite master suite of high-complexity parametric Door, Window, and architectural component families engineered in Autodesk Revit prior to the AI era. Built on rigorous trigonometric and conditional mathematical formulas, nested family hierarchies, and enterprise shared parameters - enabling a single intelligent family to replace dozens of rigid static files.",
+      highlights: [
+        "Multi-Panel Folding Doors: Custom mathematical formulas allowing independent panel count control per side, swing angles, and automatic frame clearances",
+        "2-Panel Sliding Barn Systems: Precision-engineered track hardware, hanging brackets, and parametric clearance calculations",
+        "Multi-Purpose Dynamic Windows: Configurable panel arrays with instant operation switching (Top-Hung, Side-Swing, Fixed) and infill swapping (Louvers, Glass, Solid)",
+        "Enterprise Shared Parameter Framework: 100% parameter synchronization feeding directly into automated Door & Window schedules without manual data entry",
+        "Standardized Wall Assemblies & Sheet Title Blocks: Complete architectural system families and dynamic drawing sheet packages"
+      ],
+      toolsUsed: ["Autodesk Revit (Family Editor)", "Formula Math & Trigonometry", "Nested Families", "Shared Parameters", "LOD 350+ Detailing"],
+      icon: "fas fa-drafting-compass"
+    },
     {
       id: "commercial-office",
       category: "bim",
