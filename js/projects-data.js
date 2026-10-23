@@ -7,7 +7,7 @@ const portfolioData = {
     title: "BIM Specialist & Workflow Automation Technologist",
     subtitle: "Revit Architecture & Structure | Custom pyRevit Tools | AutoCAD MCP Automation",
     tagline: "High-velocity BIM modeling and documentation engineered with custom workflow automation.",
-    location: "Sri Lanka (Open to Global & Remote Roles)",
+    location: "Open to Global Relocation & Remote Roles (Worldwide)",
     primaryEmail: "dnrdesigners@gmail.com",
     secondaryEmail: "dilupa1990@gmail.com",
     linkedin: "https://www.linkedin.com/in/dilupa-chathuranga-223b5ba8/",
@@ -104,8 +104,8 @@ const portfolioData = {
         { label: "Stage Links (Batch Link Discovery & Staging)", src: "assets/videos/stage_links.mp4" },
         { label: "Site Generator (Automated Named Sites)", src: "assets/videos/site_generator.mp4" }
       ],
-      description: "A comprehensive pyRevit coordination suite developed for multi-villa island masterplans (100+ units) in the Maldives, automating Named Sites generation, sequential link staging, and exact millimeter-precision replication across all engineering disciplines.",
-      problem: "Coordinating 100+ water villas across an island in Maldives required weeks of manual model linking, workset creation, and coordinate alignment across Architectural (ARC), Structural (STR), Mechanical (MEP), Electrical (ELE), and Plumbing (PLU) master models. Manual placement invited coordinate drift and severe modeling mismatches.",
+      description: "A comprehensive pyRevit coordination suite engineered for large-scale multi-villa resort masterplans (100+ units), automating Named Sites generation, sequential link staging, and exact millimeter-precision replication across all engineering disciplines.",
+      problem: "Coordinating 100+ villas across a large-scale coastal resort masterplan required weeks of manual model linking, workset creation, and coordinate alignment across Architectural (ARC), Structural (STR), Mechanical (MEP), Electrical (ELE), and Plumbing (PLU) master models. Manual placement invited coordinate drift and severe modeling mismatches.",
       solution: "Engineered a high-velocity 3-module coordination suite on the 'Coordination' ribbon panel:  -  Stage Links: Scans external project directories for unlinked FOH, BOH, and Villa models (0 initial links loaded), creates corresponding project Worksets, batch-links them anew into the active project, and stages them into a sequential staging line south of the island.  -  Site Generator: Automatically discovers villa clusters, preserves survey coordinates, and publishes all Named Sites across 100+ villas in one single click without coordinate drift.  -  Replicate Master: Reads placed building coordinates, rotations (deg), and workset assignments directly from the ARC Master Model, and automatically batch-links and replicates STR, MEP, ELE, and PLU models at exact millimeter positions into clean discipline masters.",
       impact: "Compressed weeks of tedious multi-discipline model linking into seconds. Completely eliminated coordinate drift, rotation errors, and workset misalignment across 100+ island villas.",
       ribbonTools: [
@@ -180,20 +180,21 @@ const portfolioData = {
     {
       id: "update-mot-areas",
       category: "automation",
-      title: "MOT Area & Hospitality Spatial Compliance",
-      badge: "Hospitality Compliance",
-      subtitle: "Ministry of Tourism (MOT) Room Area & Spatial Compliance Sync",
+      title: "Hospitality & Municipal Spatial Compliance Engine",
+      badge: "Regulatory Compliance",
+      subtitle: "Automated Room Boundary, Gross/Net BUA & Regulatory Compliance Sync",
       video: "assets/videos/update_mot_areas.mp4",
-      description: "Automated spatial compliance tool built for luxury Maldives resort masterplans to calculate, verify, and synchronize room boundaries against Ministry of Tourism (MOT) area standards.",
-      problem: "Maldives resort developments require strict adherence to MOT room area classifications. Manual verification and area parameter synchronization across hundreds of rooms and villas was labor-intensive and error-prone.",
-      solution: "Developed an automated spatial sync tool that reads room geometry from 'TOTAL BUA PER UNIT' Area Plan views, categorizes 'Building Common Area' as Covered and 'Exterior Area' as Open, and writes compliant MOT area parameters directly into schedule headers.",
-      impact: "Guarantees 100% audit-ready MOT submission schedules with zero human calculation error.",
+      description: "Automated spatial compliance engine built for luxury resort and hospitality masterplans to calculate, verify, and synchronize room boundaries against municipal building codes and tourism authority (MOT) area standards.",
+      problem: "Large-scale hospitality and resort developments require strict adherence to municipal authority room area classifications and gross built-up ratios. Manual verification and area parameter synchronization across hundreds of rooms and villas was labor-intensive and error-prone.",
+      solution: "Developed an automated spatial sync engine that reads room geometry from 'TOTAL BUA PER UNIT' Area Plan views, categorizes 'Building Common Area' as Covered and 'Exterior Area' as Open, and writes compliant regulatory area parameters directly into schedule headers. Built with a flexible architecture easily adaptable to any regional or municipal zoning framework.",
+      impact: "Guarantees 100% audit-ready regulatory and tourism authority submission schedules with zero human calculation error.",
       ribbonTools: [
         "Update MOT Areas (One-Click Spatial Sync)",
         "TOTAL BUA PER UNIT View Extractor",
-        "Resort Compliance Schedules"
+        "Resort Compliance Schedules",
+        "Configurable Municipal Rule Engine"
       ],
-      tags: ["pyRevit", "MOT Compliance", "Resort BIM", "Area Calculations"],
+      tags: ["pyRevit", "Spatial Compliance", "Municipal Regulations", "Area Calculations", "Configurable Engine"],
       icon: "fas fa-chart-pie"
     },
     {
