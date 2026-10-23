@@ -237,16 +237,18 @@ const portfolioData = {
       category: "bim",
       title: "Commercial Office Building (Arc & Str)",
       badge: "Commercial Multi-Story",
-      subtitle: "Full-Scale Architectural & Structural BIM Coordination",
+      subtitle: "Revit Architectural & Structural Modeling | 2D Drawings & AI Walkthrough",
       video: "assets/videos/commercial_office_building.mp4",
-      description: "Comprehensive multi-story commercial office facility modeled in Autodesk Revit. Coordinated architectural envelope, interior partitions, core circulation, and structural frame elements.",
+      revitSheet: "assets/images/commercial_office_revit_3d_sheet.png",
+      aiNote: "AI-generated conceptual walkthrough synthesized directly from my 2D Revit elevation and section drawing submittals.",
+      description: "Comprehensive multi-story commercial office facility modeled and detailed in Autodesk Revit. Produced complete working drawing packagesâ€”detailed floor plans, building sections, and elevationsâ€”with full architectural and structural coordination.",
       highlights: [
-        "Production of detailed plan layouts, building sections, and external elevation drawing packages",
-        "Coordination between Architectural and Structural disciplines to ensure structural alignment",
-        "Implementation of custom schedules for doors, glazed partitions, and material finishes",
+        "Modeled & detailed in Autodesk Revit: core circulation, envelope, and structural frame elements",
+        "Full production of working drawings: GA plans, technical sections, and 4-sided elevation sheets",
+        "AI-Generated Walkthrough: Video synthesized from technical 2D CAD/Revit elevation drawings",
         "Adherence to strict municipal submission standards and client documentation guidelines"
       ],
-      toolsUsed: ["Autodesk Revit", "AutoCAD", "BIM Worksharing", "Construction Drawings"],
+      toolsUsed: ["Autodesk Revit (BIM)", "Working Drawings", "Revit Elevations & Sections", "AI Visualization"],
       icon: "fas fa-building"
     },
     {
@@ -254,16 +256,18 @@ const portfolioData = {
       category: "bim",
       title: "Luxury Single-Bedroom Beach Villa with Skydeck",
       badge: "Hospitality & Resort",
-      subtitle: "High-End Architectural Modeling & Bespoke Detail Documentation",
+      subtitle: "Revit Organic Architecture | Technical Drawings & AI Visualization",
       image: "assets/images/luxury_beach_villa_render.jpg",
-      description: "A luxury coastal resort villa featuring intricate architectural detailing, timber pergolas, panoramic glazing, cantilevered skydeck, and integrated interior casework.",
+      revitSheet: "assets/images/beach_villa_revit_3d_sheet.png",
+      aiNote: "AI-generated realistic render synthesized from technical Revit elevation linework and organic timber wall cladding specifications.",
+      description: "A luxury coastal resort villa featuring intricate organic architecture modeled in Autodesk Revit: sweeping undulating thatched roof, sunken plunge pool, and drywall clad in irregular vertical timber poles. All floor plans, elevations, sections, and schedules authored in Revit.",
       highlights: [
-        "High-fidelity LOD 350 architectural model encompassing foundation to bespoke roof profiles",
-        "Parametric door and window families customized with ironmongery and glazing specifications",
-        "Detailed interior millwork, bathroom casework, and outdoor timber sundeck modeling",
-        "Coordinated with MEP engineers for concealed service routes and architectural ceiling drop integration"
+        "Modeled in Autodesk Revit (LOD 350): complex wave-curved thatched roof, pergola, and sunken pool",
+        "Detailed drawing packages: architectural floor plans, sections, and 4-sided elevation sheets",
+        "Authentic Timber Cladding: Specified irregular, organic eucalyptus stick screens on drywall",
+        "AI-Generated Render: Photorealistic visualization synthesized from technical elevation drawings"
       ],
-      toolsUsed: ["Autodesk Revit", "Parametric Families", "LOD 350 Details", "Navisworks"],
+      toolsUsed: ["Autodesk Revit (BIM)", "Complex Roof Modeling", "Working Drawings", "AI Visualization"],
       icon: "fas fa-umbrella-beach"
     },
     {

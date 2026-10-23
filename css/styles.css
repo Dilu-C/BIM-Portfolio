@@ -2145,3 +2145,16 @@ body {
     align-self: center !important;
   }
 }
+
+[data-theme="light"] .modal-revit-sheet-box {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+[data-theme="light"] .modal-revit-sheet-box span {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .modal-revit-sheet-box p {
+  color: #334155 !important;
+}

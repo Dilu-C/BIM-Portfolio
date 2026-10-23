@@ -105,15 +105,15 @@ function renderProjects(filter = 'all') {
       ${proj.video ? `
         <div class="project-video-preview" style="position: relative; overflow: hidden; border-radius: 8px 8px 0 0; background: #0b1120; border-bottom: 1px solid rgba(255,255,255,0.08);">
           <video src="${proj.video}" autoplay loop muted playsinline style="width: 100%; height: 165px; object-fit: cover; display: block;"></video>
-          <span style="position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); color: #fbbf24; font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(251, 191, 36, 0.3); letter-spacing: 0.05em;">
-            <i class="fas fa-video" style="font-size: 0.5rem; margin-right: 4px; color: #fbbf24;"></i> 3D WALKTHROUGH
+          <span style="position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(4px); color: #fbbf24; font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(251, 191, 36, 0.4); letter-spacing: 0.05em;">
+            <i class="fas fa-robot" style="font-size: 0.55rem; margin-right: 4px; color: #fbbf24;"></i> AI WALKTHROUGH
           </span>
         </div>
       ` : (proj.image ? `
         <div class="project-video-preview" style="position: relative; overflow: hidden; border-radius: 8px 8px 0 0; background: #0b1120; border-bottom: 1px solid rgba(255,255,255,0.08);">
           <img src="${proj.image}" alt="${proj.title}" style="width: 100%; height: 165px; object-fit: cover; display: block;" />
-          <span style="position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); color: #38bdf8; font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.3); letter-spacing: 0.05em;">
-            <i class="fas fa-camera" style="font-size: 0.5rem; margin-right: 4px; color: #38bdf8;"></i> 3D RENDER
+          <span style="position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(4px); color: #38bdf8; font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.4); letter-spacing: 0.05em;">
+            <i class="fas fa-robot" style="font-size: 0.55rem; margin-right: 4px; color: #38bdf8;"></i> AI RENDER
           </span>
         </div>
       ` : `
@@ -312,24 +312,41 @@ function openProjectModal(projectId) {
     ${proj.video ? `
     <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px; text-align: center;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06);">
-        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-family: monospace;">
-          <i class="fas fa-play-circle" style="color: #fbbf24;"></i> Architectural & Structural BIM Walkthrough
+        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #fbbf24; font-family: monospace;">
+          <i class="fas fa-robot"></i> AI-Generated Conceptual Walkthrough
         </span>
-        <span class="badge badge-gold" style="font-size: 0.7rem;"><i class="fas fa-cube"></i> Revit Multi-Story</span>
+        <span class="badge badge-gold" style="font-size: 0.7rem;"><i class="fas fa-layer-group"></i> From Revit Drawings</span>
       </div>
       <video id="modal-active-video" src="${proj.video}" autoplay loop muted playsinline controls style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08); background: #000;"></video>
+      ${proj.aiNote ? `<p style="font-size: 0.78rem; color: #94a3b8; margin-top: 8px; font-style: italic;">Note: ${proj.aiNote}</p>` : ''}
     </div>
     ` : (proj.image ? `
     <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px; text-align: center;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06);">
-        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-family: monospace;">
-          <i class="fas fa-image" style="color: #38bdf8;"></i> Architectural 3D Visualization Render
+        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #38bdf8; font-family: monospace;">
+          <i class="fas fa-robot"></i> AI-Generated Architectural Render
         </span>
-        <span class="badge badge-gold" style="font-size: 0.7rem;"><i class="fas fa-cube"></i> LOD 350 Model</span>
+        <span class="badge badge-cyan" style="font-size: 0.7rem;"><i class="fas fa-drafting-compass"></i> From Revit Elevations</span>
       </div>
       <img src="${proj.image}" alt="${proj.title}" style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08);" />
+      ${proj.aiNote ? `<p style="font-size: 0.78rem; color: #94a3b8; margin-top: 8px; font-style: italic;">Note: ${proj.aiNote}</p>` : ''}
     </div>
     ` : '')}
+
+    ${proj.revitSheet ? `
+    <div class="modal-section modal-revit-sheet-box" style="margin-top: 18px; margin-bottom: 18px; background: rgba(14, 20, 35, 0.7); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 16px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <span style="font-size: 0.85rem; font-weight: 700; color: #f8fafc; letter-spacing: 0.02em;">
+          <i class="fas fa-cube" style="color: var(--accent-blue); margin-right: 6px;"></i> Authentic Production Revit Model â€” Multi-Angle 3D Views
+        </span>
+        <span class="badge badge-emerald" style="font-size: 0.7rem;"><i class="fas fa-check-circle"></i> Authored in Revit</span>
+      </div>
+      <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.55;">
+        Multi-angle isometric views extracted from the actual working drawing package in Autodesk Revit. Architectural modeling, floor plans, sections, and elevation submittals authored by Dilupa Chathuranga.
+      </p>
+      <img src="${proj.revitSheet}" alt="${proj.title} Revit 3D Views" style="width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 4px 14px rgba(0,0,0,0.5); display: block;" />
+    </div>
+    ` : ''}
 
     <div class="modal-section">
       <h4><i class="fas fa-building text-gold"></i> Project Overview</h4>
