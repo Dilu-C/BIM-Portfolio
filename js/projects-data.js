@@ -240,8 +240,45 @@ const portfolioData = {
       title: "Advanced Parametric D&W Suite & Master Library",
       badge: "Parametric Engineering",
       subtitle: "Mathematical Formula-Driven Folding/Sliding Systems, Dynamic Windows & Shared Parameters",
-      image: "assets/images/parametric_dw_showcase.png?v=5.1",
+      image: "assets/images/param_door_folding_15panel.png?v=5.2",
       isAi: false,
+      gallery: [
+        {
+          label: "15-Panel Folding Door (Accordion Math)",
+          icon: "fas fa-door-open",
+          src: "assets/images/param_door_folding_15panel.png?v=5.2",
+          title: "RYN_DOR_Folding_MultiPanel_In.CG_Fr.AL (W8000 x H3200 mm)",
+          caption: "<strong>Trigonometric Accordion Kinematics (W8000 x H3200 mm):</strong> Mathematical formulation allowing arbitrary, independent panel counts per side (Left: 10 panels divided into 5+5 groups, Right: 5 panels divided into 2+3 groups). Dynamic <code>Panel Fold Angle (60.00 deg)</code>, automated individual panel widths (526.7 mm), and overall opening length (7900 mm) calculated in real time without geometric distortion."
+        },
+        {
+          label: "4-Panel Window (Top/Side Hung & Louvers)",
+          icon: "fas fa-window-maximize",
+          src: "assets/images/param_win_tophung_multipanel.png?v=5.2",
+          title: "RYN_WIN_TopHung/Swing_MultyPanel.Eq_In.AL_Fr.AL (W3000 x H1150 mm)",
+          caption: "<strong>Multi-Mode Operation & Dynamic Louvers (W3000 x H1150 mm):</strong> Boolean operation toggles for Top-Hung vs Side-Hung, dynamic panel arrays (4 panels), and louver count drivers (12 louvers). Integrates curved shading canopy calculations (450 mm eave, 50 mm edge curve) and real-time open area calculation (2.166 m2) directly within the family."
+        },
+        {
+          label: "2-Panel Barn Sliding (Ribbed Cladding)",
+          icon: "fas fa-sliders-h",
+          src: "assets/images/param_door_sliding_barn_2panel.png?v=5.2",
+          title: "RYN_DOR_Sliding_Barn_2Panel (W2100 x H2600 mm)",
+          caption: "<strong>Heavy-Duty Track Hardware & Architectural Materials (W2100 x H2600 mm):</strong> Parametric overhead barn door hardware with 4200 mm sliding track length, 5 mm panel offset, and vertical ribbed architectural cladding. Populates comprehensive enterprise schedule parameters (Acoustic rating, Fire rating, Closer, Hardware) directly to project schedules."
+        },
+        {
+          label: "1-Panel Barn Sliding (Trolley Rollers)",
+          icon: "fas fa-door-closed",
+          src: "assets/images/param_door_sliding_barn_1panel.png?v=5.2",
+          title: "RYN_DOR_Sliding_Barn_1Panel-Type2 (W1000 x H2400 mm)",
+          caption: "<strong>Exposed Trolley Roller System (W1000 x H2400 mm):</strong> Overhead round tube track with dual-wheel trolley hangers, parametric rail offsets (Rail H Offset: 57.7 mm, Rail Offset: 32.7 mm), sliding length calculation (2000 mm), and integrated stainless pull handle and kickplate components."
+        },
+        {
+          label: "Unequal 2-Leaf Door (Transom & Infill)",
+          icon: "fas fa-columns",
+          src: "assets/images/param_door_swing_unequal_transom.png?v=5.2",
+          title: "RYN_DOR_Swing_2Panel+2Widths+TopFixedGlass (W2100 x H3200 mm)",
+          caption: "<strong>Asymmetric Dual Leaf & Transom Infill (W2100 x H3200 mm):</strong> Independent leaf width formulas (Door 1: 800 mm, Door 2: 1200 mm), fixed top transom glass (700 mm height), and instant material infill toggling between Glass/Timber and Louver panels via single boolean switch."
+        }
+      ],
       description: "An elite master suite of high-complexity parametric Door, Window, and architectural component families engineered in Autodesk Revit prior to the AI era. Built on rigorous trigonometric and conditional mathematical formulas, nested family hierarchies, and enterprise shared parameters - enabling a single intelligent family to replace dozens of rigid static files.",
       highlights: [
         "Multi-Panel Folding Doors: Custom mathematical formulas allowing independent panel count control per side, swing angles, and automatic frame clearances",

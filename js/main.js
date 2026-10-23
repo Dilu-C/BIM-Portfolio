@@ -1,3 +1,19 @@
+window.switchModalGallery = function(src, caption, btn) {
+  const img = document.getElementById('modal-active-gallery-img');
+  const cap = document.getElementById('modal-active-gallery-caption');
+  if (img) {
+    img.src = src;
+  }
+  if (cap && caption) {
+    cap.innerHTML = caption;
+  }
+  if (btn && btn.parentElement) {
+    const allBtns = btn.parentElement.querySelectorAll('.gallery-tab-btn');
+    allBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+};
+
 // Main JavaScript Logic for Dilupa Chathuranga's Portfolio
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -102,14 +118,14 @@ function renderProjects(filter = 'all') {
 
   container.innerHTML = filtered.map(proj => `
     <div class="project-card">
-      ${proj.video ? `
+      ${!proj.gallery && proj.video ? `
         <div class="project-video-preview" style="position: relative; overflow: hidden; border-radius: 8px 8px 0 0; background: #0b1120; border-bottom: 1px solid rgba(255,255,255,0.08);">
           <video src="${proj.video}" autoplay loop muted playsinline style="width: 100%; height: 165px; object-fit: cover; display: block;"></video>
           <span style="position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(4px); color: #fbbf24; font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(251, 191, 36, 0.4); letter-spacing: 0.05em;">
             <i class="fas fa-robot" style="font-size: 0.55rem; margin-right: 4px; color: #fbbf24;"></i> AI WALKTHROUGH
           </span>
         </div>
-      ` : (proj.image ? `
+      ` : (!proj.gallery && proj.image ? `
         <div class="project-video-preview" style="position: relative; overflow: hidden; border-radius: 8px 8px 0 0; background: #0b1120; border-bottom: 1px solid rgba(255,255,255,0.08);">
           <img src="${proj.image}" alt="${proj.title}" style="width: 100%; height: 165px; object-fit: cover; display: block;" />
           <span style="position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(4px); color: ${proj.isAi === false ? '#34d399' : '#38bdf8'}; font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid ${proj.isAi === false ? 'rgba(52, 211, 153, 0.4)' : 'rgba(56, 189, 248, 0.4)'}; letter-spacing: 0.05em;">
@@ -308,6 +324,33 @@ function openProjectModal(projectId) {
     <span class="badge badge-gold modal-badge">${proj.badge}</span>
     <h2 class="modal-title">${proj.title}</h2>
     <div class="modal-subtitle">${proj.subtitle}</div>
+
+    ${proj.gallery && proj.gallery.length > 0 ? `
+    <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 16px; text-align: center;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #34d399; font-family: monospace; font-weight: 700;">
+          <i class="fas fa-drafting-compass" style="margin-right: 6px;"></i> Parametric Family Architecture & Type Properties
+        </span>
+        <span class="badge badge-emerald" style="font-size: 0.72rem;"><i class="fas fa-check-circle"></i> 100% Handcrafted Revit BIM</span>
+      </div>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; justify-content: center;">
+        ${proj.gallery.map((g, i) => `
+          <button class="gallery-tab-btn ${i === 0 ? 'active' : ''}" onclick="switchModalGallery('${g.src}', '${g.caption.replace(/'/g, "\'")}', this)">
+            <i class="${g.icon}"></i> ${g.label}
+          </button>
+        `).join('')}
+      </div>
+
+      <div style="background: #111827; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+        <img id="modal-active-gallery-img" src="${proj.gallery[0].src}" alt="${proj.gallery[0].title}" style="width: 100%; height: auto; border-radius: 4px; display: block;" />
+      </div>
+
+      <div id="modal-active-gallery-caption" style="margin-top: 12px; font-size: 0.86rem; color: #cbd5e1; text-align: left; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 12px 16px; line-height: 1.6;">
+        ${proj.gallery[0].caption}
+      </div>
+    </div>
+    ` : ''}
 
     ${proj.video ? `
     <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px; text-align: center;">
