@@ -1,4 +1,5 @@
 // Portfolio Projects & Tools Data for Dilupa Chathuranga
+// STRICT DILU TOOLS ONLY
 
 const portfolioData = {
   profile: {
@@ -161,74 +162,6 @@ const portfolioData = {
       icon: "fas fa-paint-roller"
     },
     {
-      id: "structural-automation",
-      category: "structure",
-      title: "Structural Engineering Detailing Suite",
-      badge: "Structural Automation",
-      subtitle: "Smart Connect, SplitColumn & Projected Beams Auto-Snapping",
-      video: "assets/videos/project_beams.mp4",
-      videos: [
-        { label: "Project Beams (Surface Snapping)", src: "assets/videos/project_beams.mp4" },
-        { label: "Smart Connect (Framing Connection Healer)", src: "assets/videos/smart_connect.mp4" },
-        { label: "Split Column (Multi-Level Splitter)", src: "assets/videos/split_column.mp4" }
-      ],
-      description: "A suite of structural engineering pyRevit tools designed to automate structural framing alignment, column level splitting, and analytical joint connectivity.",
-      problem: "Structural modellers spend hours manually extending and trimming beam centerlines to complex sloped roof surfaces, splitting multi-story columns at floor slabs, and correcting unjoined structural framing joints.",
-      solution: "Developed structural automation tools: • ProjectBeams: Calculates 3D geometric vectors and mathematically snaps rafter and purlin centerlines to sloped roof or slab planes in a single pass without distorting plan (X, Y) coordinates. • Smart Connect: Automatically batch-places structural connections to intersecting framing members. • SplitColumn: Accurately splits continuous columns at selected target levels while preserving elevation offsets.",
-      impact: "Saves dozens of hours in structural framing setup and ensures flawless analytical model geometry for Robot Structural Analysis and Navisworks.",
-      ribbonTools: [
-        "ProjectBeams (Single-Pass Surface Snapping)",
-        "Smart Connect (Framing Joint Healer)",
-        "SplitColumn (Multi-Level Column Splitter)"
-      ],
-      tags: ["Revit API", "Structural Detailing", "Smart Connect", "Beam Projection", "Column Splitting"],
-      icon: "fas fa-cubes"
-    },
-    {
-      id: "brick-masonry",
-      category: "automation",
-      title: "Parametric Brick Masonry & Coursing Engine",
-      badge: "Architectural Detailing",
-      subtitle: "Procedural Block Coursing, Mortar Joint Control & Quantity Takeoffs",
-      video: "assets/videos/brick_masonry.mp4",
-      description: "Custom Revit architectural modeling tool that parametrically splits walls and generates true brick, solid concrete block, hollow block, or paving unit courses with configurable mortar joints.",
-      problem: "Modeling individual masonry courses for construction detailing, architectural visual presentations, and exact block unit quantity takeoffs was virtually impossible using standard Revit walls without days of tedious manual drafting.",
-      solution: "Engineered a parametric masonry generator that takes host wall geometry, applies chosen block dimensions (Standard Brick 215x102.5x65, Solid Concrete 440x100x215, Hollow Block 440x215x215, Paving 200x100x60), accounts for mortar joint gaps, and procedurally models the masonry coursing.",
-      impact: "Provides exact bill of quantities (BOQ) unit counts, accurate bond patterns, and pristine construction details in seconds.",
-      ribbonTools: [
-        "Parametric Block Dimension Selector",
-        "Mortar Joint Thickness Controller",
-        "Automated Coursing Splitter",
-        "Exact Unit Quantity Counter"
-      ],
-      tags: ["Revit API", "Architectural Detailing", "Brick Masonry", "Procedural Modeling", "Quantity Takeoff"],
-      icon: "fas fa-th"
-    },
-    {
-      id: "coordination-toolkit",
-      category: "coordination",
-      title: "Level Re-Hosting & Model Coordination Suite",
-      badge: "BIM Coordination",
-      subtitle: "Change Host Level with Offset Compensation & Copy from Links",
-      video: "assets/videos/change_host_level.mp4",
-      videos: [
-        { label: "Change Host Level", src: "assets/videos/change_host_level.mp4" },
-        { label: "Copy Elements from Link", src: "assets/videos/copy_from_link.mp4" }
-      ],
-      description: "Specialized model coordination toolkit providing zero-displacement level re-hosting and selective element copying across linked Revit models.",
-      problem: "Re-hosting walls, columns, floors, or stairs to different levels in Revit natively displaces their vertical position, wrecking floor-to-floor coordination. Copying specific elements from linked consultant files often required messy Copy/Monitor workarounds.",
-      solution: "Built a dual-mode coordination tool: (1) Change Host recalculates base and top offsets automatically to maintain the element's exact 3D position while updating its host level parameter. (2) Copy from Link browses linked models and selectively imports chosen categories at exact matching coordinates.",
-      impact: "Eliminates vertical coordinate shifting, fixes level association blunders across multi-story buildings, and enables seamless cross-model asset migration.",
-      ribbonTools: [
-        "Change Host (Zero-Displacement Re-Hosting)",
-        "Move Level (Elevation Adjustment Shield)",
-        "Copy from Link (Multi-Category Link Importer)",
-        "Join / Unjoin Batch Geometry Cleaner"
-      ],
-      tags: ["Revit API", "Level Re-Hosting", "Copy from Link", "Coordination", "pyRevit"],
-      icon: "fas fa-arrows-alt-v"
-    },
-    {
       id: "update-mot-areas",
       category: "automation",
       title: "MOT Area & Hospitality Spatial Compliance",
@@ -253,8 +186,8 @@ const portfolioData = {
       title: "BIM Family Cloud & Visual Asset Browser",
       badge: "Firm-Wide Asset Engine",
       subtitle: "Multi-Discipline Family Catalog with Studio-White 3D Previews",
-      video: "assets/videos/family_library.mp4",
       image: "assets/images/family_library_ui.png",
+      video: "assets/videos/family_library.mp4",
       description: "A high-performance visual component browser for Revit that provides instant access to hundreds of verified, standardized architectural, structural, and MEP families with studio-white 3D previews.",
       problem: "Drafters frequently loaded outdated or corrupt families from scattered local hard drives, creating model inconsistencies and ballooning project file sizes.",
       solution: "Engineered an in-Revit visual catalog interface with discipline filter tabs (ARC, STR, PLU, FIRE, ACMV), real-time search, studio-white canvas previews, and 1-click loading into active models.",
