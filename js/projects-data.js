@@ -238,6 +238,7 @@ const portfolioData = {
       title: "Commercial Office Building (Arc & Str)",
       badge: "Commercial Multi-Story",
       subtitle: "Full-Scale Architectural & Structural BIM Coordination",
+      video: "assets/videos/commercial_office_building.mp4",
       description: "Comprehensive multi-story commercial office facility modeled in Autodesk Revit. Coordinated architectural envelope, interior partitions, core circulation, and structural frame elements.",
       highlights: [
         "Production of detailed plan layouts, building sections, and external elevation drawing packages",

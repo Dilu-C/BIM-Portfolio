@@ -102,10 +102,19 @@ function renderProjects(filter = 'all') {
 
   container.innerHTML = filtered.map(proj => `
     <div class="project-card">
-      <div class="project-banner">
-        <div class="project-banner-pattern"></div>
-        <i class="${proj.icon} project-banner-icon"></i>
-      </div>
+      ${proj.video ? `
+        <div class="project-video-preview" style="position: relative; overflow: hidden; border-radius: 8px 8px 0 0; background: #0b1120; border-bottom: 1px solid rgba(255,255,255,0.08);">
+          <video src="${proj.video}" autoplay loop muted playsinline style="width: 100%; height: 165px; object-fit: cover; display: block;"></video>
+          <span style="position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); color: #fbbf24; font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(251, 191, 36, 0.3); letter-spacing: 0.05em;">
+            <i class="fas fa-video" style="font-size: 0.5rem; margin-right: 4px; color: #fbbf24;"></i> 3D WALKTHROUGH
+          </span>
+        </div>
+      ` : `
+        <div class="project-banner">
+          <div class="project-banner-pattern"></div>
+          <i class="${proj.icon} project-banner-icon"></i>
+        </div>
+      `}
       <div class="project-content">
         <div>
           <span class="badge badge-gold" style="margin-bottom: 10px;">${proj.badge}</span>
@@ -292,6 +301,18 @@ function openProjectModal(projectId) {
     <span class="badge badge-gold modal-badge">${proj.badge}</span>
     <h2 class="modal-title">${proj.title}</h2>
     <div class="modal-subtitle">${proj.subtitle}</div>
+
+    ${proj.video ? `
+    <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px; text-align: center;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-family: monospace;">
+          <i class="fas fa-play-circle" style="color: #fbbf24;"></i> Architectural & Structural BIM Walkthrough
+        </span>
+        <span class="badge badge-gold" style="font-size: 0.7rem;"><i class="fas fa-cube"></i> Revit Multi-Story</span>
+      </div>
+      <video id="modal-active-video" src="${proj.video}" autoplay loop muted playsinline controls style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08); background: #000;"></video>
+    </div>
+    ` : ''}
 
     <div class="modal-section">
       <h4><i class="fas fa-building text-gold"></i> Project Overview</h4>
