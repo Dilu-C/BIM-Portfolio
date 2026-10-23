@@ -31,6 +31,14 @@ function renderTools() {
 
   container.innerHTML = portfolioData.tools.map(tool => `
     <div class="tool-card" data-category="${tool.category}">
+      ${tool.video ? `
+        <div class="tool-video-preview" style="position: relative; overflow: hidden; border-radius: 8px 8px 0 0; background: #0b1120; border-bottom: 1px solid rgba(255,255,255,0.08); margin: -28px -28px 18px -28px;">
+          <video src="${tool.video}" autoplay loop muted playsinline style="width: 100%; height: 165px; object-fit: cover; display: block;"></video>
+          <span style="position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); color: #34d399; font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(52, 211, 153, 0.3); letter-spacing: 0.05em;">
+            <i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 4px; color: #10b981;"></i> LIVE DEMO
+          </span>
+        </div>
+      ` : ''}
       <div class="tool-card-top">
         <div class="tool-icon-wrapper">
           <i class="${tool.icon}"></i>
@@ -183,7 +191,17 @@ function openToolModal(toolId) {
     <h2 class="modal-title">${tool.title}</h2>
     <div class="modal-subtitle">${tool.subtitle}</div>
 
-    ${tool.image ? `
+    ${tool.video ? `
+    <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px; text-align: center;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-family: monospace;">
+          <i class="fas fa-play-circle" style="color: var(--accent-cyan, #06b6d4);"></i> Verified Production Automation Loop
+        </span>
+        <span class="badge badge-emerald" style="font-size: 0.7rem;"><i class="fas fa-check-circle"></i> Verified In Revit</span>
+      </div>
+      <video src="${tool.video}" autoplay loop muted playsinline controls style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08); background: #fff;"></video>
+    </div>
+    ` : (tool.image ? `
     <div class="modal-section" style="margin-top: 16px; margin-bottom: 16px; background: #0b1120; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px; text-align: center;">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06);">
         <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-family: monospace;">
@@ -193,7 +211,7 @@ function openToolModal(toolId) {
       </div>
       <img src="${tool.image}" alt="${tool.title}" style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08); background: #fff;" />
     </div>
-    ` : ''}
+    ` : '')}
 
     <div class="modal-section">
       <h4><i class="fas fa-info-circle text-cyan"></i> Overview</h4>
