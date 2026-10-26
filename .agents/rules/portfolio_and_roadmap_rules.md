@@ -1,4 +1,4 @@
-﻿---
+---
 trigger: portfolio, bim_portfolio, weekend_roadmap, ui_navigation, 3d_buttons
 description: BIM Portfolio UI/UX standards, 3D tactile button conventions, and Weekend video production reminder & roadmap.
 ---
