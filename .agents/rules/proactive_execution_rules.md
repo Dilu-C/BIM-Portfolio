@@ -1,4 +1,4 @@
-﻿# Proactive Progress Reporting & Task Visibility Rules
+# Proactive Progress Reporting & Task Visibility Rules
 
 ## 1. High-Frequency Proactive Updates (තත්පර 15-30 සජීවී කාල පරාසය)
 - පසුබිමෙන් ධාවනය වන දීර්ඝ කාර්යයන් (Revit batch updates, model processing, file operations, CAD tasks) ක්‍රියාත්මක වන විට, උපරිම වශයෙන් සෑම තත්පර 15-30 කට වරක්ම පරිශීලකයාට සජීවී ප්‍රගති වාර්තාවක් (Live Progress Update) ලබා දිය යුතුය.

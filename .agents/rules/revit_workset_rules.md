@@ -1,4 +1,4 @@
-﻿---
+---
 trigger: model_open, workshared_model, batch_automation, sync_model
 description: Revit Central Models සැකසීමේදී, Batch Automation සහ Sync කිරීමේදී Worksets ස්වයංක්‍රීයව AllWorksets ලෙස තබාගැනීම පිළිබඳ නීති.
 ---
