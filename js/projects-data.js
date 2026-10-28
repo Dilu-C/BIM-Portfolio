@@ -4,8 +4,8 @@
 const portfolioData = {
   profile: {
     name: "Dilupa Chathuranga",
-    title: "BIM Specialist & Workflow Automation Technologist",
-    subtitle: "Revit Architecture & Structure | Custom pyRevit Tools | Revit & AutoCAD Automation",
+    title: "BIM Specialist & Automation Solutions Technologist",
+    subtitle: "Revit Architecture & Structure | Multi-Platform AI MCP Bridges | Custom Automation Solutions",
     tagline: "High-velocity BIM modeling and documentation engineered with custom workflow automation.",
     location: "Available for Freelance BIM Projects & Remote Work",
     primaryEmail: "dnrdesigners@gmail.com",
@@ -260,15 +260,22 @@ const portfolioData = {
     {
       id: "bim-cad-mcp",
       category: "automation",
-      title: "Revit & AutoCAD MCP AI Automation Bridges",
-      badge: "AI + BIM/CAD Protocol",
-      subtitle: "Dual-Engine Model Context Protocol for Live Revit API Execution & AutoCAD DWG Automation",
-      description: "Pioneered production-grade Model Context Protocol (MCP) bridges connecting AI coding agents directly to live Autodesk Revit and AutoCAD runtime environments. Enables hands-free Revit Python API script execution in active documents and autonomous AutoCAD DWG geometric sanitization.",
-      problem: "Traditional BIM and CAD operations require endless manual repetition across disparate environments: manually testing and running Python scripts inside Revit, auditing element parameters, and spending days in AutoCAD cleaning, exploding, flattening, and standardizing multi-building DWG files before import.",
-      solution: "Engineered dual native MCP server bridges: (1) Revit MCP Server: Live socket/listener bridge executing Python scripts directly within active or background Revit sessions via pyRevit and Revit API, enabling real-time element querying, parameter injection, geometry verification, and model health audits. (2) AutoCAD MCP Server: Direct COM automation bridge executing batch layer sanitization, 3D-to-2D polyline flattening, block audits, and coordinate boundary extraction in minutes.",
-      impact: "Unlocks autonomous AI-driven BIM engineering: audits Revit project health directly through natural language agent workflows and transforms days of manual CAD drawing preparation into structured, reliable data streams ready for automated Revit import.",
-      tags: ["Revit API", "AutoCAD COM", "Model Context Protocol", "AI Automation", "Python MCP"],
-      icon: "fas fa-robot"
+      title: "Multi-Platform MCP AI Automation Ecosystem",
+      badge: "5x Native AI + AEC Protocols",
+      subtitle: "Full-Spectrum Model Context Protocol Bridges across Revit, AutoCAD, Rhino 3D, SCIA Engineer & MS Excel",
+      description: "Pioneered production-grade Model Context Protocol (MCP) server bridges connecting AI coding agents directly to live AEC runtime environments - Autodesk Revit, AutoCAD, Rhino 3D, SCIA Engineer, and Microsoft Excel. Enables hands-free multi-disciplinary model querying, procedural geometry generation, finite element structural calculations, DWG sanitization, and automated document generation.",
+      problem: "Traditional AEC engineering and documentation workflows suffer from isolated software silos and manual friction:\n- Disconnected Structural Analysis: Structural engineers spend hours manually rebuilding and translating Revit geometries into SCIA Engineer for FEA calculation runs.\n- Repetitive CAD Import Sanitization: Drafters lose days in AutoCAD cleaning layers, exploding nested blocks, and flattening 3D polylines before DWGs can be safely linked.\n- Complex Organic Facade Transfers: Organic curved NURBS roofs and parametric facade arrays in Rhino 3D require tedious manual re-creation in Revit.\n- Document & Schedule Latency: Transmittal schedules and engineering calculation sheets in Word and Excel lag behind active BIM revisions, risking costly site errors.",
+      solution: "Engineered 5 native, high-performance MCP server bridges:\n- Autodesk Revit MCP Server: Live socket/listener bridge executing Python scripts directly within active or background Revit sessions for element querying, parameter injection, geometry verification, and model health audits.\n- AutoCAD MCP Server: Direct COM automation bridge executing batch layer sanitization, 3D-to-2D polyline flattening, block audits, and coordinate boundary extraction in minutes.\n- Rhino 3D MCP Server: Direct Rhino Python & command execution bridge handling complex NURBS surfaces, procedural geometry querying, layer/object automation, and export pipelines.\n- SCIA Engineer MCP Server: Direct structural automation bridge automating project initialization, ESA script execution, finite element calculation runs, and extraction of internal forces, deflections, and structural query results.\n- MS Office & Excel MCP Server: High-speed COM/FastMCP bridge automating Word (.docx) transmittals, drawing registers, and parametric Excel calculation sheets with zero copy-paste latency.",
+      impact: "Unifies fragmented AEC software into a continuous, AI-orchestrated engineering pipeline - compressing multi-software coordination cycles from days to minutes while guaranteeing 100% data fidelity across architectural, structural, and documentation deliverables.",
+      ribbonTools: [
+        "Autodesk Revit MCP (Live Socket & pyRevit Bridge)",
+        "AutoCAD MCP (Direct COM DWG Sanitizer & Polylines)",
+        "Rhino 3D MCP (NURBS Geometry Engine & Layer Query)",
+        "SCIA Engineer MCP (Structural Analysis & FEA Automation)",
+        "MS Excel FastMCP (Parametric Calculation Sync & Reports)"
+      ],
+      tags: ["Revit API", "AutoCAD COM", "Rhino 3D MCP", "SCIA Engineer MCP", "Excel FastMCP", "AI Automation", "Model Context Protocol"],
+      icon: "fas fa-network-wired"
     }
   ],
 
@@ -455,10 +462,10 @@ const portfolioData = {
       { name: "NCED Academic Honors & Drafting Theory", level: 98 }
     ],
     automation: [
-      { name: "pyRevit Tool Development & IronPython", level: 95 },
-      { name: "WPF / XAML Custom UI Architecture", level: 92 },
-      { name: "Revit API Custom Extensions & Batch Exporters", level: 90 },
-      { name: "AutoCAD MCP & Workflow Automation Scripting", level: 88 }
+      { name: "Automation Solutions Architecture & Scripting", level: 96 },
+      { name: "Multi-Platform MCP Bridges (Revit, CAD, Rhino, SCIA, Excel)", level: 95 },
+      { name: "pyRevit & Revit API Custom Ribbon Development", level: 94 },
+      { name: "WPF / XAML Custom UI Architecture", level: 92 }
     ]
   }
 };
