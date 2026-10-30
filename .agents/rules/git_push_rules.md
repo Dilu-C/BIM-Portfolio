@@ -1,4 +1,4 @@
----
+﻿---
 trigger: always_on
 description: Guardrail prohibiting automated git push commands in the background to prevent hung tasks and credential deadlocks.
 ---
@@ -15,7 +15,7 @@ description: Guardrail prohibiting automated git push commands in the background
 - **Never Run Remote Push**: Never attempt to force, automate, or background-push to remote repositories via terminal.
 
 ### 2.1 Multi-Repo Zero-Uncommitted Guardrail (à·ƒà·‘à¶¸ Repository à¶‘à¶šà¶šà·Šà¶¸ à¶…à¶±à·’à·€à·à¶»à·Šà¶ºà¶ºà·™à¶±à·Š Commit à¶šà·’à¶»à·“à¶¸à·š à¶±à·“à¶­à·’à¶º)
-- **Zero Uncommitted Changes Across ALL Repos**: Whenever any file (rule, skill, script, config, or doc) is modified or created across ANY git repository (`AntGvt_Dilu_Project2`, `Riyan-Revit-Tools`, `Dilu-BIM-Automation`, or `BIM-Portfolio`), the agent MUST run `git add -A` and `git commit` on EVERY affected repository before reporting to the user or concluding the turn.
+- **Zero Uncommitted Changes Across ALL Repos**: Whenever any file (rule, skill, script, config, or doc) is modified or created across ANY git repository (`AntGvt_Dilu_Project2`, `Riyan-Revit-Tools`, or `Dilu-BIM-Automation`), the agent MUST run `git add -A` and `git commit` on EVERY affected repository before reporting to the user or concluding the turn.
 - **Zero Manual Commit Hassle**: NEVER leave uncommitted changes sitting in GitHub Desktop for the user to discover or manually commit.
 - **Multi-Repo Status Verification**: Before sending a response, verify that `git status` reports clean working trees across all touched repositories.
 
@@ -31,9 +31,6 @@ description: Guardrail prohibiting automated git push commands in the background
 - **Repository 3: AntGvt_Dilu_Project2 (Workspace Repository)**
   - **GitHub Desktop Tracked Location**: `c:\Users\User\Desktop\Dilu\AntGvt_Dilu\AntGvt_Dilu_Project2`
   - **Mandatory Commit Before Concluding**: Whenever agent rules, skills, configurations, or workspace files are edited, immediately stage (`git add -A`) and commit via GitHub Desktop's embedded git binary.
-- **Repository 4: BIM-Portfolio**
-  - **GitHub Desktop Tracked Location**: `C:\Users\User\Documents\GitHub\BIM-Portfolio`
-  - **Mandatory Commit Before Concluding**: Whenever portfolio rules, configs, or documents are edited, immediately stage (`git add -A`) and commit via GitHub Desktop's embedded git binary.
 - **Universal Revit 2027+ Guardrail**: All code, features, and fixes across BOTH repositories must strictly maintain 100% compatibility with Revit 2021 through Revit 2027+ (.NET 8, CPython 3, 64-bit ElementId, ForgeTypeId).
 
 ## 4. Zero Legacy & Markdown Artifacts in Extension Runtime (Zero Stray File Guardrail)
