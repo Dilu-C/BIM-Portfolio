@@ -1,4 +1,4 @@
----
+﻿---
 trigger: always_on
 description: Guardrail prohibiting automated git push commands in the background to prevent hung tasks and credential deadlocks.
 ---
@@ -86,5 +86,10 @@ description: Guardrail prohibiting automated git push commands in the background
 - **Zero Cross-Repo Contamination**: `Dilu-BIM-Automation` සහ `Riyan-Revit-Tools` යනු එකිනෙකට සම්පූර්ණයෙන්ම වෙනස්, ස්වාධීන repositories දෙකකි.
 - **Never Mirror/Copy Across Repos**: එක් repository එකක ඇති panel folders, scripts, shared parameters, හෝ assets කිසිවිටෙකත් පරිශීලකයාගේ සෘජු විධානයකින් තොරව අනෙක් repository එක තුළට copy කිරීම, merge කිරීම හෝ paste කිරීම දැඩි ලෙස තහනම් වේ.
 - **Zero Unprompted Panel Injections**: `Dilu.tab` වෙත `Riyan` හි panels බලහත්කාරයෙන් පැටවීම හෝ `Dilu` හි layout එක Riyan මට්ටමට මාරු කිරීම නොකළ යුතුය.
-
-
+## 10. Mandatory Synchronized tools_update.zip Rebuild Parity
+- **Zero Stale Zip Release (à¶´à·à¶»à¶«à·’ ZIP à¶­à¶¶à·à¶œà·™à¶± Version Bump à¶±à·œà¶šà·’à¶»à·“à¶¸à·š à¶±à·“à¶­à·’à¶º)**:
+  - `Riyan.extension` à·„à·’ à¶šà·’à·ƒà·’à¶ºà¶¸à·Š à·„à· code à·€à·™à¶±à·ƒà·Šà¶šà¶¸à¶šà·Š, bug fix à¶‘à¶šà¶šà·Š à·„à· UI update à¶‘à¶šà¶šà·Š à·ƒà·’à¶¯à·”à¶šà¶» Version bump à¶šà¶»à¶± à·ƒà·‘à¶¸ à¶…à·€à·ƒà·Šà¶®à·à·€à¶šà¶¯à·“à¶¸, à·ƒà·„à·à¶ºà¶šà¶ºà· à·€à·’à·ƒà·’à¶±à·Š à¶…à¶±à·’à·€à·à¶»à·Šà¶ºà¶ºà·™à¶±à·Šà¶¸ **`tools_update.zip` à¶‘à¶š à¶‘à¶¸ à¶¸à·œà·„à·œà¶­à·šà¶¯à·“à¶¸ fresh re-pack à¶šà·… à¶ºà·”à¶­à·”à¶º**.
+  - `tools_update.zip` à¶‘à¶š re-pack à¶±à·œà¶šà¶» à¶šà·’à·ƒà·’à·ƒà·šà¶­à·Šà¶¸ Git Commit à·„à· Version Release à¶±à·œà¶šà·… à¶ºà·”à¶­à·”à¶º.
+- **Strict Zero Heavy Binary Bloat (500MB Master RVT Bloat Guardrail)**:
+  - `tools_update.zip` à·„à· Git repository à¶‘à¶š à¶šà·’à·ƒà·’à·€à·’à¶§à·™à¶šà¶­à·Š 50MB - 500MB Master RVT à¶œà·œà¶±à·”, à¶¶à¶»à·à¶­à·’ `.rvt`, à·„à· à·ƒà¶¸à·Šà¶´à·–à¶»à·Šà¶« 400MB+ Library cache à¶œà·œà¶±à·” à·€à¶½à·’à¶±à·Š bloat à¶±à·œà¶šà·… à¶ºà·”à¶­à·”à¶º.
+  - `tools_update.zip` à¶‘à¶š strictly 5 MB à¶±à·œà¶‰à¶šà·Šà¶¸à·€à¶± lightweight tools bundle à¶‘à¶šà¶šà·Š à¶´à¶¸à¶«à¶šà·Š à·€à·’à¶º à¶ºà·”à¶­à·”à¶º.
