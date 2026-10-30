@@ -1,4 +1,4 @@
-﻿---
+---
 trigger: always_on
 description: Mandatory rules for absolute truthfulness, strict directive adherence (only do what was asked, zero unsolicited actions), zero excuses, and zero false reporting.
 ---
