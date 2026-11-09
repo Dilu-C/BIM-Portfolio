@@ -281,6 +281,111 @@ const portfolioData = {
 
   projects: [
     {
+      id: "fehendhoo-residential",
+      category: "bim",
+      title: "Multi-Storey Residential & Guesthouse (Hiyaaleege)",
+      badge: "01 | Full Package (34 Sheets)",
+      subtitle: "Complete Architectural Working Drawings, 3D Axonometrics & 16-Sheet D&W Dynamic Schedules",
+      image: "assets/images/fehendhoo_3d_sheet.png",
+      pdfDoc: "assets/docs/01_HIYAALEEGE_B_FEHENDHOO_34_Sheets.pdf",
+      sheets: "34 Vector Drawing Sheets",
+      isAi: false,
+      description: "Comprehensive 4-storey residential and guesthouse facility modeled and detailed end-to-end in Autodesk Revit. Features 34 fully coordinated sheets including 3D axonometric presentations, plans, sections, elevations, and an unprecedented 16 sheets of automated Door & Window dynamic schedules.",
+      highlights: [
+        "Full 34-sheet architectural documentation package authored and detailed in Autodesk Revit",
+        "Complete GA floor plans (Ground, 1st, 2nd, 3rd + Roof), structural column layouts, and multiple building cross-sections",
+        "Dual 3D axonometric and perspective presentation sheets demonstrating high-fidelity BIM geometry",
+        "16 sheets of automated Door & Window schedules generated via pyRevit automation with dynamic elevation tables and parameter mapping",
+        "Proof of high-velocity drawing production with zero discrepancies across all 34 sheets"
+      ],
+      toolsUsed: ["Autodesk Revit", "pyRevit D&W Suite", "3D Axonometric Views", "Working Drawings", "LOD 300+ Modeling"],
+      icon: "fas fa-hotel"
+    },
+    {
+      id: "henbadhoo-hiya",
+      category: "bim",
+      title: "Multi-Storey Residential Complex (Henbadhoo Hiya)",
+      badge: "02 | Architectural Package (20 Sheets)",
+      subtitle: "Full Architectural Working Drawings | Floor Plans, Elevations & Technical Sections",
+      image: "assets/images/henbadhoo_ground_floor.png",
+      pdfDoc: "assets/docs/02_HENBEDHOO_HIYA_20_Sheets.pdf",
+      sheets: "20 Vector Drawing Sheets",
+      isAi: false,
+      description: "Complete 20-sheet architectural package detailing a multi-storey residential complex. Authored from 2D CAD engineering inputs into coordinated Revit BIM models, delivering clean dimensioned plans, cross sections, 4-sided elevations, and roof drainage documentation.",
+      highlights: [
+        "20-sheet complete working drawing package modeled in Autodesk Revit",
+        "Clean architectural floor plans with precise room scheduling, dimensioning, and structural grid alignment",
+        "Detailed exterior elevations capturing finishes, lintel heights, and balcony balustrade detailing",
+        "Technical building sections verifying head heights, structural slab build-ups, and roof drainage slopes"
+      ],
+      toolsUsed: ["Autodesk Revit", "CAD to BIM Conversion", "Architectural Detailing", "Working Drawings"],
+      icon: "fas fa-city"
+    },
+    {
+      id: "pool-bar-resort",
+      category: "bim",
+      title: "Resort Pool Bar & Pavilion Structure (Block 04)",
+      badge: "03 | Hospitality Architecture (24 Sheets)",
+      subtitle: "Curved Pavilion Modeling, Open-Air Timber Framing & Detailed GA Drawing Package",
+      image: "assets/images/pool_bar_typical_details.png",
+      pdfDoc: "assets/docs/03_ROOM_BLOCK_04_POOL_BAR_24_Sheets.pdf",
+      sheets: "24 Vector Drawing Sheets",
+      isAi: false,
+      description: "Comprehensive 24-sheet architectural and structural working drawing package for a luxury island resort pool bar and pavilion. Features intricate timber framing details, open-air service counters, and curved roof profiles.",
+      highlights: [
+        "24-sheet drawing package authored in Autodesk Revit with high-detail architectural and structural coordination",
+        "Open-air hospitality pavilion layouts, kitchen/bar service counters, and guest circulation planning",
+        "Curved roof geometry, timber rafter framing, and weathered finish detailing",
+        "Full coordination between concrete substructure and structural timber superstructure"
+      ],
+      toolsUsed: ["Autodesk Revit", "Hospitality BIM", "Timber Framing Details", "Working Drawings"],
+      icon: "fas fa-cocktail"
+    },
+    {
+      id: "commercial-retail",
+      category: "bim",
+      title: "Commercial Retail Building (Block 01)",
+      badge: "04 | Commercial Working Drawings (23 Sheets)",
+      subtitle: "High-Traffic Retail Architecture | GA Floor Plans, 4-Side Elevations & Building Sections",
+      image: "assets/images/retail_ground_floor.png",
+      pdfDoc: "assets/docs/04_ROOM_BLOCK_01_RETAIL_23_Sheets.pdf",
+      sheets: "23 Vector Drawing Sheets",
+      isAi: false,
+      description: "High-traffic commercial retail facility modeled and documented in Autodesk Revit from provided 2D CAD engineering drawings. Features complete General Arrangement floor plans, setting-out dimensions, architectural wall build-up sections, and commercial facade elevations.",
+      highlights: [
+        "Complete 23-sheet commercial architectural drawing set produced in Autodesk Revit",
+        "High-precision 2D CAD to Revit conversion: setting out, retail customer flow, and back-of-house circulation",
+        "Detailed longitudinal and cross sections showing structural interfaces, slab levels, and ceiling heights",
+        "Commercial facade elevations with opening schedules and material specifications",
+        "100% vector drawing sheets with pure technical documentation"
+      ],
+      toolsUsed: ["Autodesk Revit", "CAD to BIM Conversion", "Commercial Architecture", "GA Working Drawings", "LOD 300 Detailing"],
+      icon: "fas fa-store"
+    },
+    {
+      id: "commercial-office",
+      category: "bim",
+      title: "Commercial Office Building (COFB)",
+      badge: "05 | Commercial Multi-Story (19 Sheets)",
+      subtitle: "Revit Architectural & Structural Modeling | 2D CAD Conversion & Full Working Drawings",
+      video: "assets/videos/commercial_office_building.mp4",
+      image: "assets/images/commercial_office_revit_3d_sheet.png",
+      revitSheet: "assets/images/commercial_office_revit_3d_sheet.png",
+      pdfDoc: "assets/docs/05_COFB_OFFICE_BUILDING_19_Sheets.pdf",
+      sheets: "19 Vector Drawing Sheets",
+      aiNote: "AI-generated conceptual walkthrough synthesized directly from my 2D Revit elevation and section drawing submittals.",
+      description: "Comprehensive multi-story commercial office facility modeled and detailed in Autodesk Revit from 2D CAD drawings. Authored complete architectural and structural drawing submittals - GA floor plans, building sections, exterior elevations, and core layouts with strict CAD-to-BIM precision.",
+      highlights: [
+        "Authored in Autodesk Revit (LOD 300+): core circulation, building envelope, and coordinated structural frame",
+        "Complete 19-sheet working drawing package: GA plans, technical sections, and 4-sided elevations",
+        "Rigorous 2D CAD to Revit conversion matching municipal submission standards and client requirements",
+        "AI-Generated Walkthrough: Video synthesized from technical 2D CAD/Revit elevation drawings",
+        "Sanitized vector PDF package available for instant technical review"
+      ],
+      toolsUsed: ["Autodesk Revit (BIM)", "CAD to BIM Conversion", "Working Drawings", "Revit Elevations & Sections", "AI Visualization"],
+      icon: "fas fa-building"
+    },
+    {
       id: "parametric-families",
       category: "bim",
       title: "Architectural Master Library & Advanced Parametric Component Suite",
@@ -376,25 +481,7 @@ const portfolioData = {
       toolsUsed: ["Autodesk Revit (Family Editor)", "Formula Math & Trigonometry", "3D Spline Sweeps & Variable Diameters", "Curved Curtain Systems", "Screen Type Catalogs", "Shared Parameters", "LOD 350+ Detailing"],
       icon: "fas fa-drafting-compass"
     },
-    {
-      id: "commercial-office",
-      category: "bim",
-      title: "Commercial Office Building (Arc & Str)",
-      badge: "Commercial Multi-Story",
-      subtitle: "Revit Architectural & Structural Modeling | 2D Drawings & AI Walkthrough",
-      video: "assets/videos/commercial_office_building.mp4",
-      revitSheet: "assets/images/commercial_office_revit_3d_sheet.png",
-      aiNote: "AI-generated conceptual walkthrough synthesized directly from my 2D Revit elevation and section drawing submittals.",
-      description: "Comprehensive multi-story commercial office facility modeled and detailed in Autodesk Revit. Produced complete working drawing packages - detailed floor plans, building sections, and elevations - with full architectural and structural coordination.",
-      highlights: [
-        "Modeled & detailed in Autodesk Revit: core circulation, envelope, and structural frame elements",
-        "Full production of working drawings: GA plans, technical sections, and 4-sided elevation sheets",
-        "AI-Generated Walkthrough: Video synthesized from technical 2D CAD/Revit elevation drawings",
-        "Adherence to strict municipal submission standards and client documentation guidelines"
-      ],
-      toolsUsed: ["Autodesk Revit (BIM)", "Working Drawings", "Revit Elevations & Sections", "AI Visualization"],
-      icon: "fas fa-building"
-    },
+
     {
       id: "beach-villa",
       category: "bim",

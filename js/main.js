@@ -168,9 +168,16 @@ function renderProjects(filter = 'all') {
         <div class="tag-list" style="margin-top: 14px; margin-bottom: 16px;">
           ${proj.toolsUsed.map(t => `<span class="tag">${t}</span>`).join('')}
         </div>
-        <button class="btn-card-action" onclick="openProjectModal('${proj.id}')">
-          <i class="fas fa-layer-group"></i> Project Specifications
-        </button>
+        <div style="display: flex; gap: 8px; margin-top: 10px;">
+          <button class="btn-card-action" onclick="openProjectModal('${proj.id}')" style="flex: 1;">
+            <i class="fas fa-layer-group"></i> Specifications
+          </button>
+          ${proj.pdfDoc ? `
+          <a href="${proj.pdfDoc}" target="_blank" class="btn-card-action" style="flex: 1; text-align: center; text-decoration: none; background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4); color: #38bdf8; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+            <i class="fas fa-file-pdf"></i> View PDF
+          </a>
+          ` : ''}
+        </div>
       </div>
     </div>
   `).join('');
@@ -419,6 +426,17 @@ function openProjectModal(projectId) {
         `).join('')}
       </ul>
     </div>
+
+    ${proj.pdfDoc ? `
+    <div class="modal-section" style="margin: 18px 0; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 8px; padding: 16px; text-align: center;">
+      <div style="font-size: 0.88rem; color: #f1f5f9; margin-bottom: 10px; font-weight: 600;">
+        <i class="fas fa-file-pdf text-gold" style="margin-right: 6px;"></i> Verified Full Working Drawing Package (${proj.sheets || 'Full PDF Set'})
+      </div>
+      <a href="${proj.pdfDoc}" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);">
+        <i class="fas fa-external-link-alt"></i> Open Full Vector PDF Drawing Set
+      </a>
+    </div>
+    ` : ''}
 
     <div class="modal-section" style="margin-top: 20px;">
       <h4><i class="fas fa-tools"></i> Software & Methodologies Used</h4>
